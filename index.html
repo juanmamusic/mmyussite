@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MMY US — Build your next development like a product, not a project</title>
+<meta name="description" content="MMY US manufactures permanent, code-compliant modular homes and multifamily buildings off-site — delivered in as little as 16 weeks instead of the industry's 76.">
+<meta property="og:title" content="MMY US — Manufactured. Not constructed.">
+<meta property="og:description" content="Permanent, code-compliant modular homes and multiplexes, manufactured off-site and delivered in as little as 16 weeks.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* ============================================================
+   MMY US — Onepager de conversión
+   Design tokens
+   ============================================================ */
+:root{
+  --ink:#1E1E1E;
+  --ink-2:#262626;
+  --ink-3:#303030;
+  --line-dark: rgba(241,239,236,.12);
+  --line-dark-soft: rgba(241,239,236,.07);
+  --tx-d1:#FFFFFF;
+  --tx-d2:#A7A7A7;
+  --tx-d3:#6E6E6E;
+
+  --paper:#F1EFEC;
+  --paper-2:#E2E2E2;
+  --paper-3:#D3D3D3;
+  --line-light: rgba(30,30,30,.13);
+  --line-light-soft: rgba(30,30,30,.07);
+  --tx-1:#262626;
+  --tx-2:#5A5A5A;
+  --tx-3:#A7A7A7;
+
+  --blue:#5B8D89;
+  --blue-deep:#3F6863;
+  --blue-bright:#7DA8A3;
+  --blue-tint:#E4EBEA;
+  --blue-tint-2:#CFDEDC;
+  --wood:#9A8F85;
+  --wood-tint:#EDE9E5;
+  --gold:#D4B283;
+
+  --radius-lg:20px;
+  --radius:14px;
+  --radius-sm:9px;
+
+  --container: 1240px;
+
+  --ff-display:'Montserrat', 'Arial Narrow', sans-serif;
+  --ff-body:'Montserrat', -apple-system, sans-serif;
+  --ff-mono:'Montserrat', sans-serif;
+
+  --ease: cubic-bezier(.19,1,.22,1);
+  --ease-soft: cubic-bezier(.33,1,.68,1);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  .a2d-m1,.a2d-m2,.a2d-m3,.a2d-m4,.a2d-m5{ animation:none !important; opacity:1 !important; transform:none !important; box-shadow:none !important; }
+}
+body{
+  font-family:var(--ff-body);
+  color:var(--tx-1);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+ul{list-style:none; margin:0; padding:0;}
+button{font-family:inherit;}
+.container-mmy{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
+}
+@media (min-width:768px){ .container-mmy{padding:0 32px;} }
+@media (min-width:1280px){ .container-mmy{padding:0 40px;} }
+
+section{position:relative;}
+.section-pad{padding:clamp(64px, 10vw, 128px) 0;}
+.section-pad-sm{padding:clamp(48px, 7vw, 84px) 0;}
+
+.bg-ink{background:var(--ink); color:var(--tx-d1);}
+.bg-ink .tx-muted{color:var(--tx-d2);}
+.bg-paper{background:var(--paper); color:var(--tx-1);}
+.bg-paper2{background:var(--paper-2); color:var(--tx-1);}
+
+/* ---------- Typography ---------- */
+.eyebrow{
+  font-family:var(--ff-mono);
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--wood);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:16px;
+}
+.bg-paper .eyebrow, .bg-paper2 .eyebrow{ color:var(--wood); }
+.eyebrow::before{
+  content:"";
+  width:22px; height:1px;
+  background:currentColor;
+  opacity:.6;
+  display:inline-block;
+}
+h1,h2,h3,h4{
+  font-family:var(--ff-display);
+  font-weight:600;
+  letter-spacing:-0.01em;
+  line-height:1.06;
+  margin:0;
+}
+.h-hero{
+  font-size:clamp(22px, 4vw, 48px);
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+}
+.h-section{
+  font-size:clamp(28px, 4.4vw, 46px);
+  line-height:1.08;
+}
+.h-card{
+  font-size:clamp(19px, 2vw, 22px);
+  line-height:1.2;
+}
+.lede{
+  font-family:var(--ff-body);
+  font-size:clamp(16px, 1.9vw, 19px);
+  line-height:1.55;
+  color:var(--tx-2);
+  font-weight:400;
+  max-width:640px;
+}
+.bg-ink .lede{color:var(--tx-d2);}
+.mono{font-family:var(--ff-mono);}
+.text-body{color:var(--tx-2); line-height:1.65; font-size:15.5px;}
+.bg-ink .text-body{color:var(--tx-d2);}
+
+/* ---------- Buttons ---------- */
+.btn-mmy{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--ff-body); font-weight:600; font-size:15px;
+  padding:16px 32px;
+  border-radius:100px;
+  border:1px solid transparent;
+  transition:transform .35s var(--ease), background .25s ease, border-color .25s ease, color .25s ease;
+  white-space:nowrap;
+  cursor:pointer;
+}
+.btn-mmy:hover{ transform:translateY(-2px); }
+.btn-primary-mmy{
+  background:var(--blue);
+  color:#fff;
+}
+.btn-primary-mmy:hover{ background:var(--blue-bright); color:#fff; }
+.btn-ghost-dark{
+  border-color:var(--line-dark);
+  color:var(--tx-d1);
+  background:rgba(255,255,255,.03);
+}
+.btn-ghost-dark:hover{ border-color:rgba(244,243,239,.4); color:#fff; }
+.btn-ghost-light{
+  border-color:var(--line-light);
+  color:var(--tx-1);
+}
+.btn-ghost-light:hover{ border-color:var(--tx-1); }
+.btn-mmy svg{ width:16px; height:16px; transition:transform .3s var(--ease); }
+.btn-mmy:hover svg{ transform:translateX(3px); }
+
+/* ---------- Icons ---------- */
+.icon{ width:22px; height:22px; stroke:currentColor; fill:none; flex-shrink:0; }
+
+/* ---------- Navbar ---------- */
+.mmy-nav{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  padding:18px 0;
+  transition:background .35s ease, padding .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+  border-bottom:1px solid transparent;
+}
+.mmy-nav.is-scrolled{
+  background:rgba(18,22,27,.72);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--line-dark);
+  padding:12px 0;
+}
+.mmy-nav .nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px;
+}
+.mmy-logo{ display:flex; align-items:center; gap:10px; }
+.mmy-logo svg{ height:26px; width:auto; }
+.mmy-logo .logo-img{ height:24px; width:auto; filter:brightness(0) invert(1); }
+.nav-links{ display:none; align-items:center; gap:34px; }
+.nav-links a{
+  font-size:14px; font-weight:500; color:var(--tx-d2);
+  position:relative; padding:4px 0;
+  transition:color .25s ease;
+}
+.nav-links a:hover{ color:#fff; }
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:0; height:1px; width:0;
+  background:var(--blue-bright); transition:width .3s var(--ease);
+}
+.nav-links a:hover::after{ width:100%; }
+@media (min-width:992px){ .nav-links{ display:flex; } }
+.nav-cta{ display:flex; align-items:center; gap:14px; }
+.nav-toggle{
+  background:transparent; border:1px solid var(--line-dark); border-radius:9px;
+  width:42px; height:42px; display:flex; align-items:center; justify-content:center;
+  color:#fff;
+}
+@media (min-width:992px){ .nav-toggle{ display:none; } }
+
+.mmy-mobile-menu{
+  position:fixed; inset:0; z-index:1100;
+  background:var(--ink);
+  padding:22px 20px;
+  transform:translateY(-100%);
+  transition:transform .45s var(--ease);
+  display:flex; flex-direction:column;
+}
+.mmy-mobile-menu.is-open{ transform:translateY(0); }
+.mmy-mobile-menu .mm-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:48px; }
+.mmy-mobile-menu a{
+  font-family:var(--ff-display); font-size:30px; font-weight:500;
+  color:var(--tx-d1); padding:14px 0; border-bottom:1px solid var(--line-dark-soft);
+}
+.mmy-mobile-menu .mm-foot{ margin-top:auto; color:var(--tx-d3); font-size:13px; font-family:var(--ff-mono); }
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex; align-items:center;
+  color:#fff;
+  overflow:hidden;
+  background:var(--ink);
+  padding-top:88px;
+}
+.hero-bg{ position:absolute; inset:0; z-index:0; background:var(--ink); }
+.hero-bg::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(60% 55% at 82% 32%, rgba(91,141,137,.22) 0%, rgba(91,141,137,0) 68%),
+    radial-gradient(40% 40% at 8% 88%, rgba(212,178,131,.10) 0%, rgba(212,178,131,0) 70%);
+}
+.hero-grid{
+  position:absolute; inset:0; z-index:1; opacity:.4;
+  background-image:
+    linear-gradient(rgba(241,239,236,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,239,236,.07) 1px, transparent 1px);
+  background-size:33px 33px;
+  mask-image:radial-gradient(120% 100% at 50% 0%, black 40%, transparent 92%);
+}
+.hero-cursor-glow{
+  position:absolute; inset:0; z-index:2; overflow:hidden; pointer-events:none;
+}
+.hero-cursor-glow-blob{
+  position:absolute; top:-210px; left:-210px;
+  width:420px; aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle farthest-corner at 50% 50%, rgba(125,168,163,.55) 0%, rgba(125,168,163,0) 70%);
+  filter:blur(46px);
+  mix-blend-mode:screen;
+  opacity:0;
+  transition:opacity .4s ease;
+  will-change:transform;
+}
+.hero-cursor-glow-blob.is-active{ opacity:.4; }
+.hero-content{ position:relative; z-index:3; width:100%; padding-bottom:clamp(34px,6vw,64px); }
+.hero-columns{ display:flex; flex-direction:column; gap:44px; align-items:center; margin-bottom:36px; }
+.hero-copy{ width:100%; }
+.hero-tag{
+  font-family:var(--ff-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--tx-d2); display:flex; align-items:center; gap:10px; margin-bottom:22px;
+}
+.hero-tag .dot{ width:7px; height:7px; border-radius:50%; background:#4ADE80; box-shadow:0 0 0 3px rgba(74,222,128,.18); }
+.hero-title{ margin-bottom:22px; }
+.hero-title em{
+  font-style:normal; color:var(--blue-bright);
+}
+.hero-sub{ max-width:560px; font-size:clamp(15.5px,1.7vw,18px); color:var(--tx-d2); line-height:1.6; margin-bottom:34px; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-bottom:26px; }
+.hero-micro{ font-family:var(--ff-mono); font-size:12.5px; color:var(--tx-d3); display:flex; gap:8px; align-items:center; }
+
+.hero-video-card{
+  position:relative; width:100%;
+  border-radius:26px; overflow:hidden;
+  border:1px solid var(--line-dark);
+  box-shadow:0 40px 90px -34px rgba(0,0,0,.7);
+  aspect-ratio:16/9;
+  min-height:200px;
+  background:var(--ink-2);
+}
+.hero-video-card video{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-video-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(200deg, rgba(20,20,20,0) 55%, rgba(20,20,20,.55) 100%);
+  pointer-events:none;
+}
+.hero-video-tag{
+  position:absolute; left:16px; bottom:16px; z-index:2;
+  font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.06em;
+  color:#fff; background:rgba(20,20,20,.5); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(241,239,236,.18); border-radius:100px; padding:7px 14px;
+  display:flex; align-items:center; gap:8px;
+}
+.hero-video-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue-bright); flex-shrink:0; }
+
+@media (min-width:992px){
+  .hero{ padding-top:0; }
+  .hero-columns{ flex-direction:row; align-items:center; gap:56px; }
+  .hero-copy{ flex:1 1 54%; }
+  .hero-video-card{ flex:1 1 46%; min-height:280px; }
+}
+
+.trust-strip{
+  border-top:1px solid var(--line-dark);
+  padding-top:22px;
+  display:flex; flex-direction:column; gap:16px;
+}
+@media (min-width:768px){ .trust-strip{ flex-direction:row; align-items:center; gap:28px; } }
+.trust-label{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--tx-d3); white-space:nowrap; }
+.logo-marquee{ overflow:hidden; width:100%; mask-image:linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
+.logo-track{ display:flex; align-items:center; gap:52px; width:max-content; animation:marquee 32s linear infinite; }
+.logo-track img{ height:20px; width:auto; filter:brightness(0) invert(1); opacity:.55; }
+@keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+.scroll-cue{
+  position:absolute; right:24px; bottom:24px; z-index:3;
+  writing-mode:vertical-rl; text-orientation:mixed;
+  font-family:var(--ff-mono); font-size:11px; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--tx-d3); display:none; align-items:center; gap:10px;
+}
+.scroll-cue::after{ content:""; width:1px; height:34px; background:var(--tx-d3); display:block; animation:scrollcue 2s ease-in-out infinite; }
+@keyframes scrollcue{ 0%,100%{ transform:scaleY(1); opacity:.6;} 50%{ transform:scaleY(.4); opacity:1;} }
+@media (min-width:992px){ .scroll-cue{ display:flex; } }
+
+/* ---------- Dimension divider ---------- */
+.dim-divider{ display:flex; align-items:center; gap:16px; padding:0 0 8px; opacity:.9; }
+.dim-divider .dim-line{ flex:1; height:1px; background:var(--line-light); position:relative; }
+.dim-divider .dim-line::before, .dim-divider .dim-line::after{
+  content:""; position:absolute; top:-4px; width:1px; height:9px; background:var(--line-light);
+}
+.dim-divider .dim-line::before{ left:0; }
+.dim-divider .dim-line::after{ right:0; }
+.dim-divider .dim-label{ font-family:var(--ff-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--tx-3); white-space:nowrap; }
+.bg-ink .dim-divider .dim-line{ background:var(--line-dark); }
+.bg-ink .dim-divider .dim-line::before, .bg-ink .dim-divider .dim-line::after{ background:var(--line-dark); }
+.bg-ink .dim-divider .dim-label{ color:var(--tx-d3); }
+
+/* ---------- Reveal animation ---------- */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.is-in{ opacity:1; transform:translateY(0); }
+.reveal-delay-1{ transition-delay:.08s; }
+.reveal-delay-2{ transition-delay:.16s; }
+.reveal-delay-3{ transition-delay:.24s; }
+.reveal-delay-4{ transition-delay:.32s; }
+
+/* ---------- Problem section ---------- */
+.pain-card{
+  background:#fff; border:1px solid var(--line-light);
+  border-radius:var(--radius); padding:28px 26px;
+  height:100%;
+  transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.pain-card:hover{ border-color:var(--blue); transform:translateY(-4px); box-shadow:0 20px 40px -24px rgba(20,24,29,.25); }
+.pain-num{
+  font-family:var(--ff-mono); font-size:34px; font-weight:600; color:var(--tx-1);
+  display:block; margin-bottom:6px; letter-spacing:-.02em;
+}
+.pain-tag{ font-family:var(--ff-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--tx-3); margin-bottom:18px; display:block;}
+.pain-card p{ font-size:14.5px; color:var(--tx-2); line-height:1.6; margin:0; }
+.pivot-row{
+  display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between;
+  margin-top:40px; padding-top:32px; border-top:1px solid var(--line-light);
+}
+.pivot-row p{ font-family:var(--ff-display); font-size:clamp(18px,2.4vw,24px); font-weight:500; max-width:640px; margin:0; color:var(--tx-1); }
+
+/* ---------- 2D modular-assembly animation (Problem section) ---------- */
+.a2d-panel{
+  background:var(--ink); border-radius:var(--radius-lg); overflow:hidden;
+  position:relative; height:100%;
+}
+.a2d-panel::before{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(70% 60% at 50% 15%, rgba(91,141,137,.20) 0%, rgba(91,141,137,0) 70%);
+  pointer-events:none;
+}
+.a2d-head{ position:relative; z-index:2; padding:22px 24px 0; }
+.a2d-caption{ font-size:13px; color:var(--tx-d2); line-height:1.5; max-width:320px; margin-top:8px; }
+.a2d-stage{
+  position:relative; z-index:1;
+  width:100%; aspect-ratio:5/4;
+  min-height:220px;
+  margin-top:14px;
+}
+.a2d-guide{
+  position:absolute; left:8%; right:8%; bottom:12%; top:8%;
+  border:1.5px dashed rgba(241,239,236,.16);
+  border-radius:12px;
+}
+.a2d-ground{
+  position:absolute; left:4%; right:4%; bottom:11%; height:1px;
+  background-image:repeating-linear-gradient(90deg, rgba(241,239,236,.28) 0 1px, transparent 1px 16px);
+}
+.a2d-mod{
+  position:absolute; border-radius:7px;
+  border:1px solid rgba(241,239,236,.22);
+  box-shadow:0 14px 26px -14px rgba(0,0,0,.55);
+  will-change:transform, opacity;
+}
+.a2d-m1{ left:9%; bottom:13%; width:34%; height:24%; background:var(--blue); animation:a2dDrop1 7s ease infinite; }
+.a2d-m2{ left:57%; bottom:13%; width:34%; height:24%; background:var(--wood); animation:a2dDrop2 7s ease infinite; }
+.a2d-m3{ left:9%; bottom:41%; width:34%; height:24%; background:var(--ink-3); animation:a2dDrop3 7s ease infinite; }
+.a2d-m4{ left:57%; bottom:41%; width:34%; height:24%; background:var(--blue-deep); animation:a2dDrop4 7s ease infinite; }
+.a2d-m5{ left:27%; bottom:69%; width:46%; height:20%; background:var(--gold); animation:a2dDrop5 7s ease infinite; }
+
+@keyframes a2dDrop1{
+  0%,8%{ transform:translateY(-70px); opacity:0; }
+  12%{ transform:translateY(5px); opacity:1; }
+  16%,84%{ transform:translateY(0); opacity:1; }
+  90%,100%{ transform:translateY(-70px); opacity:0; }
+}
+@keyframes a2dDrop2{
+  0%,16%{ transform:translateY(-70px); opacity:0; }
+  20%{ transform:translateY(5px); opacity:1; }
+  24%,84%{ transform:translateY(0); opacity:1; }
+  90%,100%{ transform:translateY(-70px); opacity:0; }
+}
+@keyframes a2dDrop3{
+  0%,24%{ transform:translateY(-70px); opacity:0; }
+  28%{ transform:translateY(5px); opacity:1; }
+  32%,84%{ transform:translateY(0); opacity:1; }
+  90%,100%{ transform:translateY(-70px); opacity:0; }
+}
+@keyframes a2dDrop4{
+  0%,32%{ transform:translateY(-70px); opacity:0; }
+  36%{ transform:translateY(5px); opacity:1; }
+  40%,84%{ transform:translateY(0); opacity:1; }
+  90%,100%{ transform:translateY(-70px); opacity:0; }
+}
+@keyframes a2dDrop5{
+  0%,40%{ transform:translateY(-70px); opacity:0; }
+  44%{ transform:translateY(5px); opacity:1; }
+  48%,84%{ transform:translateY(0); opacity:1; }
+  90%,100%{ transform:translateY(-70px); opacity:0; }
+}
+
+/* ---------- Stat band ---------- */
+.stat-band{ border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); }
+.stat-grid{ display:grid; grid-template-columns:1fr; }
+.stat-item{ padding:30px 4px; text-align:left; border-top:1px solid var(--line-dark); }
+.stat-item:first-child{ border-top:none; }
+.stat-num{ font-family:var(--ff-mono); font-weight:600; font-size:clamp(34px,6vw,64px); line-height:1; color:#fff; letter-spacing:-.02em; }
+.stat-num .unit{ font-size:.45em; color:var(--gold); margin-left:2px; }
+.stat-label{ font-size:13px; color:var(--tx-d2); margin-top:10px; max-width:280px; line-height:1.4; }
+@media (min-width:576px){
+  .stat-grid{ grid-template-columns:repeat(3,1fr); }
+  .stat-item{ padding:38px 18px; border-top:none; border-left:1px solid var(--line-dark); }
+  .stat-item:first-child{ border-left:none; }
+}
+@media (min-width:768px){ .stat-item{ padding:52px 30px; } }
+
+/* ---------- Assembly line (signature) ---------- */
+.assembly-wrap{ position:relative; margin-top:56px; }
+.assembly-track{
+  display:flex; flex-direction:column; gap:0;
+  position:relative;
+}
+.assembly-connector{
+  position:absolute; left:23px; top:16px; bottom:16px; width:1px;
+  background:var(--line-dark);
+}
+.assembly-connector .fill{
+  position:absolute; top:0; left:0; width:100%; height:0%;
+  background:linear-gradient(180deg, var(--blue-bright), var(--blue));
+  transition:height 1.4s var(--ease);
+}
+.is-in .assembly-connector .fill{ height:100%; }
+.assembly-node{
+  display:flex; gap:20px; padding:20px 0;
+  opacity:0; transform:translateX(-14px);
+  transition:opacity .6s var(--ease), transform .6s var(--ease);
+}
+.is-in .assembly-node{ opacity:1; transform:translateX(0); }
+.assembly-node:nth-child(1){ transition-delay:.05s; }
+.assembly-node:nth-child(2){ transition-delay:.2s; }
+.assembly-node:nth-child(3){ transition-delay:.35s; }
+.assembly-node:nth-child(4){ transition-delay:.5s; }
+.assembly-node:nth-child(5){ transition-delay:.65s; }
+.assembly-node:nth-child(6){ transition-delay:.8s; }
+.assembly-icon{
+  position:relative; z-index:1;
+  width:47px; height:47px; border-radius:50%;
+  background:var(--ink-2); border:1px solid var(--line-dark);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; color:var(--blue-bright);
+}
+.assembly-body{ padding-top:5px; }
+.assembly-step-tag{ font-family:var(--ff-mono); font-size:11px; color:var(--tx-d3); letter-spacing:.08em; text-transform:uppercase; }
+.assembly-title{ font-family:var(--ff-display); font-size:19px; font-weight:600; color:#fff; margin:3px 0 6px; }
+.assembly-desc{ font-size:14px; color:var(--tx-d2); line-height:1.55; max-width:460px; }
+
+@media (min-width:992px){
+  .assembly-track{ flex-direction:row; align-items:flex-start; gap:0; }
+  .assembly-connector{ left:0; right:0; top:23px; bottom:auto; height:1px; width:auto; }
+  .assembly-connector .fill{ width:0%; height:100%; }
+  .is-in .assembly-connector .fill{ width:100%; }
+  .assembly-node{ flex-direction:column; flex:1; padding:0 10px; text-align:left; transform:translateY(16px); }
+  .is-in .assembly-node{ transform:translateY(0); }
+  .assembly-body{ padding-top:20px; }
+  .assembly-desc{ max-width:none; font-size:13.3px; }
+}
+
+/* ---------- How it works accordion ---------- */
+.accordion-mmy .accordion-item{
+  background:transparent; border:none; border-bottom:1px solid var(--line-light);
+}
+.accordion-mmy .accordion-item:first-child{ border-top:1px solid var(--line-light); }
+.accordion-mmy .accordion-button{
+  background:transparent; box-shadow:none; padding:22px 6px;
+  font-family:var(--ff-display); font-weight:600; font-size:clamp(16px,2vw,20px);
+  color:var(--tx-1); gap:18px;
+}
+.accordion-mmy .accordion-button::after{ display:none; }
+.accordion-mmy .acc-step{ font-family:var(--ff-mono); font-size:13px; color:var(--blue); width:30px; flex-shrink:0; }
+.accordion-mmy .acc-plus{
+  width:26px; height:26px; border-radius:50%; border:1px solid var(--line-light);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-left:auto;
+  transition:transform .4s var(--ease), background .3s ease, border-color .3s ease;
+  position:relative;
+}
+.accordion-mmy .acc-plus::before, .accordion-mmy .acc-plus::after{
+  content:""; position:absolute; background:var(--tx-1); transition:transform .3s ease, opacity .3s ease;
+}
+.accordion-mmy .acc-plus::before{ width:10px; height:1px; }
+.accordion-mmy .acc-plus::after{ width:1px; height:10px; }
+.accordion-mmy .accordion-button:not(.collapsed) .acc-plus{ background:var(--blue); border-color:var(--blue); }
+.accordion-mmy .accordion-button:not(.collapsed) .acc-plus::before, .accordion-mmy .accordion-button:not(.collapsed) .acc-plus::after{ background:#fff; }
+.accordion-mmy .accordion-button:not(.collapsed) .acc-plus::after{ transform:rotate(90deg); opacity:0; }
+.accordion-mmy .accordion-body{ padding:0 6px 26px 48px; color:var(--tx-2); font-size:15px; line-height:1.65; max-width:680px; }
+
+/* ---------- Zigzag proof section ---------- */
+.proof-row{ display:flex; flex-direction:column; gap:40px; align-items:center; padding:52px 0; border-top:1px solid var(--line-light); }
+.proof-row:first-of-type{ border-top:none; }
+.proof-media{ width:100%; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/3; background:var(--paper-2); }
+.proof-media img, .proof-media video{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--ease); }
+.proof-row:hover .proof-media img, .proof-row:hover .proof-media video{ transform:scale(1.045); }
+.proof-text{ width:100%; }
+.proof-index{ font-family:var(--ff-mono); font-size:13px; color:var(--blue); margin-bottom:14px; }
+@media (min-width:992px){
+  .proof-row{ flex-direction:row; gap:70px; }
+  .proof-row.flip{ flex-direction:row-reverse; }
+  .proof-media, .proof-text{ width:50%; }
+}
+
+/* ---------- Scale / configuration ---------- */
+.scale-shell{
+  background:var(--ink); border-radius:var(--radius-lg); padding:clamp(28px,4vw,52px); color:#fff;
+  position:relative; overflow:hidden;
+}
+.scale-shell::before{
+  content:""; position:absolute; inset:0;
+  background-image: linear-gradient(rgba(244,243,239,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(244,243,239,.05) 1px, transparent 1px);
+  background-size:36px 36px; pointer-events:none;
+}
+.scale-inner{ position:relative; z-index:1; }
+.scale-tiers{ display:flex; flex-wrap:wrap; gap:10px; margin:30px 0 34px; }
+.scale-tier{
+  font-family:var(--ff-mono); font-size:13px; padding:10px 16px; border-radius:100px;
+  border:1px solid var(--line-dark); color:var(--tx-d2);
+  transition:all .35s var(--ease);
+}
+.scale-tier.is-active{ background:var(--blue); border-color:var(--blue); color:#fff; }
+.scale-bar-wrap{ margin-bottom:34px; }
+.scale-bar-track{ height:8px; border-radius:100px; background:var(--ink-2); overflow:hidden; border:1px solid var(--line-dark); }
+.scale-bar-fill{ height:100%; border-radius:100px; background:linear-gradient(90deg, var(--blue-deep), var(--blue-bright)); width:5%; transition:width .8s var(--ease); }
+.scale-callouts{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:576px){ .scale-callouts{ grid-template-columns:1fr 1fr; } }
+.scale-callout{ border:1px solid var(--line-dark); border-radius:var(--radius); padding:18px 20px; }
+.scale-callout .num{ font-family:var(--ff-mono); font-size:26px; font-weight:600; color:var(--blue-bright); }
+.scale-callout .lbl{ font-size:13px; color:var(--tx-d2); margin-top:4px; }
+
+/* Unit chip stack animation */
+.chip-stack{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+.unit-chip{
+  font-family:var(--ff-mono); font-size:12.5px; padding:9px 14px; border-radius:8px;
+  background:var(--ink-2); border:1px solid var(--line-dark); color:var(--tx-d1);
+  opacity:0; transform:translateY(14px) scale(.94);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+.is-in .unit-chip{ opacity:1; transform:translateY(0) scale(1); }
+.unit-chip:nth-child(1){ transition-delay:.05s; }
+.unit-chip:nth-child(2){ transition-delay:.13s; }
+.unit-chip:nth-child(3){ transition-delay:.21s; }
+.unit-chip:nth-child(4){ transition-delay:.29s; }
+.unit-chip:nth-child(5){ transition-delay:.37s; }
+.unit-chip:nth-child(6){ transition-delay:.45s; }
+.unit-chip:nth-child(7){ transition-delay:.53s; }
+
+/* ---------- Facades / interiors gallery ---------- */
+.gallery-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+@media (min-width:768px){ .gallery-grid{ grid-template-columns:repeat(3,1fr); gap:16px; } }
+.gallery-item{ border-radius:var(--radius); overflow:hidden; aspect-ratio:3/4; background:var(--paper-2); }
+.gallery-item.wide{ aspect-ratio:4/3; grid-column:span 2; }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.gallery-item:hover img{ transform:scale(1.06); }
+
+/* Floor plan mini cards */
+.fp-card{ border:1px solid var(--line-light); border-radius:var(--radius); overflow:hidden; background:#fff; height:100%; }
+.fp-media{ aspect-ratio:4/3; background:var(--paper-2); }
+.fp-media img{ width:100%; height:100%; object-fit:contain; padding:14px; }
+.fp-meta{ padding:16px 18px; display:flex; gap:18px; border-top:1px solid var(--line-light); }
+.fp-meta div{ font-family:var(--ff-mono); font-size:12px; color:var(--tx-3); }
+.fp-meta strong{ display:block; font-family:var(--ff-display); font-size:18px; color:var(--tx-1); font-weight:600; }
+
+/* ---------- Scroll carousel (projects/testimonials) ---------- */
+.scroller{
+  display:flex; gap:18px; overflow-x:auto; padding-bottom:14px; scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.scroller::-webkit-scrollbar{ display:none; }
+.scroller > *{ scroll-snap-align:start; flex-shrink:0; }
+
+.project-card{
+  width:clamp(268px,78vw,340px);
+  border:1px solid var(--line-light); border-radius:var(--radius-lg); overflow:hidden; background:#fff;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.project-card:hover{ transform:translateY(-5px); box-shadow:0 24px 44px -26px rgba(20,24,29,.28); }
+.project-media{ aspect-ratio:5/4; background:var(--paper-2); overflow:hidden; }
+.project-media img{ width:100%; height:100%; object-fit:cover; }
+.project-body{ padding:20px 22px 24px; }
+.project-year{ font-family:var(--ff-mono); font-size:11.5px; color:var(--tx-3); margin-bottom:8px; }
+.project-title{ font-family:var(--ff-display); font-size:18px; font-weight:600; margin-bottom:8px; line-height:1.25; }
+.project-desc{ font-size:13.5px; color:var(--tx-2); line-height:1.55; margin-bottom:16px; }
+.project-badges{ display:flex; flex-wrap:wrap; gap:8px; }
+.badge-mmy{
+  font-family:var(--ff-mono); font-size:11px; padding:5px 10px; border-radius:100px;
+  background:var(--blue-tint); color:var(--blue-deep); font-weight:600;
+}
+@media (min-width:992px){ .scroller{ overflow:visible; flex-wrap:wrap; } .project-card{ width:calc(25% - 14px); } }
+
+/* ---------- Logos trusted (light) ---------- */
+.trusted-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); border-radius:var(--radius); overflow:hidden; }
+@media (min-width:576px){ .trusted-grid{ grid-template-columns:repeat(4,1fr); } }
+.trusted-cell{ background:#fff; padding:26px 18px; display:flex; align-items:center; justify-content:center; height:88px; }
+.trusted-cell img{ max-height:26px; width:auto; max-width:100%; filter:grayscale(1); opacity:.65; transition:opacity .3s ease, filter .3s ease; }
+.trusted-cell:hover img{ filter:grayscale(0); opacity:1; }
+
+/* ---------- Testimonials ---------- */
+.testi-card{
+  width:clamp(270px,80vw,380px);
+  background:var(--ink); color:#fff; border-radius:var(--radius-lg); padding:28px 26px;
+  display:flex; flex-direction:column; justify-content:space-between; min-height:200px;
+}
+.testi-quote-icon{ color:var(--blue-bright); margin-bottom:14px; }
+.testi-text{ font-family:var(--ff-display); font-size:17px; line-height:1.4; font-weight:500; margin-bottom:22px; }
+.testi-meta{ font-family:var(--ff-mono); font-size:12px; color:var(--tx-d3); display:flex; align-items:center; gap:8px; }
+@media (min-width:992px){ .testi-card{ width:calc(25% - 14px); } }
+
+/* ---------- FAQ ---------- */
+.faq-item .accordion-button{ font-size:16px; }
+
+/* ---------- Final CTA ---------- */
+.cta-shell{
+  background:var(--ink); border-radius:var(--radius-lg); color:#fff;
+  padding:clamp(32px,5vw,64px); position:relative; overflow:hidden;
+}
+.cta-shell::before{
+  content:""; position:absolute; inset:0;
+  background-image: linear-gradient(rgba(244,243,239,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(244,243,239,.05) 1px, transparent 1px);
+  background-size:40px 40px; pointer-events:none;
+}
+.cta-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1fr; gap:44px; }
+@media (min-width:992px){ .cta-grid{ grid-template-columns:1.05fr .95fr; gap:60px; } }
+.contact-line{ display:flex; align-items:center; gap:12px; padding:14px 0; border-top:1px solid var(--line-dark); }
+.contact-line:last-child{ border-bottom:1px solid var(--line-dark); }
+.contact-line a{ font-family:var(--ff-mono); font-size:14.5px; }
+.contact-line svg{ color:var(--blue-bright); }
+
+.form-mmy label{ font-family:var(--ff-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--tx-d3); margin-bottom:8px; display:block; }
+.form-mmy .form-control, .form-mmy .form-select{
+  background:rgba(255,255,255,.04); border:1px solid var(--line-dark); color:#fff;
+  border-radius:var(--radius-sm); padding:12px 14px; font-size:14.5px;
+}
+.form-mmy .form-control::placeholder{ color:var(--tx-d3); }
+.form-mmy .form-control:focus, .form-mmy .form-select:focus{
+  background:rgba(255,255,255,.06); border-color:var(--blue-bright); box-shadow:0 0 0 3px rgba(61,107,255,.22); color:#fff;
+}
+.form-mmy .form-select option{ background:var(--ink); }
+.form-success{
+  display:none; align-items:center; gap:12px; padding:16px 18px; border-radius:var(--radius-sm);
+  background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.35); color:#BBF7D0; font-size:14px; margin-top:16px;
+}
+.form-success.is-visible{ display:flex; }
+
+/* ---------- Footer ---------- */
+footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
+.footer-top{ display:grid; grid-template-columns:1fr; gap:36px; padding-bottom:40px; border-bottom:1px solid var(--line-dark); }
+@media (min-width:768px){ .footer-top{ grid-template-columns:1.4fr .8fr .8fr .8fr; gap:24px; } }
+.footer-top .logo-img{ height:24px; filter:brightness(0) invert(1); margin-bottom:16px; }
+.footer-desc{ font-size:13.5px; color:var(--tx-d3); max-width:280px; line-height:1.6; }
+.footer-col h6{ font-family:var(--ff-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--tx-d3); margin-bottom:16px; font-weight:600; }
+.footer-col a, .footer-col p{ display:block; font-size:14px; color:var(--tx-d2); padding:6px 0; }
+.footer-col a:hover{ color:#fff; }
+.footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
+@media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
+.social-row{ display:flex; gap:12px; }
+.social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
+.social-row a:hover{ border-color:var(--blue-bright); color:var(--blue-bright); }
+
+/* utility */
+.count-up{ font-variant-numeric:tabular-nums; }
+.mt-tag{ font-family:var(--ff-mono); font-size:11px; color:var(--tx-3); }
+
+/* ---------- Accessibility: visible keyboard focus ---------- */
+a:focus-visible,
+button:focus-visible,
+.btn-mmy:focus-visible,
+.scale-tier:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.accordion-button:focus-visible{
+  outline:2px solid var(--blue-bright);
+  outline-offset:3px;
+  border-radius:6px;
+}
+.nav-links a:focus-visible{ outline-offset:5px; }
+.gallery-item:focus-visible img, .project-card:focus-visible{ outline:2px solid var(--blue-bright); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     ICON SPRITE
+     ============================================================ -->
+<svg style="display:none" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.4A7 7 0 0 1 12 2a7 7 0 0 1 7 7.6C19 14.8 12 21 12 21Z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.4" r="2.4" stroke-width="1.6"/></symbol>
+  <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M9 12h11M4 18h13M21 18h-3" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="6" r="2" stroke-width="1.6"/><circle cx="7" cy="12" r="2" stroke-width="1.6"/><circle cx="18" cy="18" r="2" stroke-width="1.6"/></symbol>
+  <symbol id="icon-factory" viewBox="0 0 24 24"><path d="M3 21V11l5 3v-3l5 3V8l6 4v9H3Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 21v-4M12 21v-4M17 21v-4" stroke-width="1.6"/><path d="M17 5V3M17 5l1.6-1M17 5l-1.6-1" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="icon-truck" viewBox="0 0 24 24"><path d="M2 7h11v10H2z" stroke-width="1.6" stroke-linejoin="round"/><path d="M13 10h4l4 3.4V17h-8z" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="18.5" r="1.8" stroke-width="1.6"/><circle cx="17" cy="18.5" r="1.8" stroke-width="1.6"/></symbol>
+  <symbol id="icon-assemble" viewBox="0 0 24 24"><rect x="3" y="10" width="8" height="8" rx="1.4" stroke-width="1.6"/><rect x="13" y="6" width="8" height="8" rx="1.4" stroke-width="1.6"/><path d="M11 14h2M15 14v-4" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.2" stroke-width="1.6"/><path d="M11 12.2 20 3.4M17 6.6l2 2M14.4 9.2l1.8 1.8" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-gauge" viewBox="0 0 24 24"><path d="M4 15a8 8 0 1 1 16 0" stroke-width="1.6" stroke-linecap="round"/><path d="M12 15 16 9" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="15" r="1.4" stroke-width="1.6"/></symbol>
+  <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke-width="1.6"/><circle cx="12" cy="12" r=".8" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 4c0 9-6 15-15 15C5 10 11 4 20 4Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19c3-4 6-7 12-12" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.2 7.8-7 9-3.8-1.2-7-4-7-9V6l7-3Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-cube" viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9L12 3Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 7.5 12 12l8-4.5M12 12v9" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1" stroke-width="1.6"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="m4 6.5 8 6 8-6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.6 4.4-2.2 2A13 13 0 0 0 14.6 15l2-2.2L21 14.5v3a2 2 0 0 1-2.2 2C10.2 19 5 13.8 4.5 5.2A2 2 0 0 1 6.5 3Z" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M7 8c-2.2 0-4 1.8-4 4v4h4v-4H5c0-1.1.9-2 2-2V8Zm10 0c-2.2 0-4 1.8-4 4v4h4v-4h-2c0-1.1.9-2 2-2V8Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke-width="1.6"/><path d="M8 10.5V17M8 7.5v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v-2.5" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.2" stroke-width="1.6"/><path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path d="M12 7.5V12l3 2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="mmy-nav" id="mainNav">
+  <div class="container-mmy nav-inner">
+    <a href="#top" class="mmy-logo" aria-label="MMY US — home">
+      <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
+    </a>
+    <nav class="nav-links">
+      <a href="#why">Why MMY</a>
+      <a href="#process">How it works</a>
+      <a href="#projects">Projects</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-mmy btn-primary-mmy d-none d-sm-inline-flex">
+        Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+      <button class="nav-toggle" id="menuOpen" aria-label="Open menu">
+        <svg class="icon" style="width:18px;height:18px"><use href="#icon-menu" xlink:href="#icon-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mmy-mobile-menu" id="mobileMenu">
+  <div class="mm-top">
+    <img class="logo-img" style="height:22px;filter:brightness(0) invert(1)" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
+    <button class="nav-toggle" id="menuClose" aria-label="Close menu">
+      <svg class="icon" style="width:18px;height:18px"><use href="#icon-close" xlink:href="#icon-close"/></svg>
+    </button>
+  </div>
+  <a href="#why" class="mm-link">Why MMY</a>
+  <a href="#process" class="mm-link">How it works</a>
+  <a href="#projects" class="mm-link">Projects</a>
+  <a href="#faq" class="mm-link">FAQ</a>
+  <a href="#contact" class="mm-link">Get in touch</a>
+  <div class="mm-foot">Louisville, KY &middot; hello@mmyus.com</div>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-cursor-glow" id="heroCursorGlow"><div class="hero-cursor-glow-blob" id="heroCursorGlowBlob"></div></div>
+
+  <div class="hero-content">
+    <div class="container-mmy">
+      <div class="hero-columns">
+        <div class="hero-copy">
+          <div class="hero-tag reveal is-in">
+            <span class="dot"></span> Modern Methods of Construction &middot; Louisville, KY
+          </div>
+          <h1 class="h-hero hero-title reveal is-in reveal-delay-1">
+            Your next apartment building doesn't have to be a <em>construction project.</em>
+          </h1>
+          <p class="hero-sub reveal is-in reveal-delay-2">
+            MMY US manufactures permanent, code-compliant homes and multiplexes off-site, then assembles them on your land in as little as <strong style="color:#fff">16 weeks</strong> — not the industry's average of 76.
+          </p>
+          <div class="hero-actions reveal is-in reveal-delay-3">
+            <a href="#contact" class="btn-mmy btn-primary-mmy">Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+            <a href="#process" class="btn-mmy btn-ghost-dark">See how it works</a>
+          </div>
+          <div class="hero-micro reveal is-in reveal-delay-4">
+            <svg class="icon" style="width:14px;height:14px"><use href="#icon-check" xlink:href="#icon-check"/></svg>
+            Pre-engineered to comply with building codes across 47 U.S. states
+          </div>
+        </div>
+
+        <div class="hero-video-card reveal is-in reveal-delay-2">
+          <video autoplay muted loop playsinline preload="metadata" poster="mmy-hero-card-poster.jpg">
+            <source src="mmy-hero-card.mp4" type="video/mp4">
+          </video>
+          <div class="hero-video-tag"><span class="dot"></span> Recently delivered &middot; lot to key</div>
+        </div>
+      </div>
+
+      <div class="trust-strip reveal is-in reveal-delay-4">
+        <span class="trust-label">Trusted by developers &amp; institutions</span>
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1902c74056c17c24e0553_nhs-new.svg" alt="NHS">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV">
+            <!-- duplicate for seamless marquee -->
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1902c74056c17c24e0553_nhs-new.svg" alt="NHS">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="scroll-cue">Scroll to explore</span>
+</section>
+
+<!-- ============================================================
+     PROBLEM / AGITATE
+     ============================================================ -->
+<section class="bg-paper section-pad" id="problem">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">The old way</span><span class="dim-line"></span></div>
+    <div class="row align-items-center gy-4 mb-5">
+      <div class="col-lg-7">
+        <h2 class="h-section reveal">Construction was never built to scale like housing demand needs it to.</h2>
+        <p class="lede reveal reveal-delay-1 mt-3">Every added trade, every weather day, every change order adds risk to a project that was already unpredictable.</p>
+      </div>
+      <div class="col-lg-5">
+        <div class="a2d-panel reveal reveal-delay-2">
+          <div class="a2d-head">
+            <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">Meanwhile, at MMY US</span>
+            <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional crew is still waiting on permits.</p>
+          </div>
+          <div class="a2d-stage" aria-hidden="true">
+            <div class="a2d-guide"></div>
+            <div class="a2d-ground"></div>
+            <div class="a2d-mod a2d-m1"></div>
+            <div class="a2d-mod a2d-m2"></div>
+            <div class="a2d-mod a2d-m3"></div>
+            <div class="a2d-mod a2d-m4"></div>
+            <div class="a2d-mod a2d-m5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 g-md-4">
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-1">
+          <span class="pain-tag">Timeline risk</span>
+          <span class="pain-num">76 weeks</span>
+          <p>The U.S. average for a multifamily project — before permitting delays or a single subcontractor falls behind schedule.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-2">
+          <span class="pain-tag">Coordination risk</span>
+          <span class="pain-num">12+ trades</span>
+          <p>Architects, engineers, framers, electricians, plumbers, drywallers. Every trade you add is another schedule to sync and another point of failure.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-3">
+          <span class="pain-tag">Cost risk</span>
+          <span class="pain-num">Estimate only</span>
+          <p>Without a finished digital model before you break ground, your budget stays a guess until the building is done.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pivot-row reveal">
+      <p>MMY US removes the guesswork by building your development somewhere it can actually be controlled: a factory.</p>
+      <a href="#process" class="btn-mmy btn-ghost-light">See the process <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STAT BAND
+     ============================================================ -->
+<section class="bg-ink stat-band">
+  <div class="container-mmy">
+    <div class="stat-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="count-up" data-target="16">0</span><span class="unit">wks</span></div>
+        <div class="stat-label">Turnaround from authorization to handover — roughly 5x faster than a traditional build.</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span class="count-up" data-target="80">0</span><span class="unit">%</span></div>
+        <div class="stat-label">More accurate cost prediction, using a digital twin built before construction starts.</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span class="count-up" data-target="35">0</span><span class="unit">%</span></div>
+        <div class="stat-label">Less carbon emitted than traditional construction — about 32 tons of CO&#8322; saved per unit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SIGNATURE: ASSEMBLY LINE
+     ============================================================ -->
+<section class="bg-ink section-pad" id="process">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">How a building becomes a product</span><span class="dim-line"></span></div>
+    <div class="row gy-4 mb-2">
+      <div class="col-lg-8">
+        <h2 class="h-section reveal" style="color:#fff">One system. Six repeatable steps. Every time.</h2>
+      </div>
+      <div class="col-lg-4">
+        <p class="lede reveal reveal-delay-1">This is the entire MMY US process, from an empty lot to a finished, occupied building — the same one running today in Louisville, Kentucky.</p>
+      </div>
+    </div>
+
+    <div class="assembly-wrap reveal" id="assemblyWrap">
+      <div class="assembly-track">
+        <div class="assembly-connector"><div class="fill"></div></div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-pin" xlink:href="#icon-pin"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">01 / Site</span>
+            <h3 class="assembly-title">Site &amp; permits</h3>
+            <p class="assembly-desc">Confirm your lot, your local code, and your zoning requirements.</p>
+          </div>
+        </div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-sliders" xlink:href="#icon-sliders"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">02 / Configure</span>
+            <h3 class="assembly-title">Configure</h3>
+            <p class="assembly-desc">Choose your unit mix, building size and facade from a pre-engineered catalog.</p>
+          </div>
+        </div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-factory" xlink:href="#icon-factory"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">03 / Manufacture</span>
+            <h3 class="assembly-title">Manufacture</h3>
+            <p class="assembly-desc">85% of the work happens off-site — structure, MEP, fixtures and finishes, built as complete modules.</p>
+          </div>
+        </div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-truck" xlink:href="#icon-truck"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">04 / Transport</span>
+            <h3 class="assembly-title">Transport</h3>
+            <p class="assembly-desc">Modules ship by truck or rail, nationwide, from a single facility.</p>
+          </div>
+        </div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-assemble" xlink:href="#icon-assemble"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">05 / Assemble</span>
+            <h3 class="assembly-title">Assemble</h3>
+            <p class="assembly-desc">We set, connect and seal the modules on-site, while ground works run in parallel — not in sequence.</p>
+          </div>
+        </div>
+
+        <div class="assembly-node">
+          <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-key" xlink:href="#icon-key"/></svg></div>
+          <div class="assembly-body">
+            <span class="assembly-step-tag">06 / Handover</span>
+            <h3 class="assembly-title">Handover</h3>
+            <p class="assembly-desc">A permanent, code-compliant building, signed off and ready to occupy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <button class="btn-mmy btn-ghost-dark" type="button" data-bs-toggle="collapse" data-bs-target="#howItWorksDetail" aria-expanded="false" aria-controls="howItWorksDetail">
+        Walk through the full 8-step breakdown <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </button>
+    </div>
+
+    <div class="collapse mt-5" id="howItWorksDetail">
+      <div class="accordion accordion-mmy" id="processAccordion">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
+              <span class="acc-step">01</span> Choose your development size <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p1" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">From single-family homes to multiplexes up to 8 stories — sized to fit your site and local requirements.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
+              <span class="acc-step">02</span> Choose your unit mix <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p2" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">Configure a mix of studios through 3-bedroom units from our pre-designed catalog, which reduces your design costs.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
+              <span class="acc-step">03</span> Choose your style <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p3" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">Select from a range of standardized facade designs to suit your built environment.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
+              <span class="acc-step">04</span> Approve your detailed design <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p4" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">Units are pre-engineered to comply with codes across 47 U.S. states. Once you approve, we handle permit submission with the relevant state authority.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p5">
+              <span class="acc-step">05</span> We manufacture your units <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p5" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">Units are pre-fabricated in a factory as complete modules — structure, MEP systems, fixtures, and both interior and exterior finishes. Our proprietary cold-formed steel system pushes off-site labor efficiency to roughly 85%.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p6">
+              <span class="acc-step">06</span> We perform your site works <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p6" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">Foundation work runs in parallel with manufacturing. MMY's intramodular connection system is compatible with modern foundation systems, including pre-cast.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p7">
+              <span class="acc-step">07</span> We transport the modules <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p7" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">A proprietary chassis design enables cost-effective nationwide rail or truck transport from a single facility — so you're not limited by proximity to a factory.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p8">
+              <span class="acc-step">08</span> Install &amp; handover <span class="acc-plus"></span>
+            </button>
+          </h2>
+          <div id="p8" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+            <div class="accordion-body" style="color:var(--tx-d2)">In a matter of weeks, we set, connect and seal the modules into the complete structure. Every building meets standard codes — then we sign off and hand it over.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY MMY — proof zigzag
+     ============================================================ -->
+<section class="bg-paper section-pad" id="why">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Why developers switch</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal" style="max-width:700px;">Faster and more predictable — built to the same code as anything else.</h2>
+
+    <div class="mt-3">
+      <div class="proof-row reveal">
+        <div class="proof-media">
+          <video autoplay muted loop playsinline preload="metadata" poster="mmy-hero-poster.jpg" aria-label="Aerial drone footage of a completed MMY US infill lot">
+            <source src="mmy-hero.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="proof-text">
+          <span class="proof-index">01</span>
+          <h3 class="h-card mb-3">Rapid development</h3>
+          <p class="text-body">An estimated 16 weeks from authorization to handover, with far greater time and cost certainty than a traditional build.</p>
+        </div>
+      </div>
+
+      <div class="proof-row flip reveal">
+        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a760cd1d0ab8f5566762c15_Final%20Sburg%20.jpg" alt="Finished modular home on an urban infill lot" loading="lazy"></div>
+        <div class="proof-text">
+          <span class="proof-index">02</span>
+          <h3 class="h-card mb-3">Less disruption</h3>
+          <p class="text-body">Modern Methods of Construction mean fewer trades, fewer deliveries, fewer vehicles on-site — and a lot less noise for the neighbors who are already there.</p>
+        </div>
+      </div>
+
+      <div class="proof-row reveal">
+        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19ab8b79a4084f681c97b_high-qual-image.png" alt="High quality finished modular unit" loading="lazy"></div>
+        <div class="proof-text">
+          <span class="proof-index">03</span>
+          <h3 class="h-card mb-3">High quality</h3>
+          <p class="text-body">Every completed unit meets — and typically exceeds — local building codes, outperforming traditionally built homes on the same lot.</p>
+        </div>
+      </div>
+
+      <div class="proof-row flip reveal">
+        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19ab8b95732699058e3eb_vr-screenshot.png" alt="Digital twin VR model of a building" loading="lazy"></div>
+        <div class="proof-text">
+          <span class="proof-index">04</span>
+          <h3 class="h-card mb-3">Experience it before it's built</h3>
+          <p class="text-body">We build a digital model of your development before we build the real one — so you can walk through it, and price it, before ground is broken.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCALE / CONFIGURATION
+     ============================================================ -->
+<section class="bg-paper2 section-pad-sm" id="scale">
+  <div class="container-mmy">
+    <div class="scale-shell reveal">
+      <div class="scale-inner">
+        <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">One system, any scale</span><span class="dim-line"></span></div>
+        <div class="row gy-4">
+          <div class="col-lg-7">
+            <h2 class="h-section" style="color:#fff;">From a Quadplex to a 72-Plex, without reinventing the building.</h2>
+            <p class="lede mt-3" style="color:var(--tx-d2)">Every configuration is assembled from the same catalog of pre-engineered units — scaling up doesn't mean starting over.</p>
+
+            <div class="scale-tiers" id="scaleTiers">
+              <button class="scale-tier is-active" data-value="8">Quadplex</button>
+              <button class="scale-tier" data-value="16">Eightplex</button>
+              <button class="scale-tier" data-value="38">18-Plex</button>
+              <button class="scale-tier" data-value="72">48-Plex</button>
+              <button class="scale-tier" data-value="100">72-Plex</button>
+            </div>
+
+            <div class="scale-bar-wrap">
+              <div class="scale-bar-track"><div class="scale-bar-fill" id="scaleBarFill"></div></div>
+            </div>
+
+            <div class="chip-stack">
+              <span class="unit-chip">Studio</span>
+              <span class="unit-chip">1-Bedroom</span>
+              <span class="unit-chip">2-Bedroom</span>
+              <span class="unit-chip">3-Bedroom</span>
+              <span class="unit-chip">4 facade styles</span>
+              <span class="unit-chip">Up to 8 stories</span>
+              <span class="unit-chip">20+ floor plans</span>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="scale-callouts">
+              <div class="scale-callout">
+                <div class="num">4–60+</div>
+                <div class="lbl">Units per structure, built from the same standardized catalog.</div>
+              </div>
+              <div class="scale-callout">
+                <div class="num">8</div>
+                <div class="lbl">Stories maximum, from single-family infill to mid-rise multiplex.</div>
+              </div>
+              <div class="scale-callout">
+                <div class="num">15–35%</div>
+                <div class="lbl">Lower development cost on orders above 100 units, via volume.</div>
+              </div>
+              <div class="scale-callout">
+                <div class="num">47</div>
+                <div class="lbl">U.S. states where our units are pre-engineered to meet code.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FACADES
+     ============================================================ -->
+<section class="bg-paper section-pad">
+  <div class="container-mmy">
+    <div class="row align-items-end gy-3 mb-4">
+      <div class="col-lg-7">
+        <div class="dim-divider reveal"><span class="dim-label">Style, standardized</span><span class="dim-line"></span></div>
+        <h2 class="h-section reveal">4 facades. Enough variety for any streetscape.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="lede reveal reveal-delay-1">Every option ships from the same catalog of pre-engineered units — choose a look that fits the neighborhood, not a one-off design.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item wide"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655d525c274ad98f0751befc_V3_A%2000-XX-00_cover%20sheet.png" alt="MMY US multiplex facade elevation" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655dca8b662f4855abb306f0_Facade%202.png" alt="Facade option 2" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654e4169d9f09f88429742b5_Facade%203.png" alt="Facade option 3" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654e4169418f6b433a717607_Facade%204.png" alt="Facade option 4" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a750494bc284a51f10ed7df_Sellersburg%20Exploded%20Box%201.png" alt="Exploded module diagram" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INTERIORS
+     ============================================================ -->
+<section class="bg-paper2 section-pad">
+  <div class="container-mmy">
+    <div class="row align-items-end gy-3 mb-4">
+      <div class="col-lg-7">
+        <div class="dim-divider reveal"><span class="dim-label">Finished, not framed</span><span class="dim-line"></span></div>
+        <h2 class="h-section reveal">Every unit ships fully finished.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="lede reveal reveal-delay-1">Kitchens, bathrooms, flooring and fixtures are installed on the factory floor — not punch-listed on-site after handover.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655b68dd0920e04e42e629ea_2300136_MMY%20US%20KY%20LV%20Infill%20Affordable%20Housing%20Project_presentation_Page_25.jpg" alt="Finished modular kitchen interior" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655b68dc41d65a4c770c6419_2300136_MMY%20US%20KY%20LV%20Infill%20Affordable%20Housing%20Project_presentation_Page_16.jpg" alt="Finished modular living room" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655be8a30dd60693e86ed4c4_V1_A%2062-XX-03_INTERIOR_RENDER.jpeg" alt="Interior render of unit" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655b68dd70547d2cb3e75814_2300136_MMY%20US%20KY%20LV%20Infill%20Affordable%20Housing%20Project_presentation_Page_21.jpg" alt="Finished modular bathroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655b68dcfe30f79ce813c373_2300136_MMY%20US%20KY%20LV%20Infill%20Affordable%20Housing%20Project_presentation_Page_24.jpg" alt="Finished modular bedroom" loading="lazy"></div>
+      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655b68dd5d0487fad09849a1_2300136_MMY%20US%20KY%20LV%20Infill%20Affordable%20Housing%20Project_presentation_Page_20.jpg" alt="Finished modular interior finish detail" loading="lazy"></div>
+    </div>
+
+    <div class="row g-3 g-md-4 mt-1 reveal">
+      <div class="col-6 col-md-4">
+        <div class="fp-card">
+          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5d9f070f356cfd62bea_floor-plan-1.png" alt="Floor plan 1"></div>
+          <div class="fp-meta">
+            <div><strong>600</strong>ft&sup2;</div>
+            <div><strong>1</strong>bed</div>
+            <div><strong>1</strong>bath</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="fp-card">
+          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5d9a92f87d46426aa85_floor-plan-2.png" alt="Floor plan 2"></div>
+          <div class="fp-meta">
+            <div><strong>1,097</strong>ft&sup2;</div>
+            <div><strong>2</strong>bed</div>
+            <div><strong>2</strong>bath</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="fp-card">
+          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5e2b49987c897df4cd0_floor-plan-3.png" alt="Floor plan 3"></div>
+          <div class="fp-meta">
+            <div><strong>1,239</strong>ft&sup2;</div>
+            <div><strong>3</strong>bed</div>
+            <div><strong>2</strong>bath</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-tag mt-3 reveal">+20 other pre-permitted floor plans available on request</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section class="bg-paper section-pad" id="projects">
+  <div class="container-mmy">
+    <div class="row align-items-end gy-3 mb-4">
+      <div class="col-lg-7">
+        <div class="dim-divider reveal"><span class="dim-label">Built, not rendered</span><span class="dim-line"></span></div>
+        <h2 class="h-section reveal">Recent projects on the ground.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="lede reveal reveal-delay-1">A sample of single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments.</p>
+      </div>
+    </div>
+
+    <div class="scroller reveal" tabindex="0" role="region" aria-label="Recent projects, scroll horizontally">
+      <div class="project-card">
+        <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
+        <div class="project-body">
+          <div class="project-year">2025 &middot; Single-family</div>
+          <h3 class="project-title">LEED Platinum Home — Elizabeth</h3>
+          <p class="project-desc">1,700 sq ft, 3 bed, 2 bath. Exceeds IBC &amp; state code — delivered lot-to-key in 18 weeks.</p>
+          <div class="project-badges">
+            <span class="badge-mmy">Faster build</span>
+            <span class="badge-mmy">Energy efficient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
+        <div class="project-body">
+          <div class="project-year">2026 &middot; Single-family</div>
+          <h3 class="project-title">LEED Platinum Home — Windsor</h3>
+          <p class="project-desc">Climate-resilient steel construction exceeding IBC &amp; state code — delivered lot-to-key in 12 weeks.</p>
+          <div class="project-badges">
+            <span class="badge-mmy">80% faster build</span>
+            <span class="badge-mmy">3x energy efficient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
+        <div class="project-body">
+          <div class="project-year">2025 &middot; Multifamily</div>
+          <h3 class="project-title">MMY US 9-Plex</h3>
+          <p class="project-desc">LEED Platinum apartments exceeding IBC &amp; state code — pre-permitted and delivered in under 12 months.</p>
+          <div class="project-badges">
+            <span class="badge-mmy">90% faster build</span>
+            <span class="badge-mmy">3x energy efficient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
+        <div class="project-body">
+          <div class="project-year">2025 &middot; Multifamily</div>
+          <h3 class="project-title">MMY US 36-Unit Multifamily</h3>
+          <p class="project-desc">Design-build of a 36-unit affordable multifamily housing scheme for a national non-profit.</p>
+          <div class="project-badges">
+            <span class="badge-mmy">80% faster build</span>
+            <span class="badge-mmy">7x energy efficient</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRUSTED BY (light logos)
+     ============================================================ -->
+<section class="bg-paper2 section-pad-sm">
+  <div class="container-mmy">
+    <div class="dim-divider reveal" style="margin-bottom:24px;"><span class="dim-label">Trusted by leaders</span><span class="dim-line"></span></div>
+    <div class="trusted-grid reveal">
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1902c74056c17c24e0553_nhs-new.svg" alt="NHS"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV"></div>
+      <div class="trusted-cell"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96c53cc8439aa7010c8a_cleve-brown.png" alt="Cleveland Housing"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="bg-ink section-pad">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Kentucky developers are excited to build faster</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal" style="color:#fff;max-width:600px;">What developers say after the first meeting.</h2>
+
+    <div class="scroller mt-4 reveal" tabindex="0" role="region" aria-label="Client testimonials, scroll horizontally">
+      <div class="testi-card">
+        <div>
+          <svg class="icon testi-quote-icon" style="width:26px;height:26px"><use href="#icon-quote" xlink:href="#icon-quote"/></svg>
+          <p class="testi-text">"Wow, I am extremely impressed and would like to continue the discussion of working together. What are the next steps?"</p>
+        </div>
+        <div class="testi-meta">A.R. &middot; Louisville, KY</div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <svg class="icon testi-quote-icon" style="width:26px;height:26px"><use href="#icon-quote" xlink:href="#icon-quote"/></svg>
+          <p class="testi-text">"They are beautiful! Let's discuss tomorrow how we can use these in the two projects we already talked about."</p>
+        </div>
+        <div class="testi-meta">C.D. &middot; Louisville, KY</div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <svg class="icon testi-quote-icon" style="width:26px;height:26px"><use href="#icon-quote" xlink:href="#icon-quote"/></svg>
+          <p class="testi-text">"The information you shared at the meeting was phenomenal. I'd love to speak further about your model."</p>
+        </div>
+        <div class="testi-meta">E.S. &middot; Louisville, KY</div>
+      </div>
+      <div class="testi-card">
+        <div>
+          <svg class="icon testi-quote-icon" style="width:26px;height:26px"><use href="#icon-quote" xlink:href="#icon-quote"/></svg>
+          <p class="testi-text">"I'm so excited to hear you're close to up and running. The city will be a great partner as we work to fill our housing gaps."</p>
+        </div>
+        <div class="testi-meta">M.H. &middot; Louisville, KY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="bg-paper section-pad" id="faq">
+  <div class="container-mmy">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="dim-divider reveal"><span class="dim-label">Questions</span><span class="dim-line"></span></div>
+        <h2 class="h-section reveal">Frequently asked questions.</h2>
+        <p class="lede mt-3 reveal reveal-delay-1">Can't find what you're looking for? Our team is happy to walk through the specifics of your site.</p>
+        <a href="#contact" class="btn-mmy btn-primary-mmy mt-4 reveal reveal-delay-2">Talk to our team <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="col-lg-8">
+        <div class="accordion accordion-mmy reveal" id="faqAccordion">
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+                What is modular construction, and how is it different? <span class="acc-plus"></span>
+              </button>
+            </h2>
+            <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Modular construction builds the majority of a structure in a factory setting, then transports finished modules to the site for assembly — instead of building everything on-site from scratch. The controlled environment leads to tighter tolerances, fewer delays, and more consistent quality.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">
+                What are the environmental benefits? <span class="acc-plus"></span>
+              </button>
+            </h2>
+            <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">The MMY US system cuts carbon emissions by roughly 35% compared with traditional construction — an average reduction of about 32 tons of CO&#8322; per unit.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">
+                How much faster is it, really? <span class="acc-plus"></span>
+              </button>
+            </h2>
+            <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">A single-family home takes about 8 weeks from approval to completion, versus a national average near 48 weeks for traditional construction — roughly 5x faster, thanks to our cold-formed steel system.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">
+                How does the cost compare to traditional construction? <span class="acc-plus"></span>
+              </button>
+            </h2>
+            <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Repeating a standardized design removes the extra architectural and engineering costs of a one-off build. On orders above 100 units, developers typically see 15–35% lower development costs through volume.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">
+                Do modular homes meet local building codes? <span class="acc-plus"></span>
+              </button>
+            </h2>
+            <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. MMY US units meet the same local building codes and regulations as traditionally built housing — the difference is in the construction process, not the compliance or quality standards.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA / CONTACT
+     ============================================================ -->
+<section class="bg-paper2 section-pad" id="contact">
+  <div class="container-mmy">
+    <div class="cta-shell reveal">
+      <div class="cta-grid">
+        <div>
+          <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">Let's talk about your site</span><span class="dim-line"></span></div>
+          <h2 class="h-section" style="color:#fff;">Tell us what you're trying to build. We'll tell you if it fits the system.</h2>
+          <p class="lede mt-3" style="color:var(--tx-d2)">Whether it's a single infill lot or a 96-unit portfolio, our team will walk you through configuration, cost and timeline before you commit to anything.</p>
+
+          <div class="mt-4">
+            <div class="contact-line">
+              <svg class="icon" style="width:18px;height:18px"><use href="#icon-mail" xlink:href="#icon-mail"/></svg>
+              <a href="mailto:hello@mmyus.com">hello@mmyus.com</a>
+            </div>
+            <div class="contact-line">
+              <svg class="icon" style="width:18px;height:18px"><use href="#icon-phone" xlink:href="#icon-phone"/></svg>
+              <a href="tel:+15023062428">+1 502 306 2428</a>
+            </div>
+            <div class="contact-line">
+              <svg class="icon" style="width:18px;height:18px"><use href="#icon-pin" xlink:href="#icon-pin"/></svg>
+              <span class="mono" style="font-size:14.5px;">1344 Beech Street, Louisville, KY 40211</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form class="form-mmy" id="contactForm">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="fName">Name</label>
+                <input type="text" class="form-control" id="fName" placeholder="Jane Developer" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="fCompany">Company</label>
+                <input type="text" class="form-control" id="fCompany" placeholder="Acme Development Co.">
+              </div>
+              <div class="col-sm-6">
+                <label for="fEmail">Email</label>
+                <input type="email" class="form-control" id="fEmail" placeholder="jane@company.com" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="fType">Project type</label>
+                <select class="form-select" id="fType">
+                  <option>Single-family home</option>
+                  <option>Multiplex (4–18 units)</option>
+                  <option>Multifamily (48+ units)</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="fMsg">Tell us about your site</label>
+                <textarea class="form-control" id="fMsg" rows="3" placeholder="Location, target unit count, timeline..."></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-mmy btn-primary-mmy w-100 justify-content-center">
+                  Send message <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <svg class="icon" style="width:18px;height:18px"><use href="#icon-check" xlink:href="#icon-check"/></svg>
+              Thanks — a member of our team will follow up within one business day.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container-mmy">
+    <div class="footer-top">
+      <div>
+        <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
+        <p class="footer-desc">Permanent, code-compliant modular homes and multiplexes — designed, manufactured and delivered across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h6>Product</h6>
+        <a href="#top">Home</a>
+        <a href="#process">How it works</a>
+        <a href="#projects">Recent projects</a>
+        <a href="#contact">Tender opportunities</a>
+      </div>
+      <div class="footer-col">
+        <h6>Legal</h6>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+      </div>
+      <div class="footer-col">
+        <h6>Location</h6>
+        <p style="padding:0">1344 Beech Street,<br>Louisville, Kentucky 40211</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 MMY US, Inc. All rights reserved.</span>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/company/mmy-us/" aria-label="LinkedIn"><svg class="icon" style="width:15px;height:15px"><use href="#icon-linkedin" xlink:href="#icon-linkedin"/></svg></a>
+        <a href="https://www.instagram.com/mmyus_official/" aria-label="Instagram"><svg class="icon" style="width:15px;height:15px"><use href="#icon-instagram" xlink:href="#icon-instagram"/></svg></a>
+      </div>
+      <span class="mono" style="opacity:.6">Design concept prepared for MMY US</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JS
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Nav scroll state
+  var nav = document.getElementById('mainNav');
+  function onScroll(){
+    if(window.scrollY > 40){ nav.classList.add('is-scrolled'); }
+    else{ nav.classList.remove('is-scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  var menuOpen = document.getElementById('menuOpen');
+  var menuClose = document.getElementById('menuClose');
+  var mobileMenu = document.getElementById('mobileMenu');
+  menuOpen.addEventListener('click', function(){ mobileMenu.classList.add('is-open'); document.body.style.overflow='hidden'; });
+  menuClose.addEventListener('click', function(){ mobileMenu.classList.remove('is-open'); document.body.style.overflow=''; });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('is-open'); document.body.style.overflow=''; });
+  });
+
+  // Reveal on scroll
+  if(reduceMotion){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+
+  // Count-up stats
+  var counted = false;
+  function countUp(el, target){
+    var start = 0, duration = 1400, startTime = null;
+    function step(ts){
+      if(!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if(progress < 1){ requestAnimationFrame(step); }
+    }
+    requestAnimationFrame(step);
+  }
+  var statBand = document.querySelector('.stat-band');
+  if(statBand){
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !counted){
+          counted = true;
+          document.querySelectorAll('.count-up').forEach(function(el){
+            countUp(el, parseInt(el.getAttribute('data-target'), 10));
+          });
+          statIO.disconnect();
+        }
+      });
+    }, {threshold:0.4});
+    statIO.observe(statBand);
+  }
+
+  // Hero cursor-glow spotlight (grid hover-light effect)
+  var heroEl = document.querySelector('.hero');
+  var glowWrap = document.getElementById('heroCursorGlow');
+  var glowBlob = document.getElementById('heroCursorGlowBlob');
+  if(heroEl && glowBlob && !reduceMotion && window.matchMedia('(hover: hover)').matches){
+    var gTargetX = 0, gTargetY = 0, gCurrentX = 0, gCurrentY = 0, gActive = false;
+    heroEl.addEventListener('mousemove', function(e){
+      var rect = heroEl.getBoundingClientRect();
+      gTargetX = e.clientX - rect.left;
+      gTargetY = e.clientY - rect.top;
+      if(!gActive){ gCurrentX = gTargetX; gCurrentY = gTargetY; }
+      glowBlob.classList.add('is-active');
+      gActive = true;
+    });
+    heroEl.addEventListener('mouseleave', function(){
+      glowBlob.classList.remove('is-active');
+      gActive = false;
+    });
+    (function glowAnimate(){
+      gCurrentX += (gTargetX - gCurrentX) * 0.12;
+      gCurrentY += (gTargetY - gCurrentY) * 0.12;
+      glowBlob.style.transform = 'translate3d(' + gCurrentX + 'px, ' + gCurrentY + 'px, 0)';
+      requestAnimationFrame(glowAnimate);
+    })();
+  }
+
+  // Scale tier interaction
+  var tiers = document.querySelectorAll('.scale-tier');
+  var fill = document.getElementById('scaleBarFill');
+  tiers.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tiers.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      if(fill){ fill.style.width = btn.getAttribute('data-value') + '%'; }
+    });
+  });
+  if(fill){ fill.style.width = '8%'; }
+
+  // Contact form (prototype — no backend)
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      success.classList.add('is-visible');
+      form.querySelectorAll('input, textarea, select').forEach(function(f){ f.disabled = true; });
+      form.querySelector('button[type="submit"]').style.opacity = '.6';
+    });
+  }
+
+  // Video: pause off-screen to save resources, and respect reduced-motion
+  var autoVideos = document.querySelectorAll('video[autoplay]');
+  autoVideos.forEach(function(vid){
+    if(reduceMotion){
+      vid.pause();
+      vid.removeAttribute('autoplay');
+    } else {
+      var vIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){ entry.target.play().catch(function(){}); }
+          else{ entry.target.pause(); }
+        });
+      }, {threshold:0.1});
+      vIO.observe(vid);
+    }
+  });
+})();
+</script>
+</body>
+</html>
