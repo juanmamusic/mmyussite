@@ -210,8 +210,8 @@ h1,h2,h3,h4{
 }
 .mmy-logo{ display:flex; align-items:center; gap:10px; }
 .mmy-logo svg{ height:26px; width:auto; }
-.mmy-logo .logo-img{ height:24px; width:auto; filter:brightness(0) invert(1); }
-.nav-links{ display:none; align-items:center; gap:34px; }
+.mmy-logo .logo-img{ height:32px; width:auto; filter:brightness(0) invert(1); }
+.nav-links{ display:none; align-items:center; gap:42px; }
 .nav-links a{
   font-size:14px; font-weight:500; color:var(--tx-d2);
   position:relative; padding:4px 0;
@@ -343,9 +343,19 @@ h1,h2,h3,h4{
 }
 @media (min-width:768px){ .trust-strip{ flex-direction:row; align-items:center; gap:28px; } }
 .trust-label{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--tx-d3); white-space:nowrap; }
-.logo-marquee{ overflow:hidden; width:100%; mask-image:linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
-.logo-track{ display:flex; align-items:center; gap:52px; width:max-content; animation:marquee 32s linear infinite; }
-.logo-track img{ height:20px; width:auto; filter:brightness(0) invert(1); opacity:.55; }
+.logo-marquee{ overflow:hidden; width:100%; mask-image:linear-gradient(90deg, transparent, black 6%, black 94%, transparent); }
+.logo-marquee:hover .logo-track{ animation-play-state:paused; }
+.logo-track{ display:flex; align-items:center; gap:44px; width:max-content; animation:marquee 42s linear infinite; }
+.logo-chip{ display:flex; align-items:center; justify-content:center; flex-shrink:0; height:30px; }
+.logo-chip img{ height:26px; width:auto; max-width:120px; object-fit:contain; filter:brightness(0) invert(1); opacity:.65; transition:opacity .3s ease; }
+.logo-chip:hover img{ opacity:1; }
+.logo-svg-mark{ color:#fff; opacity:.65; transition:opacity .3s ease; }
+.logo-chip:hover .logo-svg-mark{ opacity:1; }
+.logo-text-mark{
+  font-family:var(--ff-display); font-weight:800; font-size:22px; letter-spacing:.01em;
+  color:#fff; opacity:.65; line-height:1; transition:opacity .3s ease; white-space:nowrap;
+}
+.logo-chip:hover .logo-text-mark{ opacity:1; }
 @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
 .scroll-cue{
@@ -485,6 +495,53 @@ h1,h2,h3,h4{
 }
 @media (min-width:768px){ .stat-item{ padding:52px 30px; } }
 
+/* ---------- Mini stat cards (benefits, row 2) ---------- */
+.mini-stat-card{
+  background:#fff; border:1px solid var(--line-light); border-radius:var(--radius);
+  padding:26px 22px; height:100%;
+  transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+.mini-stat-card:hover{ border-color:var(--blue); transform:translateY(-4px); box-shadow:0 20px 40px -24px rgba(20,20,20,.2); }
+.mini-stat-icon{
+  width:42px; height:42px; border-radius:10px; background:var(--blue-tint); color:var(--blue-deep);
+  display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+}
+.mini-stat-num{ font-family:var(--ff-mono); font-size:26px; font-weight:700; color:var(--tx-1); display:block; margin-bottom:4px; letter-spacing:-.02em; }
+.mini-stat-title{ font-family:var(--ff-display); font-size:15.5px; font-weight:600; color:var(--tx-1); margin-bottom:8px; }
+.mini-stat-card p{ font-size:13.5px; color:var(--tx-2); line-height:1.55; margin:0; }
+
+/* ---------- Project timeline (Gantt) ---------- */
+.gantt-wrap{ margin-top:44px; margin-bottom:8px; }
+.gantt-axis{
+  display:flex; justify-content:space-between;
+  font-family:var(--ff-mono); font-size:10.5px; color:var(--tx-d3); letter-spacing:.04em;
+  padding-bottom:10px; margin-bottom:18px; border-bottom:1px solid var(--line-dark);
+}
+.gantt-row{ display:flex; align-items:center; gap:16px; margin-bottom:16px; }
+.gantt-label{ width:100%; max-width:150px; flex-shrink:0; font-size:12.5px; color:var(--tx-d2); font-weight:600; }
+.gantt-track{ position:relative; flex:1; height:26px; background:var(--ink-2); border-radius:100px; overflow:hidden; }
+.gantt-bar{
+  position:absolute; top:0; bottom:0; border-radius:100px;
+  display:flex; align-items:center; padding:0 14px;
+  font-family:var(--ff-mono); font-size:10.5px; color:#fff; white-space:nowrap; overflow:hidden;
+}
+.gantt-bar.b1{ background:linear-gradient(90deg, var(--blue-deep), var(--blue)); }
+.gantt-bar.b2{ background:linear-gradient(90deg, #7A7268, var(--wood)); }
+.gantt-bar.b3{ background:linear-gradient(90deg, #B08F5E, var(--gold)); }
+.timeline-card{
+  background:var(--ink-2); border:1px solid var(--line-dark); border-radius:var(--radius);
+  padding:22px 22px 20px; height:100%;
+}
+.timeline-card .tl-weeks{ font-family:var(--ff-mono); font-size:12px; color:var(--blue-bright); margin-bottom:6px; }
+.timeline-card h3{ font-family:var(--ff-display); font-size:17px; font-weight:600; color:#fff; margin-bottom:12px; }
+.timeline-card ul{ margin:0; padding:0; }
+.timeline-card li{
+  font-size:13px; color:var(--tx-d2); line-height:1.5; padding:6px 0 6px 18px; position:relative;
+  border-top:1px solid var(--line-dark-soft);
+}
+.timeline-card li:first-child{ border-top:none; }
+.timeline-card li::before{ content:""; position:absolute; left:0; top:14px; width:6px; height:1px; background:var(--blue-bright); }
+
 /* ---------- Assembly line (signature) ---------- */
 .assembly-wrap{ position:relative; margin-top:56px; }
 .assembly-track{
@@ -507,12 +564,12 @@ h1,h2,h3,h4{
   transition:opacity .6s var(--ease), transform .6s var(--ease);
 }
 .is-in .assembly-node{ opacity:1; transform:translateX(0); }
-.assembly-node:nth-child(1){ transition-delay:.05s; }
-.assembly-node:nth-child(2){ transition-delay:.2s; }
-.assembly-node:nth-child(3){ transition-delay:.35s; }
-.assembly-node:nth-child(4){ transition-delay:.5s; }
-.assembly-node:nth-child(5){ transition-delay:.65s; }
-.assembly-node:nth-child(6){ transition-delay:.8s; }
+.assembly-node:nth-child(3){ transition-delay:.05s; }
+.assembly-node:nth-child(4){ transition-delay:.2s; }
+.assembly-node:nth-child(5){ transition-delay:.35s; }
+.assembly-node:nth-child(6){ transition-delay:.5s; }
+.assembly-node:nth-child(7){ transition-delay:.65s; }
+.assembly-node:nth-child(8){ transition-delay:.8s; }
 .assembly-icon{
   position:relative; z-index:1;
   width:47px; height:47px; border-radius:50%;
@@ -534,6 +591,37 @@ h1,h2,h3,h4{
   .is-in .assembly-node{ transform:translateY(0); }
   .assembly-body{ padding-top:20px; }
   .assembly-desc{ max-width:none; font-size:13.3px; }
+}
+
+/* ---------- Traveling particle + node highlight (desktop) ---------- */
+.assembly-travel-dot{
+  display:none;
+  position:absolute; top:23px; left:0; z-index:2;
+  width:11px; height:11px; margin-left:-5.5px; margin-top:-5.5px;
+  border-radius:50%; background:var(--blue-bright);
+  box-shadow:0 0 0 4px rgba(125,168,163,.22), 0 0 16px 3px rgba(125,168,163,.85);
+  pointer-events:none;
+}
+@keyframes assemblyNodePulse{
+  0%{ box-shadow:0 0 0 0 rgba(125,168,163,0); border-color:var(--line-dark); color:var(--blue-bright); }
+  8%{ box-shadow:0 0 0 9px rgba(125,168,163,.16), 0 0 26px 6px rgba(125,168,163,.6); border-color:var(--blue-bright); color:#fff; }
+  22%{ box-shadow:0 0 0 0 rgba(125,168,163,0); border-color:var(--line-dark); color:var(--blue-bright); }
+  100%{ box-shadow:0 0 0 0 rgba(125,168,163,0); border-color:var(--line-dark); color:var(--blue-bright); }
+}
+@keyframes assemblyTagPulse{
+  0%{ color:var(--tx-d3); text-shadow:none; }
+  8%{ color:var(--blue-bright); text-shadow:0 0 14px rgba(125,168,163,.85); }
+  22%{ color:var(--tx-d3); text-shadow:none; }
+  100%{ color:var(--tx-d3); text-shadow:none; }
+}
+@media (min-width:992px){
+  .assembly-travel-dot{ display:block; }
+  .assembly-wrap.dots-live .assembly-icon{ animation:assemblyNodePulse 9s linear infinite; }
+  .assembly-wrap.dots-live .assembly-step-tag{ animation:assemblyTagPulse 9s linear infinite; }
+}
+@media (prefers-reduced-motion: reduce){
+  .assembly-travel-dot{ display:none !important; }
+  .assembly-wrap.dots-live .assembly-icon, .assembly-wrap.dots-live .assembly-step-tag{ animation:none !important; }
 }
 
 /* ---------- How it works accordion ---------- */
@@ -592,9 +680,11 @@ h1,h2,h3,h4{
 .scale-tiers{ display:flex; flex-wrap:wrap; gap:10px; margin:30px 0 34px; }
 .scale-tier{
   font-family:var(--ff-mono); font-size:13px; padding:10px 16px; border-radius:100px;
-  border:1px solid var(--line-dark); color:var(--tx-d2);
+  border:1px solid var(--line-dark); color:var(--tx-d1);
+  background:transparent; appearance:none; -webkit-appearance:none; cursor:pointer;
   transition:all .35s var(--ease);
 }
+.scale-tier:hover:not(.is-active){ border-color:var(--blue-bright); color:#fff; }
 .scale-tier.is-active{ background:var(--blue); border-color:var(--blue); color:#fff; }
 .scale-bar-wrap{ margin-bottom:34px; }
 .scale-bar-track{ height:8px; border-radius:100px; background:var(--ink-2); overflow:hidden; border:1px solid var(--line-dark); }
@@ -669,9 +759,9 @@ h1,h2,h3,h4{
 /* ---------- Logos trusted (light) ---------- */
 .trusted-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); border-radius:var(--radius); overflow:hidden; }
 @media (min-width:576px){ .trusted-grid{ grid-template-columns:repeat(4,1fr); } }
-.trusted-cell{ background:#fff; padding:26px 18px; display:flex; align-items:center; justify-content:center; height:88px; }
-.trusted-cell img{ max-height:26px; width:auto; max-width:100%; filter:grayscale(1); opacity:.65; transition:opacity .3s ease, filter .3s ease; }
-.trusted-cell:hover img{ filter:grayscale(0); opacity:1; }
+.trusted-cell{ background:#fff; padding:26px 18px; display:flex; align-items:center; justify-content:center; height:88px; transition:transform .3s ease; }
+.trusted-cell img{ max-height:28px; width:auto; max-width:100%; }
+.trusted-cell:hover{ transform:translateY(-2px); }
 
 /* ---------- Testimonials ---------- */
 .testi-card{
@@ -724,7 +814,7 @@ h1,h2,h3,h4{
 footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-top{ display:grid; grid-template-columns:1fr; gap:36px; padding-bottom:40px; border-bottom:1px solid var(--line-dark); }
 @media (min-width:768px){ .footer-top{ grid-template-columns:1.4fr .8fr .8fr .8fr; gap:24px; } }
-.footer-top .logo-img{ height:24px; filter:brightness(0) invert(1); margin-bottom:16px; }
+.footer-top .logo-img{ height:32px; filter:brightness(0) invert(1); margin-bottom:16px; }
 .footer-desc{ font-size:13.5px; color:var(--tx-d3); max-width:280px; line-height:1.6; }
 .footer-col h6{ font-family:var(--ff-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--tx-d3); margin-bottom:16px; font-weight:600; }
 .footer-col a, .footer-col p{ display:block; font-size:14px; color:var(--tx-d2); padding:6px 0; }
@@ -781,7 +871,10 @@ select:focus-visible,
   <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M7 8c-2.2 0-4 1.8-4 4v4h4v-4H5c0-1.1.9-2 2-2V8Zm10 0c-2.2 0-4 1.8-4 4v4h4v-4h-2c0-1.1.9-2 2-2V8Z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="icon-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke-width="1.6"/><path d="M8 10.5V17M8 7.5v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v-2.5" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="nhs-mark" viewBox="5 58 182 76"><path fill="currentColor" d="M25.69 67.673h19.104l11.733 39.706h.163l8.037-39.706h14.439l-12.133 57.258H47.994l-11.971-39.62h-.162l-7.962 39.62H13.46l12.23-57.258zm148.285 12.963c-2.953-1.39-6.973-2.618-12.629-2.618-6.066 0-10.99.895-10.99 5.495 0 8.113 22.229 5.085 22.229 22.477 0 15.828-14.688 19.932-27.973 19.932-5.904 0-12.715-1.4-17.713-2.963l3.609-11.646c3.027 1.973 9.104 3.285 14.104 3.285 4.764 0 12.219-.904 12.219-6.809 0-9.191-22.229-5.744-22.229-21.895 0-14.772 12.963-19.201 25.516-19.201 7.057 0 13.695.743 17.553 2.542l-3.696 11.401zM84.822 67.673h15.333l-4.503 21.905h18.122l4.516-21.905h15.332l-11.895 57.258h-15.332l5.084-24.523H93.345l-5.085 24.523H72.926l11.896-57.258z"/></symbol>
   <symbol id="icon-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.2" stroke-width="1.6"/><path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" stroke-width="1.6"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" stroke-width="1.6" stroke-linecap="round"/><path d="M15.5 5.5c1.4.4 2.4 1.7 2.4 3.2 0 1.5-1 2.8-2.4 3.2M17.5 14.8c2 .6 3.5 2.5 3.5 4.7" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-drop-slash" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 4l16 16" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke-width="1.6"/><path d="M12 7.5V12l3 2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -796,10 +889,12 @@ select:focus-visible,
       <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
     </a>
     <nav class="nav-links">
-      <a href="#why">Why MMY</a>
-      <a href="#process">How it works</a>
-      <a href="#projects">Projects</a>
-      <a href="#faq">FAQ</a>
+      <a href="#top">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="floor-plans.html">Floor Plans</a>
+      <a href="blog.html">News</a>
+      <a href="tender-opportunities.html">Tender Opportunities</a>
     </nav>
     <div class="nav-cta">
       <a href="#contact" class="btn-mmy btn-primary-mmy d-none d-sm-inline-flex">
@@ -814,15 +909,19 @@ select:focus-visible,
 
 <div class="mmy-mobile-menu" id="mobileMenu">
   <div class="mm-top">
-    <img class="logo-img" style="height:22px;filter:brightness(0) invert(1)" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
+    <img class="logo-img" style="height:30px;filter:brightness(0) invert(1)" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
     <button class="nav-toggle" id="menuClose" aria-label="Close menu">
       <svg class="icon" style="width:18px;height:18px"><use href="#icon-close" xlink:href="#icon-close"/></svg>
     </button>
   </div>
+  <a href="#top" class="mm-link">Home</a>
   <a href="#why" class="mm-link">Why MMY</a>
   <a href="#process" class="mm-link">How it works</a>
-  <a href="#projects" class="mm-link">Projects</a>
-  <a href="#faq" class="mm-link">FAQ</a>
+  <a href="about.html" class="mm-link">About</a>
+  <a href="projects.html" class="mm-link">Projects</a>
+  <a href="floor-plans.html" class="mm-link">Floor Plans</a>
+  <a href="blog.html" class="mm-link">News</a>
+  <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
   <a href="#contact" class="mm-link">Get in touch</a>
   <div class="mm-foot">Louisville, KY &middot; hello@mmyus.com</div>
 </div>
@@ -839,10 +938,7 @@ select:focus-visible,
     <div class="container-mmy">
       <div class="hero-columns">
         <div class="hero-copy">
-          <div class="hero-tag reveal is-in">
-            <span class="dot"></span> Modern Methods of Construction &middot; Louisville, KY
-          </div>
-          <h1 class="h-hero hero-title reveal is-in reveal-delay-1">
+          <h1 class="h-hero hero-title reveal is-in reveal-delay-1" style="margin-top:8px;">
             Your next apartment building doesn't have to be a <em>construction project.</em>
           </h1>
           <p class="hero-sub reveal is-in reveal-delay-2">
@@ -862,7 +958,7 @@ select:focus-visible,
           <video autoplay muted loop playsinline preload="metadata" poster="mmy-hero-card-poster.jpg">
             <source src="mmy-hero-card.mp4" type="video/mp4">
           </video>
-          <div class="hero-video-tag"><span class="dot"></span> Recently delivered &middot; lot to key</div>
+          <div class="hero-video-tag"><span class="dot"></span> Recently delivered</div>
         </div>
       </div>
 
@@ -870,21 +966,21 @@ select:focus-visible,
         <span class="trust-label">Trusted by developers &amp; institutions</span>
         <div class="logo-marquee">
           <div class="logo-track">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1902c74056c17c24e0553_nhs-new.svg" alt="NHS">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV">
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company"></div>
+            <div class="logo-chip"><svg class="icon logo-svg-mark" style="width:64px;height:26px;"><use href="#nhs-mark" xlink:href="#nhs-mark"/></svg></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV"></div>
             <!-- duplicate for seamless marquee -->
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1902c74056c17c24e0553_nhs-new.svg" alt="NHS">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV">
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19034ce5bcf1c77b9df7e_ey_logo.svg.svg" alt="EY"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96cfc2d9df7ae98f73c3_habitat-brown.png" alt="Habitat for Humanity"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c1905bbddd0f94e2dadbd9_pif-logo.svg" alt="PIF"></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c18fff4079104528fa3ea4_diriyah_company_l___logo.svg.svg" alt="Diriyah Company"></div>
+            <div class="logo-chip"><svg class="icon logo-svg-mark" style="width:64px;height:26px;"><use href="#nhs-mark" xlink:href="#nhs-mark"/></svg></div>
+            <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6a96dc52ac7471fea0d82a_lv-brown.png" alt="LV"></div>
           </div>
         </div>
       </div>
@@ -977,6 +1073,51 @@ select:focus-visible,
 </section>
 
 <!-- ============================================================
+     BENEFITS — ROW 2 (beyond faster/accurate/sustainable)
+     ============================================================ -->
+<section class="bg-paper section-pad-sm">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Beyond the headline numbers</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal" style="max-width:680px;">The Multiplex has benefits beyond being faster, more accurate &amp; more sustainable.</h2>
+
+    <div class="row g-3 g-md-4 mt-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-users" xlink:href="#icon-users"/></svg></div>
+          <span class="mini-stat-num">70%</span>
+          <div class="mini-stat-title">Fewer site workers</div>
+          <p>Labor requirements are fewer overall, and off-site labor can be performed in far more attractive working conditions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-1">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-shield" xlink:href="#icon-shield"/></svg></div>
+          <span class="mini-stat-num">90%</span>
+          <div class="mini-stat-title">Fewer accidents</div>
+          <p>All work is performed at ground level with weather protection, resulting in far safer working conditions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-2">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-cube" xlink:href="#icon-cube"/></svg></div>
+          <span class="mini-stat-num">100%</span>
+          <div class="mini-stat-title">Full control</div>
+          <p>Digital records of manufacturing and on-site work feed a building digital twin — full visibility and traceability.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-3">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-drop-slash" xlink:href="#icon-drop-slash"/></svg></div>
+          <span class="mini-stat-num">0%</span>
+          <div class="mini-stat-title">Mold free</div>
+          <p>High-precision construction and high-performance materials keep every unit free from mold.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      SIGNATURE: ASSEMBLY LINE
      ============================================================ -->
 <section class="bg-ink section-pad" id="process">
@@ -994,6 +1135,7 @@ select:focus-visible,
     <div class="assembly-wrap reveal" id="assemblyWrap">
       <div class="assembly-track">
         <div class="assembly-connector"><div class="fill"></div></div>
+        <div class="assembly-travel-dot" id="assemblyDot"></div>
 
         <div class="assembly-node">
           <div class="assembly-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-pin" xlink:href="#icon-pin"/></svg></div>
@@ -1148,6 +1290,80 @@ select:focus-visible,
           </div>
         </div>
 
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECT TIMELINE (Gantt)
+     ============================================================ -->
+<section class="bg-ink section-pad-sm">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Project timeline</span><span class="dim-line"></span></div>
+    <div class="row gy-4 mb-2">
+      <div class="col-lg-8">
+        <h2 class="h-section reveal" style="color:#fff">21 weeks, mapped out — not just promised.</h2>
+      </div>
+      <div class="col-lg-4">
+        <p class="lede reveal reveal-delay-1">Multiplexes are permanent units made from modules manufactured off-site — and much of the schedule below runs in parallel, not in sequence.</p>
+      </div>
+    </div>
+
+    <div class="gantt-wrap reveal">
+      <div class="gantt-axis">
+        <span>Week 1</span><span>Week 5</span><span>Week 10</span><span>Week 15</span><span>Week 21</span>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">Design &amp; permitting</div>
+        <div class="gantt-track"><div class="gantt-bar b1" style="left:0%; width:45%;">Wks 1–10</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">Site set-up</div>
+        <div class="gantt-track"><div class="gantt-bar b2" style="left:20%; width:30%;">Wks 5–11</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label">Manufacturing &amp; install</div>
+        <div class="gantt-track"><div class="gantt-bar b3" style="left:55%; width:45%;">Wks 12–21</div></div>
+      </div>
+    </div>
+
+    <div class="row g-3 g-md-4 mt-3">
+      <div class="col-md-4">
+        <div class="timeline-card reveal">
+          <div class="tl-weeks">WEEKS 1–10</div>
+          <h3>Design &amp; permitting</h3>
+          <ul>
+            <li>Schematic &amp; detailed design</li>
+            <li>Permitting &amp; approvals</li>
+            <li>Design for manufacturing assembly</li>
+            <li>Site logistics planning</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="timeline-card reveal reveal-delay-1">
+          <div class="tl-weeks">WEEKS 5–11</div>
+          <h3>Site set-up</h3>
+          <ul>
+            <li>Site set-up &amp; establishment</li>
+            <li>Substructure, groundworks, parking, fencing</li>
+            <li>Infrastructure enabling works</li>
+            <li>Long-lead item procurement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="timeline-card reveal reveal-delay-2">
+          <div class="tl-weeks">WEEKS 12–21</div>
+          <h3>Manufacturing &amp; install</h3>
+          <ul>
+            <li>Factory manufacturing (DfMA)</li>
+            <li>Module installation</li>
+            <li>Internal finishing works</li>
+            <li>Testing, commissioning &amp; final inspections</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1348,7 +1564,7 @@ select:focus-visible,
         </div>
       </div>
     </div>
-    <p class="mt-tag mt-3 reveal">+20 other pre-permitted floor plans available on request</p>
+    <p class="mt-tag mt-3 reveal">+20 other pre-permitted floor plans available on request &middot; <a href="floor-plans.html" style="color:var(--blue); text-decoration:underline;">See all floor plans →</a></p>
   </div>
 </section>
 
@@ -1419,6 +1635,10 @@ select:focus-visible,
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="text-center mt-4 reveal">
+      <a href="projects.html" class="btn-mmy btn-ghost-light">See all projects <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
     </div>
   </div>
 </section>
@@ -1645,18 +1865,20 @@ select:focus-visible,
       <div class="footer-col">
         <h6>Product</h6>
         <a href="#top">Home</a>
-        <a href="#process">How it works</a>
-        <a href="#projects">Recent projects</a>
-        <a href="#contact">Tender opportunities</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="floor-plans.html">Floor Plans</a>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <a href="blog.html">News</a>
+        <a href="tender-opportunities.html">Tender Opportunities</a>
+        <a href="#contact">Get in touch</a>
       </div>
       <div class="footer-col">
         <h6>Legal</h6>
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms of service</a>
-      </div>
-      <div class="footer-col">
-        <h6>Location</h6>
-        <p style="padding:0">1344 Beech Street,<br>Louisville, Kentucky 40211</p>
+        <a href="#" onclick="return false;" title="Not prioritized for this prototype">Privacy policy</a>
+        <a href="#" onclick="return false;" title="Not prioritized for this prototype">Terms of service</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1741,8 +1963,42 @@ select:focus-visible,
     statIO.observe(statBand);
   }
 
+  // Assembly line: traveling particle synced to per-node glow pulse
+  var assemblyWrap = document.getElementById('assemblyWrap');
+  var assemblyTrack = assemblyWrap ? assemblyWrap.querySelector('.assembly-track') : null;
+  var assemblyDot = document.getElementById('assemblyDot');
+  var assemblyNodes = assemblyWrap ? assemblyWrap.querySelectorAll('.assembly-node') : [];
+  if(assemblyWrap && assemblyTrack && assemblyDot && assemblyNodes.length && !reduceMotion && window.matchMedia('(min-width:992px)').matches){
+    var PULSE_DURATION = 9000; // ms — must match the CSS animation-duration
+    function syncNodeDelays(){
+      var trackRect = assemblyTrack.getBoundingClientRect();
+      if(trackRect.width < 1) return;
+      assemblyNodes.forEach(function(node){
+        var icon = node.querySelector('.assembly-icon');
+        var tag = node.querySelector('.assembly-step-tag');
+        var iconRect = icon.getBoundingClientRect();
+        var centerX = (iconRect.left + iconRect.width / 2) - trackRect.left;
+        var fraction = Math.max(0, Math.min(1, centerX / trackRect.width));
+        var delay = ((fraction - 0.08) * PULSE_DURATION) + 'ms';
+        icon.style.animationDelay = delay;
+        tag.style.animationDelay = delay;
+      });
+      assemblyWrap.classList.add('dots-live');
+    }
+    syncNodeDelays();
+    window.addEventListener('resize', syncNodeDelays);
+
+    function animateAssemblyDot(ts){
+      var trackRect = assemblyTrack.getBoundingClientRect();
+      var progress = (ts % PULSE_DURATION) / PULSE_DURATION;
+      assemblyDot.style.left = (progress * trackRect.width) + 'px';
+      requestAnimationFrame(animateAssemblyDot);
+    }
+    requestAnimationFrame(animateAssemblyDot);
+  }
+
   // Hero cursor-glow spotlight (grid hover-light effect)
-  var heroEl = document.querySelector('.hero');
+  var heroEl = document.querySelector('.hero, .page-header');
   var glowWrap = document.getElementById('heroCursorGlow');
   var glowBlob = document.getElementById('heroCursorGlowBlob');
   if(heroEl && glowBlob && !reduceMotion && window.matchMedia('(hover: hover)').matches){
@@ -1769,15 +2025,45 @@ select:focus-visible,
 
   // Scale tier interaction
   var tiers = document.querySelectorAll('.scale-tier');
+  var tiersWrap = document.getElementById('scaleTiers');
   var fill = document.getElementById('scaleBarFill');
-  tiers.forEach(function(btn){
+  var tierAutoplay = null;
+  var tierIndex = 0;
+  var tierUserStopped = false;
+
+  function selectTier(btn){
+    tiers.forEach(function(b){ b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    if(fill){ fill.style.width = btn.getAttribute('data-value') + '%'; }
+  }
+
+  function stopTierAutoplay(){
+    if(tierAutoplay){ clearInterval(tierAutoplay); tierAutoplay = null; }
+  }
+
+  function startTierAutoplay(){
+    if(reduceMotion || !tiers.length || tierUserStopped) return;
+    stopTierAutoplay();
+    tierAutoplay = setInterval(function(){
+      tierIndex = (tierIndex + 1) % tiers.length;
+      selectTier(tiers[tierIndex]);
+    }, 2000);
+  }
+
+  tiers.forEach(function(btn, i){
     btn.addEventListener('click', function(){
-      tiers.forEach(function(b){ b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      if(fill){ fill.style.width = btn.getAttribute('data-value') + '%'; }
+      tierUserStopped = true; // a real click takes over for good
+      stopTierAutoplay();
+      tierIndex = i;
+      selectTier(btn);
     });
   });
+  if(tiersWrap){
+    tiersWrap.addEventListener('mouseenter', stopTierAutoplay); // pause while browsing
+    tiersWrap.addEventListener('mouseleave', startTierAutoplay); // resume on mouse-out
+  }
   if(fill){ fill.style.width = '8%'; }
+  startTierAutoplay();
 
   // Contact form (prototype — no backend)
   var form = document.getElementById('contactForm');
