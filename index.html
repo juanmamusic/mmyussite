@@ -237,10 +237,17 @@ h1,h2,h3,h4{
   background:var(--ink);
   padding:22px 20px;
   transform:translateY(-100%);
-  transition:transform .45s var(--ease);
+  visibility:hidden;
+  pointer-events:none;
+  transition:transform .45s var(--ease), visibility 0s linear .45s;
   display:flex; flex-direction:column;
 }
-.mmy-mobile-menu.is-open{ transform:translateY(0); }
+.mmy-mobile-menu.is-open{
+  transform:translateY(0);
+  visibility:visible;
+  pointer-events:auto;
+  transition:transform .45s var(--ease), visibility 0s linear 0s;
+}
 .mmy-mobile-menu .mm-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:48px; }
 .mmy-mobile-menu a{
   font-family:var(--ff-display); font-size:30px; font-weight:500;
@@ -256,7 +263,7 @@ h1,h2,h3,h4{
   color:#fff;
   overflow:hidden;
   background:var(--ink);
-  padding-top:88px;
+  padding-top:104px;
 }
 .hero-bg{ position:absolute; inset:0; z-index:0; background:var(--ink); }
 .hero-bg::before{
@@ -330,7 +337,6 @@ h1,h2,h3,h4{
 .hero-video-tag .dot{ width:6px; height:6px; border-radius:50%; background:var(--blue-bright); flex-shrink:0; }
 
 @media (min-width:992px){
-  .hero{ padding-top:0; }
   .hero-columns{ flex-direction:row; align-items:center; gap:56px; }
   .hero-copy{ flex:1 1 54%; }
   .hero-video-card{ flex:1 1 46%; min-height:280px; }
@@ -1900,24 +1906,31 @@ select:focus-visible,
 (function(){
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Nav scroll state
+  // Nav scroll state — also triggers on short viewports so hero content
+  // never blends into a fully-transparent nav when there's little vertical room.
   var nav = document.getElementById('mainNav');
   function onScroll(){
-    if(window.scrollY > 40){ nav.classList.add('is-scrolled'); }
+    var shortViewport = window.innerHeight < 700;
+    if(window.scrollY > 40 || shortViewport){ nav.classList.add('is-scrolled'); }
     else{ nav.classList.remove('is-scrolled'); }
   }
   window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
   onScroll();
 
   // Mobile menu
   var menuOpen = document.getElementById('menuOpen');
   var menuClose = document.getElementById('menuClose');
   var mobileMenu = document.getElementById('mobileMenu');
+  function closeMobileMenu(){ mobileMenu.classList.remove('is-open'); document.body.style.overflow=''; }
   menuOpen.addEventListener('click', function(){ mobileMenu.classList.add('is-open'); document.body.style.overflow='hidden'; });
-  menuClose.addEventListener('click', function(){ mobileMenu.classList.remove('is-open'); document.body.style.overflow=''; });
+  menuClose.addEventListener('click', closeMobileMenu);
   mobileMenu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ mobileMenu.classList.remove('is-open'); document.body.style.overflow=''; });
+    a.addEventListener('click', closeMobileMenu);
   });
+  // Defensive reset: browsers can restore a page from back/forward cache
+  // with old JS-added state (like an open mobile menu) still applied.
+  window.addEventListener('pageshow', closeMobileMenu);
 
   // Reveal on scroll
   if(reduceMotion){
