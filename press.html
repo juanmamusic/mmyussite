@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>News | MMY US</title>
-<meta name="description" content="Updates from MMY US — milestones, partnerships, and the people behind the fastest modular building system in the US.">
-<meta property="og:title" content="News | MMY US">
-<meta property="og:description" content="Updates from MMY US — milestones, partnerships, and the people behind the fastest modular building system in the US.">
+<title>Press | MMY US</title>
+<meta name="description" content="MMY US is comprised of UK modular construction pioneers, boasting decades of experience. Having completed over 100 projects totaling more than $5 billion, we've established ourselves as a reliable and trusted partner in MMC and modular construction.">
+<meta property="og:title" content="Press | MMY US">
+<meta property="og:description" content="MMY US is comprised of UK modular construction pioneers, boasting decades of experience. Having completed over 100 projects totaling more than $5 billion, we've established ourselves as a reliable and trusted partner in MMC and modular construction.">
 <meta property="og:type" content="website">
 <link rel="icon" href="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg">
 
@@ -966,6 +966,37 @@ select:focus-visible,
 .blog-body p{ font-size:13.5px; color:var(--tx-2); line-height:1.6; margin-bottom:16px; }
 .blog-link{ font-family:var(--ff-mono); font-size:12px; color:var(--blue); display:inline-flex; align-items:center; gap:6px; }
 
+/* ---------- Press signup panel ---------- */
+.press-signup{
+  background:var(--ink-2); border:1px solid var(--line-dark); border-radius:var(--radius-lg);
+  padding:26px 28px; display:flex; flex-direction:column; gap:14px;
+}
+.press-signup-item{ display:flex; align-items:flex-start; gap:10px; font-size:13.5px; color:var(--tx-d2); line-height:1.5; }
+
+/* ---------- Press list ---------- */
+.press-list{ border-top:1px solid var(--line-light); }
+.press-row{
+  display:flex; align-items:flex-start; gap:20px; padding:22px 4px;
+  border-bottom:1px solid var(--line-light);
+  text-decoration:none; color:inherit;
+  transition:background .25s ease, padding-left .25s ease;
+}
+.press-row:hover{ background:var(--paper2); padding-left:10px; }
+.press-date{
+  font-family:var(--ff-mono); font-size:12px; color:var(--tx-3); white-space:nowrap;
+  width:110px; flex-shrink:0; padding-top:3px;
+}
+.press-body{ display:flex; flex-direction:column; gap:6px; flex:1; }
+.press-title{ font-family:var(--ff-display); font-size:16.5px; font-weight:600; color:var(--tx-1); line-height:1.3; }
+.press-row:hover .press-title{ color:var(--blue); }
+.press-excerpt{ font-size:13.5px; color:var(--tx-2); line-height:1.55; max-width:680px; }
+.press-arrow{ color:var(--tx-3); flex-shrink:0; margin-top:6px; transition:transform .25s ease, color .25s ease; }
+.press-row:hover .press-arrow{ transform:translateX(3px); color:var(--blue); }
+@media (max-width:576px){
+  .press-row{ flex-wrap:wrap; }
+  .press-date{ width:auto; }
+}
+
 /* ---------- Simple page header (subpages) ---------- */
 .page-header{ padding-top:150px; padding-bottom:56px; position:relative; overflow:hidden; }
 
@@ -1055,78 +1086,202 @@ select:focus-visible,
 <!-- ============================================================
      PAGE HERO
      ============================================================ -->
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
 <section class="bg-ink page-header">
   <div class="hero-grid" style="position:absolute;inset:0;z-index:0;opacity:.4;background-image:linear-gradient(rgba(241,239,236,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(241,239,236,.07) 1px, transparent 1px);background-size:33px 33px;"></div>
   <div class="hero-cursor-glow" id="heroCursorGlow"><div class="hero-cursor-glow-blob" id="heroCursorGlowBlob"></div></div>
   <div class="container-mmy" style="position:relative;z-index:1;">
-    <div class="eyebrow reveal is-in" style="color:var(--wood)">News</div>
-    <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:760px;">What we're building, month by month.</h1>
-    <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Updates from the factory floor and the job site — milestones, partnerships, and the people behind MMY US.</p>
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7">
+        <div class="eyebrow reveal is-in" style="color:var(--wood)">Press</div>
+        <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:700px;">Stay ahead with our latest updates.</h1>
+        <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Coverage of MMY US in the news — expansions, partnerships, and milestones from Louisville to Cleveland.</p>
+      </div>
+      <div class="col-lg-5">
+        <div class="press-signup reveal reveal-delay-2">
+          <div class="press-signup-item">
+            <svg class="icon" style="width:18px;height:18px;color:var(--blue-bright);flex-shrink:0;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
+            <span>Product news delivered straight to your inbox.</span>
+          </div>
+          <div class="press-signup-item">
+            <svg class="icon" style="width:18px;height:18px;color:var(--blue-bright);flex-shrink:0;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
+            <span>Exclusive insights, tips, and industry updates.</span>
+          </div>
+          <div class="press-signup-item">
+            <svg class="icon" style="width:18px;height:18px;color:var(--blue-bright);flex-shrink:0;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
+            <span>Be the first to hear about new releases.</span>
+          </div>
+          <a href="index.html#contact" class="btn-mmy btn-primary-mmy mt-2">Sign up <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
-     ARTICLES
+     PRESS LIST
      ============================================================ -->
 <section class="bg-paper section-pad">
   <div class="container-mmy">
-    <div class="row g-3 g-md-4">
+    <div class="dim-divider reveal"><span class="dim-label">In the news</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal" style="max-width:600px;">MMY US, as covered by the press.</h2>
 
-      <div class="col-md-6">
-        <a href="#" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
-          <div class="blog-card reveal">
-            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="A Landmark Month for MMY US And Team Kentucky" loading="lazy"></div>
-            <div class="blog-body">
-              <div class="blog-date">Eastern Kentucky Flood Recovery</div>
-              <h3>A Landmark Month for MMY US And Team Kentucky</h3>
-              <p>In just four days, our team installed eight sets of precast crawl foundations for the Skyview High Ground community — part of a 500-home rebuild effort for families displaced by catastrophic flooding.</p>
-              <span class="blog-link">Read more <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
-            </div>
-          </div>
-        </a>
-      </div>
+    <div class="press-list mt-4">
 
-      <div class="col-md-6">
-        <a href="#" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
-          <div class="blog-card reveal reveal-delay-1">
-            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2fbd686c4f2ceb3237_Skyview%20Living%20(1).jpg" alt="A Record-Breaking Month at MMY US" loading="lazy"></div>
-            <div class="blog-body">
-              <div class="blog-date">Company Update</div>
-              <h3>A Record-Breaking Month at MMY US</h3>
-              <p>Progress on two major construction projects, a spotlight on Construction Director Kirby, and a look at Wine, Women &amp; Shoes — the Family Scholar House fundraiser we sponsored that raised $250,000.</p>
-              <span class="blog-link">Read more <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
-            </div>
-          </div>
-        </a>
-      </div>
+      <a class="press-row reveal" href="https://drive.google.com/file/d/1SW9IJ-Mp2XeqJgW9ALhma0YcGb0eQ0sH/view" target="_blank" rel="noopener">
+        <span class="press-date">July 27, 2026</span>
+        <span class="press-body">
+          <span class="press-title">MMY, Flexjet received boost from state for Northeast Ohio expansion</span>
+          <span class="press-excerpt">A modular housing manufacturer, a luxury aviation firm and a glass producer that once teetered on closure received state tax credit assistance for projects expected to create more than 1,000 jobs in Northeast Ohio.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="col-md-6">
-        <a href="#" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
-          <div class="blog-card reveal reveal-delay-2">
-            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="Housing Solutions, Growth Community Impact" loading="lazy"></div>
-            <div class="blog-body">
-              <div class="blog-date">Partnership Spotlight</div>
-              <h3>Housing Solutions, Growth &amp; Community Impact</h3>
-              <p>MMY US served as co-developer, general contractor and manufacturer on the first affordable LEED Platinum-certified home in the United States, in partnership with FSH Real Estate.</p>
-              <span class="blog-link">Read more <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
-            </div>
-          </div>
-        </a>
-      </div>
+      <a class="press-row reveal" href="https://www.jobsohio.com/newsroom/news-press/mmy-us-inc-to-open-new-operations-in-cleveland" target="_blank" rel="noopener">
+        <span class="press-date">July 27, 2026</span>
+        <span class="press-body">
+          <span class="press-title">MMY US Inc. to Open New Operations in Cleveland</span>
+          <span class="press-excerpt">MMY US Inc., an advanced modular construction company that designs and manufactures innovative building systems for residential housing, announced the selection of Cleveland to expand its US presence.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="col-md-6">
-        <a href="#" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
-          <div class="blog-card reveal reveal-delay-3">
-            <div class="blog-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a760cd1d0ab8f5566762c15_Final%20Sburg%20.jpg" alt="The first LEED Platinum single family steel modular home in USA" loading="lazy"></div>
-            <div class="blog-body">
-              <div class="blog-date">Project Milestone</div>
-              <h3>The First LEED Platinum Steel Modular Home in the USA</h3>
-              <p>This summer, Family Scholar House and MMY US unveiled their first joint project: a 1,700 sq ft, two-story, steel-frame modular home in Louisville — built with a strict zero drugs and alcohol policy on-site.</p>
-              <span class="blog-link">Read more <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
-            </div>
-          </div>
-        </a>
-      </div>
+      <a class="press-row reveal" href="https://prefabnews.com.au/cleveland-wellman-seaver-morgan-modular-factory-2026/" target="_blank" rel="noopener">
+        <span class="press-date">July 8, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Cleveland Turns a 1901 Steel-Mill Factory Into a Modular Housing Plant</span>
+          <span class="press-excerpt">A cavernous Cleveland factory that once built the machines that unloaded iron ore from Great Lakes freighters is about to start building houses.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.cleveland19.com/2026/07/01/abandoned-factory-help-build-new-modular-homes-cleveland/" target="_blank" rel="noopener">
+        <span class="press-date">July 1, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Abandoned factory to help build new modular homes in Cleveland</span>
+          <span class="press-excerpt">The Wellman-Seaver-Morgan Engineering Company Building on Central Avenue is about to help breathe new life into a Cleveland community.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://neo-trans.blog/2026/06/30/housing-maker-finds-home-in-midline/" target="_blank" rel="noopener">
+        <span class="press-date">June 30, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Housing maker finds home in Midline</span>
+          <span class="press-excerpt">The first manufacturer to locate in Cleveland's new Midline Priority Investment Area on the city's near-East Side was named today.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://drive.google.com/file/d/1p_kb6swoAkfjdZEGudQQKVexnL9rNFCY/view" target="_blank" rel="noopener">
+        <span class="press-date">June 30, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Midline's Wellman-Seaver-Morgan building gets modular home builder</span>
+          <span class="press-excerpt">Ohio has awarded $2.56 million in historic tax credits to the effort to renovate the Wellman-Seaver-Morgan Engineering Company building at 7000 Central Avenue.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.ideastream.org/community/2026-06-30/midline-lands-first-big-deal-to-revive-manufacturing-on-clevelands-east-side" target="_blank" rel="noopener">
+        <span class="press-date">June 30, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Midline lands first big deal to revive manufacturing on Cleveland's East Side</span>
+          <span class="press-excerpt">The city of Cleveland and the nonprofit Site Readiness for Good Jobs Fund announced the first big deal for the Midline, an effort aimed at reviving manufacturing across parts of the East Side.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.news5cleveland.com/news/local-news/cleveland-taps-modular-housing-manufacturer-to-remake-historic-factory-aiming-for-150-jobs" target="_blank" rel="noopener">
+        <span class="press-date">June 30, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Cleveland taps modular housing manufacturer to remake historic East Side factory</span>
+          <span class="press-excerpt">A modular housing manufacturer aims to set up shop in the Central neighborhood, bringing a historic factory back to life and creating up to 150 jobs as the business grows.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.clevelandohio.gov/news/cleveland-advances-housing-manufacturing-strategy-mmy-us-selection-and-historic-tax-credit" target="_blank" rel="noopener">
+        <span class="press-date">June 30, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Cleveland Advances Housing Manufacturing Strategy with MMY US Selection and Historic Tax Credit Award</span>
+          <span class="press-excerpt">Together, these announcements reflect a coordinated effort to expand housing production capacity in Cleveland, create quality manufacturing jobs, and activate a significant historic industrial asset.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.offsitedirtnetwork.com/post/louisville-s-new-modular-factory-brings-hope-and-jobs" target="_blank" rel="noopener">
+        <span class="press-date">December 17, 2025</span>
+        <span class="press-body">
+          <span class="press-title">Louisville's New Modular Factory Brings Hope and Jobs</span>
+          <span class="press-excerpt">Early takeaways from a first look inside the factory — trends, red flags, and moments of quiet progress that paint a picture of the modular industry as it stands today.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://drive.google.com/file/d/1CuM4pb65r7Kk3iEq3fpWmgxeeBfITiNM/view" target="_blank" rel="noopener">
+        <span class="press-date">November 20, 2025</span>
+        <span class="press-body">
+          <span class="press-title">MMY US wins Business Impact Award for modular housing work</span>
+          <span class="press-excerpt">This initiative prioritizes underserved communities, post-disaster recovery zones and municipalities with acute housing shortages.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://onelouisville.org/project-perspective-how-mmy-us-landed-its-first-us-facility-in-greater-louisville/" target="_blank" rel="noopener">
+        <span class="press-date">March 13, 2024</span>
+        <span class="press-body">
+          <span class="press-title">One Louisville welcomes MMY US to Louisville</span>
+          <span class="press-excerpt">MMY US is thrilled to call Louisville home to its first U.S. facility — a 100,000 sq ft advanced modular construction manufacturing facility in Louisville's West End, producing up to 500 housing units per year.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://spectrumnews1.com/ky/louisville/news/2024/03/01/parkland-neighborhood-investment-modular-housing" target="_blank" rel="noopener">
+        <span class="press-date">March 1, 2024</span>
+        <span class="press-body">
+          <span class="press-title">Modular housing manufacturing facility coming to west Louisville</span>
+          <span class="press-excerpt">"Let's say game changer because that's what this is — a game changer," said Councilwoman Tammy Hawkins, D-District 1. Her district will see 73 jobs.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.wdrb.com/news/business/modular-housing-manufacturer-opening-facility-in-west-louisville-adding-73-jobs/article_3e30c04c-d730-11ee-9914-e30f69c3f76a.html" target="_blank" rel="noopener">
+        <span class="press-date">February 29, 2024</span>
+        <span class="press-body">
+          <span class="press-title">Modular housing manufacturer opening facility in west Louisville, adding 73 jobs</span>
+          <span class="press-excerpt">From delivering new housing solutions to creating good-paying jobs with benefits, MMY is making an investment in west Louisville positioning the city to lead.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.kentucky.gov/Pages/Activity-stream.aspx?n=GovernorBeshear&prId=2111" target="_blank" rel="noopener">
+        <span class="press-date">February 29, 2024</span>
+        <span class="press-body">
+          <span class="press-title">Gov. Beshear Joins Modular Housing Manufacturer MMY US To Celebrate $6.1 Million West Louisville Facility</span>
+          <span class="press-excerpt">State and city leaders joined MMY US to mark the opening of its first U.S. manufacturing facility in west Louisville.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.lanereport.com/171525/2024/02/modular-housing-manufacturer-celebrates-6-1m-west-louisville-facility/" target="_blank" rel="noopener">
+        <span class="press-date">February 29, 2024</span>
+        <span class="press-body">
+          <span class="press-title">Modular housing manufacturer celebrates $6.1M West Louisville facility</span>
+          <span class="press-excerpt">The company will create 73 jobs at an average wage of $30 per hour at its new West Louisville facility.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://drive.google.com/file/d/1Skb6p-_UKwwckEEIjfzX81CSaBAyr6jT/view" target="_blank" rel="noopener">
+        <span class="press-date">February 29, 2024</span>
+        <span class="press-body">
+          <span class="press-title">MMY Global investing $6 million in new West Louisville facility</span>
+          <span class="press-excerpt">MMY US became a pioneer in new urban construction by delivering modular homes in 16 weeks — five times faster than traditional construction.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
     </div>
   </div>
@@ -1140,19 +1295,17 @@ select:focus-visible,
     <div class="cta-shell reveal">
       <div class="cta-grid" style="grid-template-columns:1fr;">
         <div>
-          <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">Never miss an update</span><span class="dim-line"></span></div>
-          <h2 class="h-section" style="color:#fff; max-width:600px;">Follow along as we build.</h2>
+          <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">Talking to the press</span><span class="dim-line"></span></div>
+          <h2 class="h-section" style="color:#fff; max-width:600px;">Working on a story about modular construction?</h2>
           <div class="hero-actions mt-4" style="margin-bottom:0;">
-            <a href="https://www.linkedin.com/company/mmy-us/" target="_blank" rel="noopener" class="btn-mmy btn-primary-mmy">Follow on LinkedIn <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
-            <a href="index.html#contact" class="btn-mmy btn-ghost-dark">Get in touch</a>
+            <a href="index.html#contact" class="btn-mmy btn-primary-mmy">Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+            <a href="blog.html" class="btn-mmy btn-ghost-dark">See our news</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
 <footer>
   <div class="container-mmy">
     <div class="footer-top">

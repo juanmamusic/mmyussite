@@ -70,7 +70,7 @@ html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  .a2d-m1,.a2d-m2,.a2d-m3,.a2d-m4,.a2d-m5{ animation:none !important; opacity:1 !important; transform:none !important; box-shadow:none !important; }
+  .a2d-home-l,.a2d-home-r,.a2d-roof{ animation:none !important; opacity:1 !important; transform:none !important; box-shadow:none !important; }
 }
 body{
   font-family:var(--ff-body);
@@ -321,6 +321,12 @@ h1,h2,h3,h4{
   background:var(--ink-2);
 }
 .hero-video-card video{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-photo-carousel{ position:relative; width:100%; height:100%; }
+.hero-photo{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity 1.4s ease;
+}
+.hero-photo.is-active{ opacity:1; }
 .hero-video-card::after{
   content:"";
   position:absolute; inset:0;
@@ -449,40 +455,34 @@ h1,h2,h3,h4{
   box-shadow:0 14px 26px -14px rgba(0,0,0,.55);
   will-change:transform, opacity;
 }
-.a2d-m1{ left:9%; bottom:13%; width:34%; height:24%; background:var(--blue); animation:a2dDrop1 7s ease infinite; }
-.a2d-m2{ left:57%; bottom:13%; width:34%; height:24%; background:var(--wood); animation:a2dDrop2 7s ease infinite; }
-.a2d-m3{ left:9%; bottom:41%; width:34%; height:24%; background:var(--ink-3); animation:a2dDrop3 7s ease infinite; }
-.a2d-m4{ left:57%; bottom:41%; width:34%; height:24%; background:var(--blue-deep); animation:a2dDrop4 7s ease infinite; }
-.a2d-m5{ left:27%; bottom:69%; width:46%; height:20%; background:var(--gold); animation:a2dDrop5 7s ease infinite; }
+.a2d-home-l{ left:13%; bottom:13%; width:35%; height:40%; background:var(--blue); animation:a2dHomeL 7s ease infinite; }
+.a2d-home-r{ left:52%; bottom:13%; width:35%; height:40%; background:var(--wood); animation:a2dHomeR 7s ease infinite; }
+.a2d-roof{
+  position:absolute; left:9%; bottom:53%; width:82%; height:26%;
+  background:var(--gold);
+  clip-path:polygon(50% 0%, 3% 100%, 97% 100%);
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.4));
+  will-change:transform, opacity;
+  animation:a2dRoof 7s ease infinite;
+}
+.a2d-footnote{ position:relative; z-index:2; font-size:11px; color:var(--tx-d3); padding:0 24px 18px; margin:0; line-height:1.5; }
 
-@keyframes a2dDrop1{
-  0%,8%{ transform:translateY(-70px); opacity:0; }
-  12%{ transform:translateY(5px); opacity:1; }
-  16%,84%{ transform:translateY(0); opacity:1; }
+@keyframes a2dHomeL{
+  0%,2%{ transform:translateY(-70px); opacity:0; }
+  6%{ transform:translateY(5px); opacity:1; }
+  10%,84%{ transform:translateY(0); opacity:1; }
   90%,100%{ transform:translateY(-70px); opacity:0; }
 }
-@keyframes a2dDrop2{
-  0%,16%{ transform:translateY(-70px); opacity:0; }
-  20%{ transform:translateY(5px); opacity:1; }
-  24%,84%{ transform:translateY(0); opacity:1; }
+@keyframes a2dHomeR{
+  0%,14%{ transform:translateY(-70px); opacity:0; }
+  18%{ transform:translateY(5px); opacity:1; }
+  22%,84%{ transform:translateY(0); opacity:1; }
   90%,100%{ transform:translateY(-70px); opacity:0; }
 }
-@keyframes a2dDrop3{
-  0%,24%{ transform:translateY(-70px); opacity:0; }
-  28%{ transform:translateY(5px); opacity:1; }
-  32%,84%{ transform:translateY(0); opacity:1; }
-  90%,100%{ transform:translateY(-70px); opacity:0; }
-}
-@keyframes a2dDrop4{
-  0%,32%{ transform:translateY(-70px); opacity:0; }
-  36%{ transform:translateY(5px); opacity:1; }
-  40%,84%{ transform:translateY(0); opacity:1; }
-  90%,100%{ transform:translateY(-70px); opacity:0; }
-}
-@keyframes a2dDrop5{
-  0%,40%{ transform:translateY(-70px); opacity:0; }
-  44%{ transform:translateY(5px); opacity:1; }
-  48%,84%{ transform:translateY(0); opacity:1; }
+@keyframes a2dRoof{
+  0%,26%{ transform:translateY(-70px); opacity:0; }
+  30%{ transform:translateY(5px); opacity:1; }
+  34%,84%{ transform:translateY(0); opacity:1; }
   90%,100%{ transform:translateY(-70px); opacity:0; }
 }
 
@@ -756,6 +756,9 @@ h1,h2,h3,h4{
 .project-title{ font-family:var(--ff-display); font-size:18px; font-weight:600; margin-bottom:8px; line-height:1.25; }
 .project-desc{ font-size:13.5px; color:var(--tx-2); line-height:1.55; margin-bottom:16px; }
 .project-badges{ display:flex; flex-wrap:wrap; gap:8px; }
+.project-meta{ margin-top:12px; padding-top:12px; border-top:1px solid var(--line-light); display:flex; flex-direction:column; gap:3px; }
+.project-meta span{ font-family:var(--ff-mono); font-size:11px; color:var(--tx-3); }
+.project-meta span strong{ color:var(--tx-2); font-weight:600; }
 .badge-mmy{
   font-family:var(--ff-mono); font-size:11px; padding:5px 10px; border-radius:100px;
   background:var(--blue-tint); color:var(--blue-deep); font-weight:600;
@@ -898,9 +901,11 @@ select:focus-visible,
       <a href="#top">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
+      <a href="press.html">Press</a>
       <a href="floor-plans.html">Floor Plans</a>
       <a href="blog.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
+      <a href="invest.html">Invest</a>
     </nav>
     <div class="nav-cta">
       <a href="#contact" class="btn-mmy btn-primary-mmy d-none d-sm-inline-flex">
@@ -925,9 +930,11 @@ select:focus-visible,
   <a href="#process" class="mm-link">How it works</a>
   <a href="about.html" class="mm-link">About</a>
   <a href="projects.html" class="mm-link">Projects</a>
+  <a href="press.html" class="mm-link">Press</a>
   <a href="floor-plans.html" class="mm-link">Floor Plans</a>
   <a href="blog.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
+  <a href="invest.html" class="mm-link">Invest</a>
   <a href="#contact" class="mm-link">Get in touch</a>
   <div class="mm-foot">Louisville, KY &middot; hello@mmyus.com</div>
 </div>
@@ -945,10 +952,10 @@ select:focus-visible,
       <div class="hero-columns">
         <div class="hero-copy">
           <h1 class="h-hero hero-title reveal is-in reveal-delay-1" style="margin-top:8px;">
-            Your next apartment building doesn't have to be a <em>construction project.</em>
+            Your next home doesn't have to be a <em>construction project.</em>
           </h1>
           <p class="hero-sub reveal is-in reveal-delay-2">
-            MMY US manufactures permanent, code-compliant homes and multiplexes off-site, then assembles them on your land in as little as <strong style="color:#fff">16 weeks</strong> — not the industry's average of 76.
+            MMY US manufactures and delivers permanent, code-compliant homes and multiplexes, lot to key in as little as <strong style="color:#fff">8 weeks</strong> (Single Family Home).
           </p>
           <div class="hero-actions reveal is-in reveal-delay-3">
             <a href="#contact" class="btn-mmy btn-primary-mmy">Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
@@ -961,9 +968,14 @@ select:focus-visible,
         </div>
 
         <div class="hero-video-card reveal is-in reveal-delay-2">
-          <video autoplay muted loop playsinline preload="metadata" poster="mmy-hero-card-poster.jpg">
-            <source src="mmy-hero-card.mp4" type="video/mp4">
-          </video>
+          <div class="hero-photo-carousel" id="heroCarousel">
+            <img class="hero-photo is-active" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a760cd1d0ab8f5566762c15_Final%20Sburg%20.jpg" alt="Completed MMY US single-family home exterior">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="Finished living room interior">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="Finished kitchen interior">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e6203fc249630c5b49a6_Bedroom%201.jpg" alt="Finished bedroom interior">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2fbd686c4f2ceb3237_Skyview%20Living%20(1).jpg" alt="Finished living space interior">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="Aerial view of completed MMY US development">
+          </div>
           <div class="hero-video-tag"><span class="dot"></span> Recently delivered</div>
         </div>
       </div>
@@ -1010,17 +1022,16 @@ select:focus-visible,
         <div class="a2d-panel reveal reveal-delay-2">
           <div class="a2d-head">
             <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">Meanwhile, at MMY US</span>
-            <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional crew is still waiting on permits.</p>
+            <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional project is still waiting on permits <sup>*</sup></p>
           </div>
           <div class="a2d-stage" aria-hidden="true">
             <div class="a2d-guide"></div>
             <div class="a2d-ground"></div>
-            <div class="a2d-mod a2d-m1"></div>
-            <div class="a2d-mod a2d-m2"></div>
-            <div class="a2d-mod a2d-m3"></div>
-            <div class="a2d-mod a2d-m4"></div>
-            <div class="a2d-mod a2d-m5"></div>
+            <div class="a2d-mod a2d-home-l"></div>
+            <div class="a2d-mod a2d-home-r"></div>
+            <div class="a2d-roof"></div>
           </div>
+          <p class="a2d-footnote">*In the states that MMY US is registered, currently Kentucky, Indiana &amp; Ohio.</p>
         </div>
       </div>
     </div>
@@ -1029,8 +1040,8 @@ select:focus-visible,
       <div class="col-md-4">
         <div class="pain-card reveal reveal-delay-1">
           <span class="pain-tag">Timeline risk</span>
-          <span class="pain-num">76 weeks</span>
-          <p>The U.S. average for a multifamily project — before permitting delays or a single subcontractor falls behind schedule.</p>
+          <span class="pain-num">42 weeks</span>
+          <p>The U.S. average to construct a single family home — before permitting delays or a single subcontractor falls behind schedule.</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -1044,7 +1055,7 @@ select:focus-visible,
         <div class="pain-card reveal reveal-delay-3">
           <span class="pain-tag">Cost risk</span>
           <span class="pain-num">Estimate only</span>
-          <p>Without a finished digital model before you break ground, your budget stays a guess until the building is done.</p>
+          <p>Without a finished single family home digital model before you break ground, your budget stays a guess until the building is done.</p>
         </div>
       </div>
     </div>
@@ -1063,8 +1074,8 @@ select:focus-visible,
   <div class="container-mmy">
     <div class="stat-grid">
       <div class="stat-item reveal">
-        <div class="stat-num"><span class="count-up" data-target="16">0</span><span class="unit">wks</span></div>
-        <div class="stat-label">Turnaround from authorization to handover — roughly 5x faster than a traditional build.</div>
+        <div class="stat-num"><span class="count-up" data-target="8">0</span><span class="unit">wks</span></div>
+        <div class="stat-label">Turnaround from order to handover — 5x faster than a traditional build.</div>
       </div>
       <div class="stat-item reveal reveal-delay-1">
         <div class="stat-num"><span class="count-up" data-target="80">0</span><span class="unit">%</span></div>
@@ -1084,7 +1095,7 @@ select:focus-visible,
 <section class="bg-paper section-pad-sm">
   <div class="container-mmy">
     <div class="dim-divider reveal"><span class="dim-label">Beyond the headline numbers</span><span class="dim-line"></span></div>
-    <h2 class="h-section reveal" style="max-width:680px;">The Multiplex has benefits beyond being faster, more accurate &amp; more sustainable.</h2>
+    <h2 class="h-section reveal" style="max-width:680px;">Our Single Family Homes &amp; Multiplex's have benefits beyond being faster, more accurate and more sustainable.</h2>
 
     <div class="row g-3 g-md-4 mt-4">
       <div class="col-sm-6 col-lg-3">
@@ -1114,8 +1125,8 @@ select:focus-visible,
       <div class="col-sm-6 col-lg-3">
         <div class="mini-stat-card reveal reveal-delay-3">
           <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-drop-slash" xlink:href="#icon-drop-slash"/></svg></div>
-          <span class="mini-stat-num">0%</span>
-          <div class="mini-stat-title">Mold free</div>
+          <span class="mini-stat-num">100%</span>
+          <div class="mini-stat-title">Mold Free</div>
           <p>High-precision construction and high-performance materials keep every unit free from mold.</p>
         </div>
       </div>
@@ -1134,7 +1145,7 @@ select:focus-visible,
         <h2 class="h-section reveal" style="color:#fff">One system. Six repeatable steps. Every time.</h2>
       </div>
       <div class="col-lg-4">
-        <p class="lede reveal reveal-delay-1">This is the entire MMY US process, from an empty lot to a finished, occupied building — the same one running today in Louisville, Kentucky.</p>
+        <p class="lede reveal reveal-delay-1">This is the entire MMY US process, from an empty lot to a finished, occupied home.</p>
       </div>
     </div>
 
@@ -1157,7 +1168,7 @@ select:focus-visible,
           <div class="assembly-body">
             <span class="assembly-step-tag">02 / Configure</span>
             <h3 class="assembly-title">Configure</h3>
-            <p class="assembly-desc">Choose your unit mix, building size and facade from a pre-engineered catalog.</p>
+            <p class="assembly-desc">Choose your model, building size and facade from a pre-engineered catalog.</p>
           </div>
         </div>
 
@@ -1198,146 +1209,46 @@ select:focus-visible,
         </div>
       </div>
     </div>
-
-    <div class="text-center mt-5 reveal">
-      <button class="btn-mmy btn-ghost-dark" type="button" data-bs-toggle="collapse" data-bs-target="#howItWorksDetail" aria-expanded="false" aria-controls="howItWorksDetail">
-        Walk through the full 8-step breakdown <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
-      </button>
-    </div>
-
-    <div class="collapse mt-5" id="howItWorksDetail">
-      <div class="accordion accordion-mmy" id="processAccordion">
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p1">
-              <span class="acc-step">01</span> Choose your development size <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p1" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">From single-family homes to multiplexes up to 8 stories — sized to fit your site and local requirements.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p2">
-              <span class="acc-step">02</span> Choose your unit mix <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p2" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">Configure a mix of studios through 3-bedroom units from our pre-designed catalog, which reduces your design costs.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p3">
-              <span class="acc-step">03</span> Choose your style <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p3" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">Select from a range of standardized facade designs to suit your built environment.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p4">
-              <span class="acc-step">04</span> Approve your detailed design <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p4" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">Units are pre-engineered to comply with codes across 47 U.S. states. Once you approve, we handle permit submission with the relevant state authority.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p5">
-              <span class="acc-step">05</span> We manufacture your units <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p5" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">Units are pre-fabricated in a factory as complete modules — structure, MEP systems, fixtures, and both interior and exterior finishes. Our proprietary cold-formed steel system pushes off-site labor efficiency to roughly 85%.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p6">
-              <span class="acc-step">06</span> We perform your site works <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p6" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">Foundation work runs in parallel with manufacturing. MMY's intramodular connection system is compatible with modern foundation systems, including pre-cast.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p7">
-              <span class="acc-step">07</span> We transport the modules <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p7" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">A proprietary chassis design enables cost-effective nationwide rail or truck transport from a single facility — so you're not limited by proximity to a factory.</div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" style="color:#F5F4EF" type="button" data-bs-toggle="collapse" data-bs-target="#p8">
-              <span class="acc-step">08</span> Install &amp; handover <span class="acc-plus"></span>
-            </button>
-          </h2>
-          <div id="p8" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
-            <div class="accordion-body" style="color:var(--tx-d2)">In a matter of weeks, we set, connect and seal the modules into the complete structure. Every building meets standard codes — then we sign off and hand it over.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ============================================================
-     PROJECT TIMELINE (Gantt)
+     PROJECT TIMELINE (Gantt) — Single Family Home
      ============================================================ -->
 <section class="bg-ink section-pad-sm">
   <div class="container-mmy">
     <div class="dim-divider reveal"><span class="dim-label">Project timeline</span><span class="dim-line"></span></div>
     <div class="row gy-4 mb-2">
       <div class="col-lg-8">
-        <h2 class="h-section reveal" style="color:#fff">21 weeks, mapped out — not just promised.</h2>
+        <h2 class="h-section reveal" style="color:#fff">8 weeks, mapped out — not just promised.</h2>
       </div>
       <div class="col-lg-4">
-        <p class="lede reveal reveal-delay-1">Multiplexes are permanent units made from modules manufactured off-site — and much of the schedule below runs in parallel, not in sequence.</p>
+        <p class="lede reveal reveal-delay-1">Single Family Homes are permanent units made from modules manufactured off-site — and much of the schedule below runs in parallel, not in sequence.</p>
       </div>
     </div>
 
     <div class="gantt-wrap reveal">
       <div class="gantt-axis">
-        <span>Week 1</span><span>Week 5</span><span>Week 10</span><span>Week 15</span><span>Week 21</span>
+        <span>Week 1</span><span>Week 2</span><span>Week 4</span><span>Week 6</span><span>Week 8</span>
       </div>
       <div class="gantt-row">
         <div class="gantt-label">Design &amp; permitting</div>
-        <div class="gantt-track"><div class="gantt-bar b1" style="left:0%; width:45%;">Wks 1–10</div></div>
+        <div class="gantt-track"><div class="gantt-bar b1" style="left:0%; width:14%;">Wks 1–2</div></div>
       </div>
       <div class="gantt-row">
         <div class="gantt-label">Site set-up</div>
-        <div class="gantt-track"><div class="gantt-bar b2" style="left:20%; width:30%;">Wks 5–11</div></div>
+        <div class="gantt-track"><div class="gantt-bar b2" style="left:14%; width:29%;">Wks 2–4</div></div>
       </div>
       <div class="gantt-row">
         <div class="gantt-label">Manufacturing &amp; install</div>
-        <div class="gantt-track"><div class="gantt-bar b3" style="left:55%; width:45%;">Wks 12–21</div></div>
+        <div class="gantt-track"><div class="gantt-bar b3" style="left:43%; width:57%;">Wks 4–8</div></div>
       </div>
     </div>
 
     <div class="row g-3 g-md-4 mt-3">
       <div class="col-md-4">
         <div class="timeline-card reveal">
-          <div class="tl-weeks">WEEKS 1–10</div>
+          <div class="tl-weeks">WEEKS 1–2</div>
           <h3>Design &amp; permitting</h3>
           <ul>
             <li>Schematic &amp; detailed design</li>
@@ -1349,7 +1260,7 @@ select:focus-visible,
       </div>
       <div class="col-md-4">
         <div class="timeline-card reveal reveal-delay-1">
-          <div class="tl-weeks">WEEKS 5–11</div>
+          <div class="tl-weeks">WEEKS 2–4</div>
           <h3>Site set-up</h3>
           <ul>
             <li>Site set-up &amp; establishment</li>
@@ -1361,7 +1272,7 @@ select:focus-visible,
       </div>
       <div class="col-md-4">
         <div class="timeline-card reveal reveal-delay-2">
-          <div class="tl-weeks">WEEKS 12–21</div>
+          <div class="tl-weeks">WEEKS 4–8</div>
           <h3>Manufacturing &amp; install</h3>
           <ul>
             <li>Factory manufacturing (DfMA)</li>
@@ -1381,19 +1292,17 @@ select:focus-visible,
 <section class="bg-paper section-pad" id="why">
   <div class="container-mmy">
     <div class="dim-divider reveal"><span class="dim-label">Why developers switch</span><span class="dim-line"></span></div>
-    <h2 class="h-section reveal" style="max-width:700px;">Faster and more predictable — built to the same code as anything else.</h2>
+    <h2 class="h-section reveal" style="max-width:700px;">Faster and more predictable — built to the same permanent building code.</h2>
 
     <div class="mt-3">
       <div class="proof-row reveal">
         <div class="proof-media">
-          <video autoplay muted loop playsinline preload="metadata" poster="mmy-hero-poster.jpg" aria-label="Aerial drone footage of a completed MMY US infill lot">
-            <source src="mmy-hero.mp4" type="video/mp4">
-          </video>
+          <img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19acecbc1de2a32a06aa0_rapid-dev-image.webp" alt="Rapid modular development site" loading="lazy">
         </div>
         <div class="proof-text">
           <span class="proof-index">01</span>
           <h3 class="h-card mb-3">Rapid development</h3>
-          <p class="text-body">An estimated 16 weeks from authorization to handover, with far greater time and cost certainty than a traditional build.</p>
+          <p class="text-body">As little as 8 weeks from order to handover, with far greater time and cost certainty than a traditional build.</p>
         </div>
       </div>
 
@@ -1594,11 +1503,16 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Single-family</div>
-          <h3 class="project-title">LEED Platinum Home — Elizabeth</h3>
-          <p class="project-desc">1,700 sq ft, 3 bed, 2 bath. Exceeds IBC &amp; state code — delivered lot-to-key in 18 weeks.</p>
+          <h3 class="project-title">LEED Platinum 2-Storey Home — Louisville</h3>
+          <p class="project-desc">1,700 sq ft, 3 bed, 2 bath. Exceeds IBC &amp; state code — permitted in 3 states.</p>
           <div class="project-badges">
             <span class="badge-mmy">Faster build</span>
             <span class="badge-mmy">Energy efficient</span>
+            <span class="badge-mmy">Affordable Housing</span>
+          </div>
+          <div class="project-meta">
+            <span>Model: <strong>Elizabeth</strong></span>
+            <span>Client: <strong>Louisville Metro Government</strong></span>
           </div>
         </div>
       </div>
@@ -1607,11 +1521,15 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2026 &middot; Single-family</div>
-          <h3 class="project-title">LEED Platinum Home — Windsor</h3>
-          <p class="project-desc">Climate-resilient steel construction exceeding IBC &amp; state code — delivered lot-to-key in 12 weeks.</p>
+          <h3 class="project-title">LEED Platinum 1-Storey Home — Louisville &amp; Cleveland</h3>
+          <p class="project-desc">Climate-resilient steel construction exceeding IBC &amp; state code — delivered lot-to-key in 8 weeks.</p>
           <div class="project-badges">
             <span class="badge-mmy">80% faster build</span>
             <span class="badge-mmy">3x energy efficient</span>
+          </div>
+          <div class="project-meta">
+            <span>Model: <strong>Windsor</strong></span>
+            <span>Client: <strong>Louisville Metro Government &amp; City of Cleveland</strong> (thru Habitat for Humanity)</span>
           </div>
         </div>
       </div>
@@ -1620,11 +1538,15 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
-          <h3 class="project-title">MMY US 9-Plex</h3>
-          <p class="project-desc">LEED Platinum apartments exceeding IBC &amp; state code — pre-permitted and delivered in under 12 months.</p>
+          <h3 class="project-title">LEED Platinum MMY US 9-Plex — Louisville</h3>
+          <p class="project-desc">LEED Platinum apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
           <div class="project-badges">
             <span class="badge-mmy">90% faster build</span>
             <span class="badge-mmy">3x energy efficient</span>
+          </div>
+          <div class="project-meta">
+            <span>Model: <strong>9-Plex</strong> (with elevator)</span>
+            <span>Client: <strong>Rebound</strong></span>
           </div>
         </div>
       </div>
@@ -1633,11 +1555,14 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
-          <h3 class="project-title">MMY US 36-Unit Multifamily</h3>
-          <p class="project-desc">Design-build of a 36-unit affordable multifamily housing scheme for a national non-profit.</p>
+          <h3 class="project-title">MMY US Multifamily — 36 Units — Sellersburg, Indiana</h3>
+          <p class="project-desc">Design-build of a 36-unit affordable multifamily housing scheme for Family Scholar House.</p>
           <div class="project-badges">
             <span class="badge-mmy">80% faster build</span>
             <span class="badge-mmy">7x energy efficient</span>
+          </div>
+          <div class="project-meta">
+            <span>Client: <strong>Family Scholar House</strong></span>
           </div>
         </div>
       </div>
@@ -1873,12 +1798,14 @@ select:focus-visible,
         <a href="#top">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
+        <a href="press.html">Press</a>
         <a href="floor-plans.html">Floor Plans</a>
       </div>
       <div class="footer-col">
         <h6>Company</h6>
         <a href="blog.html">News</a>
         <a href="tender-opportunities.html">Tender Opportunities</a>
+        <a href="invest.html">Invest</a>
         <a href="#contact">Get in touch</a>
       </div>
       <div class="footer-col">
@@ -1974,6 +1901,21 @@ select:focus-visible,
       });
     }, {threshold:0.4});
     statIO.observe(statBand);
+  }
+
+  // Hero photo carousel (crossfade)
+  var heroPhotos = document.querySelectorAll('#heroCarousel .hero-photo');
+  if(heroPhotos.length > 1){
+    if(reduceMotion){
+      // leave the first photo statically shown
+    } else {
+      var photoIndex = 0;
+      setInterval(function(){
+        heroPhotos[photoIndex].classList.remove('is-active');
+        photoIndex = (photoIndex + 1) % heroPhotos.length;
+        heroPhotos[photoIndex].classList.add('is-active');
+      }, 3800);
+    }
   }
 
   // Assembly line: traveling particle synced to per-node glow pulse
