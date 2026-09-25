@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>About Us | MMY US</title>
-<meta name="description" content="MMY US is comprised of UK modular construction pioneers, boasting decades of experience. Having completed over 100 projects totaling more than $5 billion, we've established ourselves as a reliable and trusted partner in MMC and modular construction.">
-<meta property="og:title" content="About Us | MMY US">
-<meta property="og:description" content="MMY US is comprised of UK modular construction pioneers, boasting decades of experience. Having completed over 100 projects totaling more than $5 billion, we've established ourselves as a reliable and trusted partner in MMC and modular construction.">
+<title>News | MMY US</title>
+<meta name="description" content="Updates from MMY US — milestones, partnerships, and the people behind the fastest modular building system in the US.">
+<meta property="og:title" content="News | MMY US">
+<meta property="og:description" content="Updates from MMY US — milestones, partnerships, and the people behind the fastest modular building system in the US.">
 <meta property="og:type" content="website">
 <link rel="icon" href="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg">
 
@@ -966,6 +966,33 @@ select:focus-visible,
 .blog-body p{ font-size:13.5px; color:var(--tx-2); line-height:1.6; margin-bottom:16px; }
 .blog-link{ font-family:var(--ff-mono); font-size:12px; color:var(--blue); display:inline-flex; align-items:center; gap:6px; }
 
+/* ---------- Newsletter archive list ---------- */
+.press-list{ border-top:1px solid var(--line-light); }
+.press-row{
+  display:flex; align-items:flex-start; gap:20px; padding:22px 4px;
+  border-bottom:1px solid var(--line-light);
+  text-decoration:none; color:inherit;
+  transition:background .25s ease, padding-left .25s ease;
+}
+.press-row:hover{ background:var(--paper2); padding-left:10px; }
+.press-date{
+  font-family:var(--ff-mono); font-size:12px; color:var(--tx-3); white-space:nowrap;
+  width:110px; flex-shrink:0; padding-top:3px;
+}
+.press-body{ display:flex; flex-direction:column; gap:6px; flex:1; }
+.press-title{ font-family:var(--ff-display); font-size:16.5px; font-weight:600; color:var(--tx-1); line-height:1.3; }
+.press-row:hover .press-title{ color:var(--blue); }
+.press-excerpt{ font-size:13.5px; color:var(--tx-2); line-height:1.55; max-width:680px; }
+.press-arrow{ color:var(--tx-3); flex-shrink:0; margin-top:6px; transition:transform .25s ease, color .25s ease; }
+.press-row:hover .press-arrow{ transform:translateX(3px); color:var(--blue); }
+.press-thumb{ width:84px; height:64px; border-radius:10px; overflow:hidden; flex-shrink:0; background:var(--paper-2); }
+.press-thumb img{ width:100%; height:100%; object-fit:cover; }
+@media (max-width:576px){
+  .press-row{ flex-wrap:wrap; }
+  .press-date{ width:auto; }
+  .press-thumb{ width:64px; height:48px; }
+}
+
 /* ---------- Simple page header (subpages) ---------- */
 .page-header{ padding-top:150px; padding-bottom:56px; position:relative; overflow:hidden; }
 
@@ -1059,180 +1086,164 @@ select:focus-visible,
   <div class="hero-grid" style="position:absolute;inset:0;z-index:0;opacity:.4;background-image:linear-gradient(rgba(241,239,236,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(241,239,236,.07) 1px, transparent 1px);background-size:33px 33px;"></div>
   <div class="hero-cursor-glow" id="heroCursorGlow"><div class="hero-cursor-glow-blob" id="heroCursorGlowBlob"></div></div>
   <div class="container-mmy" style="position:relative;z-index:1;">
-    <div class="eyebrow reveal is-in" style="color:var(--wood)">About</div>
-    <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:820px;">Our team has been building in modular for 20+ years.</h1>
-    <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Our team includes some of the world's most renowned experts in modular construction, managing modular projects across the globe.</p>
+    <div class="eyebrow reveal is-in" style="color:var(--wood)">News</div>
+    <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:760px;">What we're building, month by month.</h1>
+    <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Updates from the factory floor and the job site — milestones, partnerships, and the people behind MMY US.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     WHO WE ARE
+     ARTICLES (3 most recent, matching mmyus.com/newsletter order)
      ============================================================ -->
 <section class="bg-paper section-pad">
   <div class="container-mmy">
-    <div class="row gy-4 align-items-center">
-      <div class="col-lg-6">
-        <div class="dim-divider reveal"><span class="dim-label">Who we are</span><span class="dim-line"></span></div>
-        <p class="text-body reveal" style="font-size:16.5px; max-width:560px;">Our team has completed projects for national governments, sovereign wealth funds, Big Four strategy consulting firms, and others. Our management and executive board comprise globally recognized modular construction experts, who have pioneered the industry in the UK and are now leading its expansion in the US.</p>
-        <p class="text-body reveal reveal-delay-1" style="font-size:16.5px; max-width:560px;">Our expertise in the modular construction industry has helped us develop a reputation as a trusted and reliable partner for developers looking to take advantage of the benefits of MMC and modular construction. Now, we've developed the world's fastest modular building system.</p>
+    <div class="row g-3 g-md-4">
+
+      <div class="col-md-4">
+        <a href="https://www.mmyus.com/newsletter/housing-solutions-growth-community-impact" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
+          <div class="blog-card reveal">
+            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bfddf1d24a13a34aab76c_Untitled_design-6.jpg" alt="Housing Solutions, Growth Community Impact" loading="lazy"></div>
+            <div class="blog-body">
+              <div class="blog-date">May 14, 2026</div>
+              <h3>Housing Solutions, Growth &amp; Community Impact</h3>
+              <p>MMY US is expanding its vision — and we're taking you with us.</p>
+              <span class="blog-link">Read the full newsletter <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="col-lg-6">
-        <div class="row g-3">
-          <div class="col-6">
-            <div class="mini-stat-card reveal reveal-delay-1" style="text-align:center;">
-              <span class="mini-stat-num" style="font-size:32px;">$50M+</span>
-              <div class="mini-stat-title" style="margin-bottom:0;">In project value completed</div>
+
+      <div class="col-md-4">
+        <a href="https://www.mmyus.com/newsletter/project-spotlight---sellersburg---wine-women-and-shoes" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
+          <div class="blog-card reveal reveal-delay-1">
+            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bfc917b185d83a102c9e5_Screenshot_2026-04-08_at_12.10.28.png" alt="Project Spotlight - Sellersburg - Wine, Women and Shoes" loading="lazy"></div>
+            <div class="blog-body">
+              <div class="blog-date">April 9, 2026</div>
+              <h3>Project Spotlight — Sellersburg — Wine, Women and Shoes</h3>
+              <p>2026 has already proven to be a landmark year for MMY US. We've pushed boundaries and reached new operational heights.</p>
+              <span class="blog-link">Read the full newsletter <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
             </div>
           </div>
-          <div class="col-6">
-            <div class="mini-stat-card reveal reveal-delay-2" style="text-align:center;">
-              <span class="mini-stat-num" style="font-size:32px;">20+</span>
-              <div class="mini-stat-title" style="margin-bottom:0;">Years of experience in the modular industry</div>
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mini-stat-card reveal reveal-delay-3" style="text-align:center;">
-              <span class="mini-stat-num" style="font-size:32px;">15+</span>
-              <div class="mini-stat-title" style="margin-bottom:0;">Projects completed</div>
-            </div>
-          </div>
-        </div>
+        </a>
       </div>
+
+      <div class="col-md-4">
+        <a href="https://www.mmyus.com/newsletter/wine-women-and-shoes-our-amazing-suppliers" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;" class="blog-card-link">
+          <div class="blog-card reveal reveal-delay-2">
+            <div class="blog-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6ccf6941d28d977ca139ed_WWS-Louisville-2026-Website_Splash-scaled.jpg" alt="Wine, Women and Shoes + Our Amazing Suppliers" loading="lazy"></div>
+            <div class="blog-body">
+              <div class="blog-date">February 24, 2026</div>
+              <h3>Wine, Women and Shoes + Our Amazing Suppliers</h3>
+              <p>Two months into 2026, and the momentum at MMY US continues to build.</p>
+              <span class="blog-link">Read the full newsletter <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     THE OLD WAY IS UNRELIABLE
+     NEWSLETTER ARCHIVE (full list, all 9, with real thumbnails)
      ============================================================ -->
-<section class="bg-paper2 section-pad-sm">
+<section class="bg-paper2 section-pad" style="padding-top:0;">
   <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">Why we exist</span><span class="dim-line"></span></div>
-    <h2 class="h-section reveal" style="max-width:680px;">Developing multifamily housing is time-intensive and unreliable.</h2>
-    <div class="row g-3 g-md-4 mt-3">
-      <div class="col-md-6">
-        <div class="pain-card reveal">
-          <span class="pain-tag">Industry average</span>
-          <span class="pain-num">42 weeks</span>
-          <p>Average time to build a single family home in the US.</p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="pain-card reveal reveal-delay-1">
-          <span class="pain-tag">Budget risk</span>
-          <span class="pain-num">70%</span>
-          <p>Share of projects that overrun their budget, averaging 18% over.</p>
-        </div>
-      </div>
-    </div>
+    <div class="dim-divider reveal" style="margin-bottom:22px;"><span class="dim-label">Newsletter archive</span><span class="dim-line"></span></div>
 
-    <div class="steel-panel reveal">
-      <div class="steel-panel-content">
-        <p class="steel-headline">MMY's robust cold-formed steel system allows us to massively increase construction speed.</p>
-        <div class="row g-3 g-md-4 mt-2">
-          <div class="col-md-4">
-            <div class="steel-check">
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
-              <span>85% of work done off-site</span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="steel-check">
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
-              <span>Utilizes pre-cast and ICF blocks</span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="steel-check">
-              <svg class="icon" style="width:18px;height:18px;"><use href="#icon-check" xlink:href="#icon-check"/></svg>
-              <span>Single structural profile</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="press-list">
 
-<!-- ============================================================
-     LEADERSHIP
-     ============================================================ -->
-<section class="bg-paper section-pad" id="leadership">
-  <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">Our leadership</span><span class="dim-line"></span></div>
-    <h2 class="h-section reveal" style="max-width:680px;">A wide range of construction industry experts.</h2>
-    <p class="lede reveal reveal-delay-1 mt-2">Extensive international and US development &amp; project experience, including in New York, Kentucky, Indiana, and Ohio. Tap or hover a photo for a short bio.</p>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/housing-solutions-growth-community-impact" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bfddf1d24a13a34aab76c_Untitled_design-6.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">May 14, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Housing Solutions, Growth &amp; Community Impact</span>
+          <span class="press-excerpt">MMY US is expanding its vision &mdash; and we're taking you with us.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-    <div class="team-row reveal mt-4">
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6554b5ee045719e82a87dd57_Robin.jpg" alt="Robin Bartram-Brown">
-          <div class="team-tooltip"><p>Over 30 years in construction, development, and project management. Spearheaded the UK's transition to modular construction, directing over 10 mega-projects valued at over $1 billion.</p></div>
-        </div>
-        <h3>Robin Bartram-Brown</h3>
-        <span class="team-avatar-title">CEO</span>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/project-spotlight---sellersburg---wine-women-and-shoes" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bfc917b185d83a102c9e5_Screenshot_2026-04-08_at_12.10.28.png" alt="" loading="lazy"></span>
+        <span class="press-date">April 9, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Project Spotlight &mdash; Sellersburg &mdash; Wine, Women and Shoes</span>
+          <span class="press-excerpt">2026 has already proven to be a landmark year for MMY US. We've pushed boundaries, reached new operational heights, and deepened our commitment to community impact.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/655d6754d8633e8e4c691953_spencer-wylie-greyscale.png" alt="Spencer Wylie">
-          <div class="team-tooltip"><p>25 years of executive experience in international construction consultancy across the US, Europe, and the Middle East. Has overseen projects for Saudi Aramco, PIF and IKEA.</p></div>
-        </div>
-        <h3>Spencer Wylie</h3>
-        <span class="team-avatar-title">Chairman, CCO</span>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/wine-women-and-shoes-our-amazing-suppliers" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6ccf6941d28d977ca139ed_WWS-Louisville-2026-Website_Splash-scaled.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">February 24, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Wine, Women and Shoes + Our Amazing Suppliers</span>
+          <span class="press-excerpt">Two months into 2026, and the momentum at MMY US continues to build.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a737ee506f95aeac131f8e6_Rob%20Davis.jpeg" alt="Rob Davis">
-          <div class="team-tooltip"><p>Over 40 years in construction and manufacturing operations. Has overseen more than $1 billion in finished goods production across modular, FEMA, single-family and multifamily projects.</p></div>
-        </div>
-        <h3>Rob Davis</h3>
-        <span class="team-avatar-title">General Manager</span>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/behind-the-scenes-at-mmy-us" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bfa1274f483d9127a2649_unnamed-27.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">February 2, 2026</span>
+        <span class="press-body">
+          <span class="press-title">Behind the Scenes at MMY US</span>
+          <span class="press-excerpt">As the new year began, Team MMY US closed down the plant to allow our staff to spend the festive season with their loved ones.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a737f3f30be52e486f2912a_Syrus%20Smith.jpeg" alt="Syrus Smith">
-          <div class="team-tooltip"><p>Over a decade in residential construction management, focused on affordable housing since 2020. Expertise in LEED certification and city/state permitting.</p></div>
-        </div>
-        <h3>Syrus Smith</h3>
-        <span class="team-avatar-title">Construction Director</span>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/a-landmark-month-for-mmy-us-and-team-kentucky" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bf797e55b9008bb112905_Copy_of_White_Photocentric_Business_Facebook_Cover.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">December 18, 2025</span>
+        <span class="press-body">
+          <span class="press-title">A Landmark Month for MMY US And Team Kentucky</span>
+          <span class="press-excerpt">What a month it has been. As we close out 2025, we do so with extraordinary momentum, deep gratitude, and a renewed commitment to the communities we serve.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a737f88b8b2b9a3e6de65ca_Kaylet%20Lott.jpeg" alt="Kayley Lott">
-          <div class="team-tooltip"><p>Over nine years in accounting and financial management, supporting the business through financial reporting, budgeting, and sound financial controls.</p></div>
-        </div>
-        <h3>Kayley Lott</h3>
-        <span class="team-avatar-title">Finance Manager</span>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/a-record-breaking-month-at-mmy-u" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bf7167b63d8dc33f2cc4b_White_Modern_Aesthetic_Photo_Collage_Banner-4.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">November 14, 2025</span>
+        <span class="press-body">
+          <span class="press-title">Another Record-Breaking Month at MMY US</span>
+          <span class="press-excerpt">From setting a three-story, nine-unit condominium in just three days to making major strides on our Sellersburg project, the momentum keeps building.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-      <div class="team-avatar-item">
-        <div class="team-avatar-wrap">
-          <img class="team-avatar" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a737fd97981f6ef79902ec2_Howard%20Smith.jpeg" alt="Howard Smith">
-          <div class="team-tooltip"><p>Extensive experience in procurement, materials management, and supply chain operations across construction and manufacturing.</p></div>
-        </div>
-        <h3>Howard Smith</h3>
-        <span class="team-avatar-title">Procurement Manager</span>
-      </div>
-    </div>
-  </div>
-</section>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/a-record-breaking-month-at-mmy-us" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bf62adbe0e83a8c84facf_PHOTO-2025-10-09-15-15-55.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">October 10, 2025</span>
+        <span class="press-body">
+          <span class="press-title">A Record-Breaking Month at MMY US</span>
+          <span class="press-excerpt">This past month has been nothing short of extraordinary for MMY US. Our teams have achieved record-breaking engineering milestones and delivered outstanding results across multiple major projects.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
 
-<!-- ============================================================
-     PODCAST
-     ============================================================ -->
-<section class="bg-ink section-pad-sm">
-  <div class="container-mmy">
-    <div class="podcast-card reveal">
-      <img class="podcast-cover" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655629272dc7e808e285fdf4_episode%20cover.png" alt="Inside Modular podcast cover">
-      <div class="podcast-body">
-        <span class="mt-tag" style="color:var(--wood)">INSIDE MODULAR &middot; EPISODE 55</span>
-        <h3 style="color:#fff; font-family:var(--ff-display); font-size:20px; margin:6px 0 14px;">Hear from our CEO</h3>
-        <audio controls style="width:100%; max-width:420px;" src="https://www.buzzsprout.com/1178546/12772580-a-bird-s-eye-view-of-the-middle-eastern-modular-construction-market-w-mmy-global.mp3"></audio>
-      </div>
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/109-modular-boxes-have-been-built" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6cd435412ff86d63006338_IMG_6578%20(1).jpeg" alt="" loading="lazy"></span>
+        <span class="press-date">July 31, 2025</span>
+        <span class="press-body">
+          <span class="press-title">109 Modular Boxes Have Been Built</span>
+          <span class="press-excerpt">On February 29, 2024, Mayor Craig Greenberg joined Governor Andy Beshear, Councilwoman Tammy Hawkins, and MMY US leadership to officially announce the opening of our first U.S. modular housing manufacturing facility &mdash; bringing 73 new jobs to West Louisville.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
+      <a class="press-row reveal" href="https://www.mmyus.com/newsletter/the-first-leed-platinum-single-family-steel-modular-home-in-usa-" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a6bece2718970104373d6fd_Brown_and_White_Minimalist_Home_Interior_Design_Photo_Collage_LinkedIn_Post.jpg" alt="" loading="lazy"></span>
+        <span class="press-date">July 31, 2025</span>
+        <span class="press-body">
+          <span class="press-title">The First LEED Platinum Single Family Steel Modular Home in USA</span>
+          <span class="press-excerpt">From industry leaders, corporate partners, and suppliers, to neighbours, local business owners, and even modular enthusiasts who came to see innovation in action. We were thrilled to welcome over 150 guests on the day.</span>
+        </span>
+        <svg class="icon press-arrow" style="width:16px;height:16px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1242,14 +1253,14 @@ select:focus-visible,
      ============================================================ -->
 <section class="bg-paper2 section-pad">
   <div class="container-mmy">
-    <div class="cta-shell reveal" style="text-align:left;">
-      <div class="cta-grid" style="grid-template-columns:1fr; text-align:left;">
+    <div class="cta-shell reveal">
+      <div class="cta-grid" style="grid-template-columns:1fr;">
         <div>
-          <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">Work with us</span><span class="dim-line"></span></div>
-          <h2 class="h-section" style="color:#fff;">Want to build with the team behind the fastest modular system in the US?</h2>
+          <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">Never miss an update</span><span class="dim-line"></span></div>
+          <h2 class="h-section" style="color:#fff; max-width:600px;">Follow along as we build.</h2>
           <div class="hero-actions mt-4" style="margin-bottom:0;">
-            <a href="index.html#contact" class="btn-mmy btn-primary-mmy">Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
-            <a href="tender-opportunities.html" class="btn-mmy btn-ghost-dark">See tender opportunities</a>
+            <a href="https://www.linkedin.com/company/mmy-us/" target="_blank" rel="noopener" class="btn-mmy btn-primary-mmy">Follow on LinkedIn <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+            <a href="index.html#contact" class="btn-mmy btn-ghost-dark">Get in touch</a>
           </div>
         </div>
       </div>
