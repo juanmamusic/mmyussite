@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Floor Plans | MMY US</title>
-<meta name="description" content="Pre-designed, pre-engineered floor plans from MMY US — from a cozy 1-bedroom cottage to a luxury 4-bedroom villa.">
+<meta name="description" content="Pre-designed, pre-engineered floor plans from MMY US — from a 2 bed starter home to a luxury 3-bedroom home.">
 <meta property="og:title" content="Floor Plans | MMY US">
-<meta property="og:description" content="Pre-designed, pre-engineered floor plans from MMY US — from a cozy 1-bedroom cottage to a luxury 4-bedroom villa.">
+<meta property="og:description" content="Pre-designed, pre-engineered floor plans from MMY US — from a 2 bed starter home to a luxury 3-bedroom home.">
 <meta property="og:type" content="website">
-<link rel="icon" href="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -947,13 +950,21 @@ select:focus-visible,
 
 /* ---------- Floor plan full cards ---------- */
 .fp-full-card{ border:1px solid var(--line-light); border-radius:var(--radius); overflow:hidden; background:#fff; height:100%; }
-.fp-full-media{ aspect-ratio:4/3; background:var(--paper-2); display:flex; align-items:center; justify-content:center; }
+.fp-full-media{ aspect-ratio:4/3; background:var(--paper-2); display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .fp-full-media svg{ width:60%; height:60%; opacity:.8; color:var(--blue); }
+.fp-full-media img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+.fp-full-card:hover .fp-full-media img{ transform:scale(1.04); }
 .fp-full-body{ padding:20px 22px 22px; }
-.fp-full-body h3{ font-family:var(--ff-display); font-size:17px; font-weight:600; margin-bottom:12px; }
+.fp-full-body h3{ font-family:var(--ff-display); font-size:17px; font-weight:600; margin-bottom:4px; }
+.fp-full-sqft{ font-family:var(--ff-mono); font-size:11px; color:var(--wood); text-transform:uppercase; letter-spacing:.04em; margin-bottom:12px; display:block; }
 .fp-full-meta{ display:flex; gap:16px; padding-top:14px; border-top:1px solid var(--line-light); }
 .fp-full-meta div{ font-family:var(--ff-mono); font-size:11px; color:var(--tx-3); }
 .fp-full-meta strong{ display:block; font-family:var(--ff-display); font-size:19px; color:var(--tx-1); font-weight:600; }
+.fp-full-download{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  font-family:var(--ff-mono); font-size:12px; color:var(--blue); text-decoration:none;
+}
+.fp-full-download:hover{ color:var(--ink); }
 
 /* ---------- Blog / newsletter cards ---------- */
 .blog-card{ border:1px solid var(--line-light); border-radius:var(--radius-lg); overflow:hidden; background:#fff; height:100%; transition:transform .3s ease, box-shadow .3s ease; }
@@ -1016,7 +1027,6 @@ select:focus-visible,
       <a href="press.html">Press</a>
       <a href="news.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
-      <a href="invest.html">Invest</a>
     </nav>
     <div class="nav-cta">
       <a href="index.html#contact" class="btn-mmy btn-primary-mmy d-none d-sm-inline-flex">
@@ -1045,7 +1055,6 @@ select:focus-visible,
   <a href="press.html" class="mm-link">Press</a>
   <a href="news.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
-  <a href="invest.html" class="mm-link">Invest</a>
   <a href="index.html#contact" class="mm-link">Get in touch</a>
   <div class="mm-foot">Louisville, KY &middot; hello@mmyus.com</div>
 </div>
@@ -1073,16 +1082,15 @@ select:focus-visible,
     <div class="dim-divider reveal"><span class="dim-label">Catalog</span><span class="dim-line"></span></div>
     <div class="row align-items-end gy-3 mb-2">
       <div class="col-lg-7">
-        <h2 class="h-section reveal">5 pre-permitted layouts, ready to configure.</h2>
+        <h2 class="h-section reveal">8 pre-permitted layouts, ready to configure.</h2>
       </div>
       <div class="col-lg-5">
-        <p class="lede reveal reveal-delay-1">From a cozy 1-bedroom cottage to a luxury 4-bedroom villa — filter by bedroom count to find your fit.</p>
+        <p class="lede reveal reveal-delay-1">From a 2 bed, 1 bath starter home, a 2 bed, 2 bath apartment, to a luxury 3-bedroom 2 bath home — filter by bedroom count to find your fit.</p>
       </div>
     </div>
 
     <div class="filter-tabs reveal" id="fpFilters">
       <button class="filter-tab is-active" data-filter="all">All</button>
-      <button class="filter-tab" data-filter="1">1 Bed</button>
       <button class="filter-tab" data-filter="2">2 Bed</button>
       <button class="filter-tab" data-filter="3">3 Bed</button>
       <button class="filter-tab" data-filter="4">4 Bed</button>
@@ -1090,72 +1098,130 @@ select:focus-visible,
 
     <div class="row g-3 g-md-4 mt-2" id="fpGrid">
 
-      <div class="col-sm-6 col-lg-4 fp-item" data-beds="1">
+      <div class="col-sm-6 col-lg-4 fp-item" data-beds="2">
         <div class="fp-full-card reveal">
-          <div class="fp-full-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M13 3v10M3 13h10M13 13h8"/><circle cx="17" cy="17" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fp-full-media"><img src="images/floor-plans/richmond-exterior.jpg" alt="Richmond floor plan exterior rendering" loading="lazy"></div>
           <div class="fp-full-body">
-            <h3>Cozy 1 Bedroom Cottage</h3>
+            <h3>Richmond</h3>
+            <span class="fp-full-sqft">Starter home</span>
             <div class="fp-full-meta">
-              <div><strong>600</strong>ft&sup2;</div>
-              <div><strong>1</strong>bed</div>
+              <div><strong>727</strong>ft&sup2;</div>
+              <div><strong>2</strong>bed</div>
               <div><strong>1</strong>bath</div>
             </div>
+            <a class="fp-full-download" href="floor-plans/richmond.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6 col-lg-4 fp-item" data-beds="2">
         <div class="fp-full-card reveal reveal-delay-1">
-          <div class="fp-full-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v8M3 11h18M12 11v10M17 11v10"/><circle cx="7" cy="17" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fp-full-media"><img src="images/floor-plans/clarence-duplex-exterior.jpg" alt="Clarence Duplex floor plan exterior rendering" loading="lazy"></div>
           <div class="fp-full-body">
-            <h3>Modern 2 Bedroom Apartment</h3>
+            <h3>Clarence — Duplex</h3>
+            <span class="fp-full-sqft">Two attached units</span>
             <div class="fp-full-meta">
-              <div><strong>850</strong>ft&sup2;</div>
+              <div><strong>1,455</strong>ft&sup2;</div>
               <div><strong>2</strong>bed</div>
-              <div><strong>2</strong>bath</div>
+              <div><strong>1</strong>bath</div>
             </div>
+            <a class="fp-full-download" href="floor-plans/clarence-duplex.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6 col-lg-4 fp-item" data-beds="2">
         <div class="fp-full-card reveal reveal-delay-2">
-          <div class="fp-full-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M13 3v18M3 12h10M17 6h4M17 18h4"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fp-full-media"><img src="images/floor-plans/clarence-townhomes-exterior.jpg" alt="Clarence Townhomes floor plan exterior rendering" loading="lazy"></div>
           <div class="fp-full-body">
-            <h3>Charming 2 Bedroom Townhouse</h3>
+            <h3>Clarence — Townhomes</h3>
+            <span class="fp-full-sqft">Row of three attached units</span>
             <div class="fp-full-meta">
-              <div><strong>1,200</strong>ft&sup2;</div>
+              <div><strong>1,455</strong>ft&sup2;</div>
               <div><strong>2</strong>bed</div>
-              <div><strong>2</strong>bath</div>
+              <div><strong>1</strong>bath</div>
             </div>
+            <a class="fp-full-download" href="floor-plans/clarence-townhomes.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 fp-item" data-beds="2">
+        <div class="fp-full-card reveal">
+          <div class="fp-full-media"><img src="images/floor-plans/multiplex-exterior.jpg" alt="Multiplex floor plan exterior rendering, 9-Plex building" loading="lazy"></div>
+          <div class="fp-full-body">
+            <h3>Multiplex — 2 Bed</h3>
+            <span class="fp-full-sqft">9-Plex unit</span>
+            <div class="fp-full-meta">
+              <div><strong>897</strong>ft&sup2;</div>
+              <div><strong>2</strong>bed</div>
+              <div><strong>1</strong>bath</div>
+            </div>
+            <a class="fp-full-download" href="floor-plans/multiplex-2bed.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6 col-lg-4 fp-item" data-beds="3">
         <div class="fp-full-card reveal">
-          <div class="fp-full-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18M9 9h12M9 15h12"/><circle cx="6" cy="6" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <div class="fp-full-media"><img src="images/floor-plans/hanover-exterior.jpg" alt="Hanover floor plan exterior rendering" loading="lazy"></div>
           <div class="fp-full-body">
-            <h3>Spacious 3 Bedroom House</h3>
+            <h3>Hanover</h3>
+            <span class="fp-full-sqft">Two-storey</span>
             <div class="fp-full-meta">
-              <div><strong>1,500</strong>ft&sup2;</div>
+              <div><strong>1,410</strong>ft&sup2;</div>
               <div><strong>3</strong>bed</div>
               <div><strong>2</strong>bath</div>
             </div>
+            <a class="fp-full-download" href="floor-plans/hanover.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 fp-item" data-beds="3">
+        <div class="fp-full-card reveal reveal-delay-1">
+          <div class="fp-full-media"><img src="images/floor-plans/windsor-exterior.jpg" alt="Windsor floor plan exterior rendering" loading="lazy"></div>
+          <div class="fp-full-body">
+            <h3>Windsor</h3>
+            <span class="fp-full-sqft">Luxury single-storey</span>
+            <div class="fp-full-meta">
+              <div><strong>1,182</strong>ft&sup2;</div>
+              <div><strong>3</strong>bed</div>
+              <div><strong>2</strong>bath</div>
+            </div>
+            <a class="fp-full-download" href="floor-plans/windsor.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 fp-item" data-beds="3">
+        <div class="fp-full-card reveal reveal-delay-2">
+          <div class="fp-full-media"><img src="images/floor-plans/multiplex-exterior.jpg" alt="Multiplex floor plan exterior rendering, 9-Plex building" loading="lazy"></div>
+          <div class="fp-full-body">
+            <h3>Multiplex — 3 Bed</h3>
+            <span class="fp-full-sqft">9-Plex unit</span>
+            <div class="fp-full-meta">
+              <div><strong>1,100</strong>ft&sup2;</div>
+              <div><strong>3</strong>bed</div>
+              <div><strong>2</strong>bath</div>
+            </div>
+            <a class="fp-full-download" href="floor-plans/multiplex-3bed.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="col-sm-6 col-lg-4 fp-item" data-beds="4">
-        <div class="fp-full-card reveal reveal-delay-1">
-          <div class="fp-full-media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M8 3v18M16 3v18M3 12h5M16 12h5"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+        <div class="fp-full-card reveal reveal-delay-2">
+          <div class="fp-full-media"><img src="images/floor-plans/tudor-exterior.jpg" alt="Tudor floor plan exterior rendering" loading="lazy"></div>
           <div class="fp-full-body">
-            <h3>Luxury 4 Bedroom Villa</h3>
+            <h3>Tudor</h3>
+            <span class="fp-full-sqft">Single-storey</span>
             <div class="fp-full-meta">
-              <div><strong>2,500</strong>ft&sup2;</div>
+              <div><strong>1,314</strong>ft&sup2;</div>
               <div><strong>4</strong>bed</div>
-              <div><strong>3</strong>bath</div>
+              <div><strong>2</strong>bath</div>
             </div>
+            <a class="fp-full-download" href="floor-plans/tudor.pdf" target="_blank" rel="noopener">Download floor plan (PDF) <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
@@ -1235,8 +1301,7 @@ select:focus-visible,
         <h6>Company</h6>
         <a href="news.html">News</a>
         <a href="tender-opportunities.html">Tender Opportunities</a>
-        <a href="invest.html">Invest</a>
-        <a href="index.html#contact">Get in touch</a>
+          <a href="index.html#contact">Get in touch</a>
       </div>
       <div class="footer-col">
         <h6>Legal</h6>

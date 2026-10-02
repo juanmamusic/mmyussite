@@ -8,7 +8,10 @@
 <meta property="og:title" content="Press | MMY US">
 <meta property="og:description" content="MMY US is comprised of UK modular construction pioneers, boasting decades of experience. Having completed over 100 projects totaling more than $5 billion, we've established ourselves as a reliable and trusted partner in MMC and modular construction.">
 <meta property="og:type" content="website">
-<link rel="icon" href="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -992,9 +995,15 @@ select:focus-visible,
 .press-excerpt{ font-size:13.5px; color:var(--tx-2); line-height:1.55; max-width:680px; }
 .press-arrow{ color:var(--tx-3); flex-shrink:0; margin-top:6px; transition:transform .25s ease, color .25s ease; }
 .press-row:hover .press-arrow{ transform:translateX(3px); color:var(--blue); }
+.press-thumb{ width:84px; height:64px; border-radius:10px; overflow:hidden; flex-shrink:0; background:var(--paper-2); }
+.press-thumb img{ width:100%; height:100%; object-fit:cover; }
+.press-thumb.is-fallback{ display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--sage,#5B8D89), var(--ink,#1E1E1E)); }
+.press-thumb.is-fallback svg{ width:22px; height:22px; color:#fff; opacity:.85; }
+.press-thumb.is-fallback svg.icon-house-mark{ width:32.5px; height:27.5px; }
 @media (max-width:576px){
   .press-row{ flex-wrap:wrap; }
   .press-date{ width:auto; }
+  .press-thumb{ width:64px; height:48px; }
 }
 
 /* ---------- Simple page header (subpages) ---------- */
@@ -1023,6 +1032,7 @@ select:focus-visible,
   <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M7 8c-2.2 0-4 1.8-4 4v4h4v-4H5c0-1.1.9-2 2-2V8Zm10 0c-2.2 0-4 1.8-4 4v4h4v-4h-2c0-1.1.9-2 2-2V8Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-house" viewBox="0 0 176 148"><path d="M153.899 95.8H134.719C133.529 95.8 132.589 96.76 132.589 97.93V123.66C132.589 124.83 133.529 125.79 134.719 125.79H153.899C155.069 125.79 156.029 124.83 156.029 123.66V97.93C156.029 96.76 155.069 95.8 153.899 95.8ZM142.179 121.53H136.839V112.92H142.179V121.53ZM142.179 108.66H136.839V100.05H142.179V108.66ZM151.769 121.53H146.429V112.92H151.769V121.53ZM151.769 108.66H146.429V100.05H151.769V108.66ZM120.639 95.8H101.439C100.269 95.8 99.3086 96.76 99.3086 97.93V123.66C99.3086 124.83 100.269 125.79 101.439 125.79H120.639C121.809 125.79 122.769 124.83 122.769 123.66V97.93C122.769 96.76 121.809 95.8 120.639 95.8ZM108.919 121.53H103.559V112.92H108.919V121.53ZM108.919 108.66H103.559V100.05H108.919V108.66ZM118.509 121.53H113.169V112.92H118.509V121.53ZM118.509 108.66H113.169V100.05H118.509V108.66ZM63.4186 39.17H43.8786C42.7086 39.17 41.7486 40.13 41.7486 41.3V63.08C41.7486 64.25 42.7086 65.21 43.8786 65.21H63.4186C64.5886 65.21 65.5486 64.25 65.5486 63.08V41.3C65.5486 40.13 64.5886 39.17 63.4186 39.17ZM52.5686 60.95H45.9986V53.25H52.5686V60.95ZM52.5686 51.12H45.9986V43.42H52.5686V51.12ZM61.2886 60.95H54.6986V53.25H61.2886V60.95ZM61.2886 51.12H54.6986V43.42H61.2886V51.12ZM167.099 143.58V73.17H171.249C172.419 73.17 173.379 72.23 173.379 71.04V62.32C173.379 61.15 172.419 60.19 171.249 60.19H91.9886V54.02L92.7786 54.76C93.1586 55.12 93.6886 55.33 94.2486 55.33H105.159C106.029 55.33 106.819 54.8 107.139 54.01C107.459 53.2 107.269 52.27 106.629 51.67L89.5986 35.42V12.21H91.0886C92.2586 12.21 93.2186 11.27 93.2186 10.08V2.13C93.2186 0.96 92.2586 0 91.0886 0H72.6486C71.4786 0 70.5186 0.96 70.5186 2.13V10.08C70.5186 11.27 71.4786 12.21 72.6486 12.21H74.1386V20.72L55.1386 2.59C54.3086 1.82 53.0086 1.8 52.2086 2.59L0.658588 51.7C0.0185879 52.3 -0.171412 53.23 0.148588 54.02C0.468588 54.83 1.25859 55.36 2.12859 55.36H13.0586C13.5286 55.36 13.9686 55.21 14.3386 54.93V143.58H5.31859V147.83H38.8286C38.8286 147.83 38.8686 147.85 38.8886 147.85H68.3786C68.3786 147.85 68.4186 147.83 68.4386 147.83H175.589V143.58H167.079H167.099ZM169.119 64.45V68.92H91.9886V64.45H169.119ZM74.7686 4.25H88.9486V7.95H74.7686V4.25ZM85.3386 12.21V31.39L78.3886 24.78V12.21H85.3386ZM12.2086 51.1H7.44859L53.6786 7.08L99.8486 51.1H95.1086L55.1386 13.04C54.3086 12.25 53.0086 12.25 52.2086 13.04L12.2086 51.1ZM66.2586 143.58H41.0186V100.16H66.2586V143.58ZM87.7386 143.58H70.5186V98.03C70.5186 96.86 69.5786 95.9 68.3886 95.9H38.8986C37.7086 95.9 36.7686 96.86 36.7686 98.03V143.58H18.5886V50.91L53.6786 17.5L87.7486 49.97V143.58H87.7386ZM162.849 143.58H91.9886V79.87H162.849V143.58ZM162.849 77.75H91.9886V73.18H162.849V77.75ZM134.719 125.78H153.899C155.069 125.78 156.029 124.82 156.029 123.65V97.92C156.029 96.75 155.069 95.79 153.899 95.79H134.719C133.529 95.79 132.589 96.75 132.589 97.92V123.65C132.589 124.82 133.529 125.78 134.719 125.78ZM146.429 100.05H151.769V108.66H146.429V100.05ZM146.429 112.92H151.769V121.53H146.429V112.92ZM136.839 100.05H142.179V108.66H136.839V100.05ZM136.839 112.92H142.179V121.53H136.839V112.92ZM101.439 125.78H120.639C121.809 125.78 122.769 124.82 122.769 123.65V97.92C122.769 96.75 121.809 95.79 120.639 95.79H101.439C100.269 95.79 99.3086 96.75 99.3086 97.92V123.65C99.3086 124.82 100.269 125.78 101.439 125.78ZM113.179 100.05H118.519V108.66H113.179V100.05ZM113.179 112.92H118.519V121.53H113.179V112.92ZM103.559 100.05H108.919V108.66H103.559V100.05ZM103.559 112.92H108.919V121.53H103.559V112.92ZM41.7486 41.3V63.08C41.7486 64.25 42.7086 65.21 43.8786 65.21H63.4186C64.5886 65.21 65.5486 64.25 65.5486 63.08V41.3C65.5486 40.13 64.5886 39.17 63.4186 39.17H43.8786C42.7086 39.17 41.7486 40.13 41.7486 41.3ZM54.6986 43.42H61.2886V51.12H54.6986V43.42ZM54.6986 53.25H61.2886V60.95H54.6986V53.25ZM45.9986 43.42H52.5686V51.12H45.9986V43.42ZM45.9986 53.25H52.5686V60.95H45.9986V53.25ZM63.4186 39.17H43.8786C42.7086 39.17 41.7486 40.13 41.7486 41.3V63.08C41.7486 64.25 42.7086 65.21 43.8786 65.21H63.4186C64.5886 65.21 65.5486 64.25 65.5486 63.08V41.3C65.5486 40.13 64.5886 39.17 63.4186 39.17ZM52.5686 60.95H45.9986V53.25H52.5686V60.95ZM52.5686 51.12H45.9986V43.42H52.5686V51.12ZM61.2886 60.95H54.6986V53.25H61.2886V60.95ZM61.2886 51.12H54.6986V43.42H61.2886V51.12ZM153.899 95.8H134.719C133.529 95.8 132.589 96.76 132.589 97.93V123.66C132.589 124.83 133.529 125.79 134.719 125.79H153.899C155.069 125.79 156.029 124.83 156.029 123.66V97.93C156.029 96.76 155.069 95.8 153.899 95.8ZM142.179 121.53H136.839V112.92H142.179V121.53ZM142.179 108.66H136.839V100.05H142.179V108.66ZM151.769 121.53H146.429V112.92H151.769V121.53ZM151.769 108.66H146.429V100.05H151.769V108.66ZM120.639 95.8H101.439C100.269 95.8 99.3086 96.76 99.3086 97.93V123.66C99.3086 124.83 100.269 125.79 101.439 125.79H120.639C121.809 125.79 122.769 124.83 122.769 123.66V97.93C122.769 96.76 121.809 95.8 120.639 95.8ZM108.919 121.53H103.559V112.92H108.919V121.53ZM108.919 108.66H103.559V100.05H108.919V108.66ZM118.509 121.53H113.169V112.92H118.509V121.53ZM118.509 108.66H113.169V100.05H118.509V108.66Z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="icon-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke-width="1.6"/><path d="M8 10.5V17M8 7.5v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v-2.5" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="icon-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.2" stroke-width="1.6"/><path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01" stroke-width="2.2" stroke-linecap="round"/></symbol>
@@ -1047,7 +1057,6 @@ select:focus-visible,
       <a href="press.html">Press</a>
       <a href="news.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
-      <a href="invest.html">Invest</a>
     </nav>
     <div class="nav-cta">
       <a href="index.html#contact" class="btn-mmy btn-primary-mmy d-none d-sm-inline-flex">
@@ -1076,7 +1085,6 @@ select:focus-visible,
   <a href="press.html" class="mm-link">Press</a>
   <a href="news.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
-  <a href="invest.html" class="mm-link">Invest</a>
   <a href="index.html#contact" class="mm-link">Get in touch</a>
   <div class="mm-foot">Louisville, KY &middot; hello@mmyus.com</div>
 </div>
@@ -1131,6 +1139,7 @@ select:focus-visible,
     <div class="press-list mt-4">
 
       <a class="press-row reveal" href="https://drive.google.com/file/d/1SW9IJ-Mp2XeqJgW9ALhma0YcGb0eQ0sH/view" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">July 27, 2026</span>
         <span class="press-body">
           <span class="press-title">MMY, Flexjet received boost from state for Northeast Ohio expansion</span>
@@ -1140,6 +1149,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.jobsohio.com/newsroom/news-press/mmy-us-inc-to-open-new-operations-in-cleveland" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://www.jobsohio.com/img/asset/aW1hZ2VzL2Z5MjdfY29sbF90Y2EtanVseV9zb2NpYWxfcHJvamVjdC1nb2JzbWFja2VkX3ByLWltYWdlLmpwZw/fy27_coll_tca-july_social_project-gobsmacked_pr-image.jpg?w=1200&h=630&fit=crop&s=1f0946e844aaab4ba0f585b375ee72bc" alt="" loading="lazy"></span>
         <span class="press-date">July 27, 2026</span>
         <span class="press-body">
           <span class="press-title">MMY US Inc. to Open New Operations in Cleveland</span>
@@ -1149,6 +1159,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://prefabnews.com.au/cleveland-wellman-seaver-morgan-modular-factory-2026/" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://prefabnews.com.au/wp-content/uploads/2026/07/steel-modular-construction.jpg" alt="" loading="lazy"></span>
         <span class="press-date">July 8, 2026</span>
         <span class="press-body">
           <span class="press-title">Cleveland Turns a 1901 Steel-Mill Factory Into a Modular Housing Plant</span>
@@ -1158,6 +1169,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.cleveland19.com/2026/07/01/abandoned-factory-help-build-new-modular-homes-cleveland/" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://gray-woio-prod.gtv-cdn.com/resizer/v2/Q5DFA4R56FDLLPCQIV7CRG4UXA.jpg?auth=3dc23a2f6ed8ed2f4d43b93c60974749fcdcb95ad61f7b1732104b530aa606e2&width=1200&height=600&smart=true" alt="" loading="lazy"></span>
         <span class="press-date">July 1, 2026</span>
         <span class="press-body">
           <span class="press-title">Abandoned factory to help build new modular homes in Cleveland</span>
@@ -1167,6 +1179,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://neo-trans.blog/2026/06/30/housing-maker-finds-home-in-midline/" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">June 30, 2026</span>
         <span class="press-body">
           <span class="press-title">Housing maker finds home in Midline</span>
@@ -1176,6 +1189,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://drive.google.com/file/d/1p_kb6swoAkfjdZEGudQQKVexnL9rNFCY/view" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">June 30, 2026</span>
         <span class="press-body">
           <span class="press-title">Midline's Wellman-Seaver-Morgan building gets modular home builder</span>
@@ -1185,6 +1199,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.ideastream.org/community/2026-06-30/midline-lands-first-big-deal-to-revive-manufacturing-on-clevelands-east-side" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://npr.brightspotcdn.com/dims4/default/286ca79/2147483647/strip/true/crop/4000x2100+0+39/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F27%2F44%2F31ab847a432f9ca248ce525fd595%2Fsrf-3.jpg" alt="" loading="lazy"></span>
         <span class="press-date">June 30, 2026</span>
         <span class="press-body">
           <span class="press-title">Midline lands first big deal to revive manufacturing on Cleveland's East Side</span>
@@ -1194,6 +1209,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.news5cleveland.com/news/local-news/cleveland-taps-modular-housing-manufacturer-to-remake-historic-factory-aiming-for-150-jobs" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://ewscripps.brightspotcdn.com/dims4/default/70e40aa/2147483647/strip/true/crop/1920x1008+0+36/resize/1200x630!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F65%2Fcd%2F3a1c1ead414f9de7224070853c3a%2Fvlcsnap-2026-06-30-11h20m58s422.jpg" alt="" loading="lazy"></span>
         <span class="press-date">June 30, 2026</span>
         <span class="press-body">
           <span class="press-title">Cleveland taps modular housing manufacturer to remake historic East Side factory</span>
@@ -1203,6 +1219,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.clevelandohio.gov/news/cleveland-advances-housing-manufacturing-strategy-mmy-us-selection-and-historic-tax-credit" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://www.clevelandohio.gov/sites/clevelandohio/files/2023-08/CLE_4516_hi-res.jpg" alt="" loading="lazy"></span>
         <span class="press-date">June 30, 2026</span>
         <span class="press-body">
           <span class="press-title">Cleveland Advances Housing Manufacturing Strategy with MMY US Selection and Historic Tax Credit Award</span>
@@ -1212,6 +1229,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.offsitedirtnetwork.com/post/louisville-s-new-modular-factory-brings-hope-and-jobs" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">December 17, 2025</span>
         <span class="press-body">
           <span class="press-title">Louisville's New Modular Factory Brings Hope and Jobs</span>
@@ -1221,6 +1239,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://drive.google.com/file/d/1CuM4pb65r7Kk3iEq3fpWmgxeeBfITiNM/view" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">November 20, 2025</span>
         <span class="press-body">
           <span class="press-title">MMY US wins Business Impact Award for modular housing work</span>
@@ -1230,6 +1249,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://onelouisville.org/project-perspective-how-mmy-us-landed-its-first-us-facility-in-greater-louisville/" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">March 13, 2024</span>
         <span class="press-body">
           <span class="press-title">One Louisville welcomes MMY US to Louisville</span>
@@ -1239,6 +1259,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://spectrumnews1.com/ky/louisville/news/2024/03/01/parkland-neighborhood-investment-modular-housing" target="_blank" rel="noopener">
+        <span class="press-thumb"><img src="https://s7d2.scene7.com/is/image/TWCNews/parkland_neighborhood_investment_ky_0229" alt="" loading="lazy"></span>
         <span class="press-date">March 1, 2024</span>
         <span class="press-body">
           <span class="press-title">Modular housing manufacturing facility coming to west Louisville</span>
@@ -1248,6 +1269,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.wdrb.com/news/business/modular-housing-manufacturer-opening-facility-in-west-louisville-adding-73-jobs/article_3e30c04c-d730-11ee-9914-e30f69c3f76a.html" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">February 29, 2024</span>
         <span class="press-body">
           <span class="press-title">Modular housing manufacturer opening facility in west Louisville, adding 73 jobs</span>
@@ -1257,6 +1279,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.kentucky.gov/Pages/Activity-stream.aspx?n=GovernorBeshear&prId=2111" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">February 29, 2024</span>
         <span class="press-body">
           <span class="press-title">Gov. Beshear Joins Modular Housing Manufacturer MMY US To Celebrate $6.1 Million West Louisville Facility</span>
@@ -1266,6 +1289,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://www.lanereport.com/171525/2024/02/modular-housing-manufacturer-celebrates-6-1m-west-louisville-facility/" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">February 29, 2024</span>
         <span class="press-body">
           <span class="press-title">Modular housing manufacturer celebrates $6.1M West Louisville facility</span>
@@ -1275,6 +1299,7 @@ select:focus-visible,
       </a>
 
       <a class="press-row reveal" href="https://drive.google.com/file/d/1Skb6p-_UKwwckEEIjfzX81CSaBAyr6jT/view" target="_blank" rel="noopener">
+        <span class="press-thumb is-fallback"><svg class="icon icon-house-mark" viewBox="0 0 176 148"><use href="#icon-house" xlink:href="#icon-house"/></svg></span>
         <span class="press-date">February 29, 2024</span>
         <span class="press-body">
           <span class="press-title">MMY Global investing $6 million in new West Louisville facility</span>
@@ -1325,8 +1350,7 @@ select:focus-visible,
         <h6>Company</h6>
         <a href="news.html">News</a>
         <a href="tender-opportunities.html">Tender Opportunities</a>
-        <a href="invest.html">Invest</a>
-        <a href="index.html#contact">Get in touch</a>
+          <a href="index.html#contact">Get in touch</a>
       </div>
       <div class="footer-col">
         <h6>Legal</h6>
