@@ -1,59 +1,43 @@
-MMY US — website prototype
-============================
+MMY US — website
+================
 
 CONTENTS
 --------
-8 HTML pages (self-contained, no build step) + local asset folders:
+  index.html                          Home
+  about.html                          About (now includes factories, "Quadplex to 72-Plex", 4 facades)
+  projects.html                       Projects (featured cards open the case studies)
+  case-study-elizabeth.html           Case study — Elizabeth, LEED Platinum two-storey home
+  case-study-windsor.html             Case study — Windsor, LEED Platinum single-storey home
+  case-study-nine-plex.html           Case study — MMY US 9-Plex, LEED Gold multi-family
+  case-study-sellersburg.html         Case study — Sellersburg Scholar House, 36 units
+  case-study-mcc-medical-center.html  Case study — MCC Medical Center Campus, 60 units
+  press.html                          Press
+  news.html                           News
+  tender-opportunities.html           Tender Opportunities
+  invest.html                         Invest (built, NOT linked in navigation)
+  images/                             Photos, favicons, REDS10 Group logo
+  images/media/                       Home page video (placeholder until the factory flythrough file is supplied)
+  images/case-studies/                9-Plex renders used on its case study
 
-  index.html                  Home
-  about.html                  About
-  projects.html                Projects
-  floor-plans.html             Floor Plans
-  press.html                   Press
-  news.html                    News (newsletter archive)
-  tender-opportunities.html    Tender Opportunities
-  invest.html                  Invest (not linked in navigation — see NOTES)
-  images/                      6 local interior photos used on the Home page
-  images/floor-plans/          6 exterior renders used on the Floor Plans page
-  floor-plans/                 6 downloadable floor plan PDFs (Richmond,
-                                Clarence Duplex, Clarence Townhomes, Hanover,
-                                Windsor, Tudor)
-
-  All other images/video on the site are hotlinked from the live
-  mmyus.com CDN — nothing else to upload for those.
+  Some images still load from the current site's Webflow CDN
+  (cdn.prod.website-files.com). Keep the Webflow plan active until
+  those images are copied into images/ — otherwise they will break.
 
 HOW TO DEPLOY
 -------------
-1. Upload every file and all three folders (images/, images/floor-plans/,
-   floor-plans/) AS-IS to the ROOT of the destination (e.g. public_html/,
-   www/, or htdocs/) — do not rename any file or folder, all internal
-   links are relative and case-sensitive.
-2. index.html is the homepage — most hosts serve it automatically at
-   the domain root. If not, set it as the default/index document.
-3. No database, no server-side code, no build process required —
-   pure static HTML/CSS/JS (Bootstrap 5 via CDN).
+1. Upload every file and folder AS-IS to the web root (e.g. public_html/).
+   Do not rename anything — links are relative and case-sensitive.
+2. index.html is the homepage.
+3. Static HTML/CSS/JS only (Bootstrap 5 via CDN). No database or build step.
 
 NOTES
 -----
-- invest.html is built and fully functional but intentionally NOT
-  linked from any nav, mobile menu or footer (the client isn't
-  raising right now). It still works if visited directly, and can be
-  relinked in nav/mobile-menu/footer on all 8 pages by re-adding:
-  <a href="invest.html">Invest</a> — easy to restore when ready.
-- Floor Plans page now shows 6 real MMY US models (Richmond, Clarence
-  Duplex, Clarence Townhomes, Hanover, Windsor, Tudor) with real
-  exterior photos and a PDF download for each, filterable by bedroom
-  count (2/3/4 bed).
-- Press page now shows a thumbnail next to each of the 17 articles —
-  real article images where the source site exposed one, a styled
-  fallback icon where it didn't (a few sources are Google Drive
-  scans or sites with no usable og:image).
-- Projects catalog (bottom of Projects page) had 2 placeholder/fake
-  entries ("Rapid Housing Initiative") — replaced with 2 real MMY US
-  projects (Windsor model / Louisville & Cleveland, and the 9-Plex /
-  Rebound project), reusing already-verified real photos and data.
-- All content, stats and images are sourced from the live mmyus.com
-  site or supplied directly by the client, per their no-fabrication
-  requirement.
-- Privacy Policy / Terms of Service links are placeholders (not
-  prioritized for this prototype per client feedback).
+- Floor Plans page removed from the site and all navigation (client
+  request). The previous page, its PDFs and images are kept separately
+  in _archive/floor-plans-page/ (outside this folder) in case it returns.
+- invest.html is unlinked but works if visited directly. To relaunch,
+  add <a href="invest.html">Invest</a> back to the nav, mobile menu and
+  footer of each page.
+- Contact form is front-end only until a form handler is connected
+  (submissions should go to hello@mmyus.com).
+- Privacy Policy / Terms of Service links are placeholders.

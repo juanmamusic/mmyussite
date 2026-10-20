@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Projects | MMY US</title>
-<meta name="description" content="Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky and Indiana.">
+<meta name="description" content="Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky, Indiana and Ohio.">
 <meta property="og:title" content="Projects | MMY US">
-<meta property="og:description" content="Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky and Indiana.">
+<meta property="og:description" content="Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky, Indiana and Ohio.">
 <meta property="og:type" content="website">
 <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -790,6 +790,10 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-col a:hover{ color:#fff; }
 .footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
 @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
+.footer-group{ display:inline-flex; align-items:center; gap:12px; margin-top:22px; padding:10px 14px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
+.footer-group span{ font-family:var(--ff-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
+.footer-group img{ height:30px; width:auto; }
+.footer-group:hover{ border-color:var(--tx-d3); color:#fff; }
 .social-row{ display:flex; gap:12px; }
 .social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
 .social-row a:hover{ border-color:var(--blue-bright); color:var(--blue-bright); }
@@ -939,7 +943,13 @@ select:focus-visible,
 .why-card p{ font-size:13.5px; color:var(--tx-2); line-height:1.55; margin:0; }
 
 /* ---------- Full project cards (Projects page) ---------- */
-.full-project-card{
+a.full-project-card{ display:block; color:inherit; text-decoration:none; height:100%; }
+a.full-project-card:hover{ color:inherit; }
+.full-project-media.is-empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background:linear-gradient(135deg, var(--blue), var(--ink)); color:rgba(255,255,255,.85); }
+.full-project-media.is-empty span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; }
+.project-link{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-family:var(--ff-mono); font-size:12px; font-weight:600; color:var(--blue); }
+a.full-project-card:hover .project-link{ color:var(--blue-deep); }
+.full-project-card{ scroll-margin-top:110px;
   border:1px solid var(--line-light); border-radius:var(--radius-lg); overflow:hidden; background:#fff; height:100%;
   transition:transform .3s ease, box-shadow .3s ease;
 }
@@ -1018,7 +1028,6 @@ select:focus-visible,
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="floor-plans.html">Floor Plans</a>
       <a href="press.html">Press</a>
       <a href="news.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
@@ -1046,7 +1055,6 @@ select:focus-visible,
   <a href="index.html#process" class="mm-link">How it works</a>
   <a href="about.html" class="mm-link">About</a>
   <a href="projects.html" class="mm-link">Projects</a>
-  <a href="floor-plans.html" class="mm-link">Floor Plans</a>
   <a href="press.html" class="mm-link">Press</a>
   <a href="news.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
@@ -1065,7 +1073,7 @@ select:focus-visible,
   <div class="container-mmy" style="position:relative;z-index:1;">
     <div class="eyebrow reveal is-in" style="color:var(--wood)">Projects</div>
     <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:760px;">Built, not rendered.</h1>
-    <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky and Indiana.</p>
+    <p class="hero-sub reveal is-in reveal-delay-2" style="margin-bottom:0;">Single-family homes and multiplexes delivered by MMY US, from urban infill lots to affordable multifamily developments across Kentucky, Indiana and Ohio.</p>
   </div>
 </section>
 
@@ -1079,7 +1087,7 @@ select:focus-visible,
 
     <div class="row g-3 g-md-4 mt-3">
       <div class="col-md-6">
-        <div class="full-project-card reveal">
+        <a id="elizabeth" class="full-project-card reveal" href="case-study-elizabeth.html">
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Single-family &middot; 2025</span>
@@ -1094,11 +1102,12 @@ select:focus-visible,
               <span>Model: <strong>Elizabeth</strong></span>
               <span>Client: <strong>Louisville Metro Government</strong></span>
             </div>
+            <span class="project-link">Read the case study <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-6">
-        <div class="full-project-card reveal reveal-delay-1">
+        <a id="windsor" class="full-project-card reveal reveal-delay-1" href="case-study-windsor.html">
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Single-family &middot; 2026</span>
@@ -1112,29 +1121,31 @@ select:focus-visible,
               <span>Model: <strong>Windsor</strong></span>
               <span>Client: <strong>Louisville Metro Government &amp; City of Cleveland</strong> (thru Habitat for Humanity)</span>
             </div>
+            <span class="project-link">Read the case study <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-6">
-        <div class="full-project-card reveal reveal-delay-2">
+        <a id="nine-plex" class="full-project-card reveal reveal-delay-2" href="case-study-nine-plex.html">
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Multifamily &middot; 2025</span>
-            <h3 class="project-title">LEED Platinum MMY US 9-Plex — Louisville</h3>
-            <p class="project-desc">LEED Platinum apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
+            <h3 class="project-title">LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland</h3>
+            <p class="project-desc">LEED Gold apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
             <div class="project-badges">
               <span class="badge-mmy">90% faster build</span>
               <span class="badge-mmy">3x energy efficient</span>
             </div>
             <div class="project-meta">
-              <span>Model: <strong>9-Plex</strong> (with elevator)</span>
+              <span>Model: <strong>9-Plex</strong> (optional elevator)</span>
               <span>Client: <strong>Rebound</strong></span>
             </div>
+            <span class="project-link">Read the case study <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
           </div>
-        </div>
+        </a>
       </div>
       <div class="col-md-6">
-        <div class="full-project-card reveal reveal-delay-3">
+        <a id="sellersburg" class="full-project-card reveal reveal-delay-3" href="case-study-sellersburg.html">
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Multifamily &middot; 2025</span>
@@ -1147,8 +1158,24 @@ select:focus-visible,
             <div class="project-meta">
               <span>Client: <strong>Family Scholar House</strong></span>
             </div>
+            <span class="project-link">Read the case study <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
           </div>
-        </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a id="mcc-medical-center" class="full-project-card reveal" href="case-study-mcc-medical-center.html">
+          <div class="full-project-media is-empty"><svg class="icon" style="width:44px;height:44px"><use href="#icon-building" xlink:href="#icon-building"/></svg><span>Project photography coming soon</span></div>
+          <div class="project-body">
+            <span class="full-project-tag">Affordable multi-family &middot; Louisville</span>
+            <h3 class="project-title">MCC Medical Center Campus — LEED Gold 60-Unit Multi-Family</h3>
+            <p class="project-desc">60 residential units and 108 volumetric modules on a constrained urban campus site.</p>
+            <div class="project-badges">
+              <span class="badge-mmy">LEED Gold</span>
+              <span class="badge-mmy">Affordable Housing</span>
+            </div>
+            <span class="project-link">Read the case study <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -1279,12 +1306,12 @@ select:focus-visible,
       <div class="col-md-6 col-lg-4 proj-item" data-cat="residential">
         <div class="tender-card reveal reveal-delay-2" style="cursor:default;">
           <div class="tender-media">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="LEED Platinum MMY US 9-Plex — Louisville">
+            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland">
           </div>
           <div class="tender-body">
             <div class="tender-type">Residential</div>
             <h3>Louisville, KY — 9-Plex</h3>
-            <p>LEED Platinum 9-Plex with elevator, pre-permitted for delivery across Kentucky and Ohio.</p>
+            <p>LEED Gold 9-Plex with optional elevator, pre-permitted for delivery across Kentucky and Ohio.</p>
             <div class="tender-meta">
               <div><span class="lbl">Client</span><span class="val">Rebound</span></div>
               <div><span class="lbl">Year</span><span class="val">2025</span></div>
@@ -1309,7 +1336,7 @@ select:focus-visible,
           <h2 class="h-section" style="color:#fff; max-width:640px;">Tell us what you're trying to build.</h2>
           <div class="hero-actions mt-4" style="margin-bottom:0;">
             <a href="index.html#contact" class="btn-mmy btn-primary-mmy">Get in touch <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
-            <a href="floor-plans.html" class="btn-mmy btn-ghost-dark">Browse floor plans</a>
+            <a href="index.html#process" class="btn-mmy btn-ghost-dark">See how it works</a>
           </div>
         </div>
       </div>
@@ -1324,13 +1351,16 @@ select:focus-visible,
       <div>
         <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
         <p class="footer-desc">Permanent, code-compliant modular homes and multiplexes — designed, manufactured and delivered across the United States.</p>
+        <a class="footer-group" href="https://www.reds10.com/" target="_blank" rel="noopener" aria-label="A REDS10 Group company (opens reds10.com)">
+          <span>A REDS10 Group<br>company</span>
+          <img src="images/reds10-group-logo-light.png" alt="REDS10 Group">
+        </a>
       </div>
       <div class="footer-col">
         <h6>Product</h6>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="floor-plans.html">Floor Plans</a>
         <a href="press.html">Press</a>
       </div>
       <div class="footer-col">

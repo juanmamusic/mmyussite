@@ -787,6 +787,10 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-col a:hover{ color:#fff; }
 .footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
 @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
+.footer-group{ display:inline-flex; align-items:center; gap:12px; margin-top:22px; padding:10px 14px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
+.footer-group span{ font-family:var(--ff-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
+.footer-group img{ height:30px; width:auto; }
+.footer-group:hover{ border-color:var(--tx-d3); color:#fff; }
 .social-row{ display:flex; gap:12px; }
 .social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
 .social-row a:hover{ border-color:var(--blue-bright); color:var(--blue-bright); }
@@ -1015,7 +1019,6 @@ select:focus-visible,
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="floor-plans.html">Floor Plans</a>
       <a href="press.html">Press</a>
       <a href="news.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
@@ -1043,7 +1046,6 @@ select:focus-visible,
   <a href="index.html#process" class="mm-link">How it works</a>
   <a href="about.html" class="mm-link">About</a>
   <a href="projects.html" class="mm-link">Projects</a>
-  <a href="floor-plans.html" class="mm-link">Floor Plans</a>
   <a href="press.html" class="mm-link">Press</a>
   <a href="news.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
@@ -1232,13 +1234,16 @@ select:focus-visible,
       <div>
         <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
         <p class="footer-desc">Permanent, code-compliant modular homes and multiplexes — designed, manufactured and delivered across the United States.</p>
+        <a class="footer-group" href="https://www.reds10.com/" target="_blank" rel="noopener" aria-label="A REDS10 Group company (opens reds10.com)">
+          <span>A REDS10 Group<br>company</span>
+          <img src="images/reds10-group-logo-light.png" alt="REDS10 Group">
+        </a>
       </div>
       <div class="footer-col">
         <h6>Product</h6>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="floor-plans.html">Floor Plans</a>
         <a href="press.html">Press</a>
       </div>
       <div class="footer-col">

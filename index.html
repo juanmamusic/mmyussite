@@ -833,12 +833,78 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-col a:hover{ color:#fff; }
 .footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
 @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
+.footer-group{ display:inline-flex; align-items:center; gap:12px; margin-top:22px; padding:10px 14px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
+.footer-group span{ font-family:var(--ff-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
+.footer-group img{ height:30px; width:auto; }
+.footer-group:hover{ border-color:var(--tx-d3); color:#fff; }
 .social-row{ display:flex; gap:12px; }
 .social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
 .social-row a:hover{ border-color:var(--blue-bright); color:var(--blue-bright); }
 
 /* utility */
 .count-up{ font-variant-numeric:tabular-nums; }
+/* ---------- Hero achievement badge ---------- */
+.hero-badge{ display:inline-flex; align-items:center; gap:10px; padding:7px 14px 7px 8px; border-radius:100px; border:1px solid rgba(212,178,131,.38); background:rgba(212,178,131,.08); color:#EBDDC7; font-size:12.5px; font-weight:500; line-height:1.35; text-decoration:none; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:border-color .25s ease, background .25s ease; max-width:100%; }
+.hero-badge:hover{ border-color:var(--gold); background:rgba(212,178,131,.14); color:#fff; }
+.hero-badge .hb-pill{ flex-shrink:0; font-family:var(--ff-mono); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); background:var(--gold); padding:4px 8px; border-radius:100px; }
+
+/* ---------- Factory capacity ---------- */
+.factory-video{ position:relative; border-radius:var(--radius-lg); overflow:hidden; background:var(--ink-2); border:1px solid var(--line-dark); aspect-ratio:16/10; }
+.factory-video video{ width:100%; height:100%; object-fit:cover; display:block; }
+.factory-video::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(30,30,30,0) 55%, rgba(30,30,30,.55)); pointer-events:none; }
+.factory-cards{ display:grid; gap:14px; }
+.factory-card{ border:1px solid var(--line-dark); border-radius:var(--radius); padding:22px 22px 20px; background:rgba(255,255,255,.02); }
+.factory-card-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:16px; }
+.factory-card-head h3{ font-family:var(--ff-display); font-size:18px; font-weight:600; color:#fff; margin:0; }
+.factory-card-head span{ font-family:var(--ff-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--tx-d3); }
+.factory-card-head .is-future{ color:var(--gold); }
+.factory-stats{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.factory-stat .num{ font-family:var(--ff-display); font-size:clamp(26px,3vw,34px); font-weight:600; color:#fff; line-height:1; font-variant-numeric:tabular-nums; }
+.factory-stat .lbl{ font-size:12.5px; color:var(--tx-d2); margin-top:6px; }
+.factory-bar{ height:6px; border-radius:100px; background:var(--ink-2); overflow:hidden; margin-top:18px; border:1px solid var(--line-dark); }
+.factory-bar span{ display:block; height:100%; width:0; border-radius:100px; background:linear-gradient(90deg, var(--blue-deep), var(--blue-bright)); transition:width 1.4s var(--ease); }
+.factory-card.is-future .factory-bar span{ background:linear-gradient(90deg, #9A7B4F, var(--gold)); }
+.is-in .factory-bar span{ width:var(--w); }
+
+/* ---------- LEED achievement ---------- */
+.leed-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:992px){ .leed-grid{ grid-template-columns:1.45fr 1fr; gap:18px; } }
+.leed-left{ display:grid; gap:14px; }
+@media (min-width:992px){ .leed-left{ gap:18px; } }
+.leed-card{ position:relative; overflow:hidden; background:var(--ink); color:#fff; border-radius:var(--radius-lg); padding:32px 30px 30px; min-height:280px; display:flex; flex-direction:column; justify-content:space-between; gap:28px; }
+.leed-card::before{ content:""; position:absolute; width:420px; height:420px; right:-120px; top:-160px; border-radius:50%; background:radial-gradient(circle, rgba(91,141,137,.35), rgba(91,141,137,0) 65%); pointer-events:none; }
+.leed-card h3{ font-family:var(--ff-display); font-size:clamp(24px,2.6vw,32px); font-weight:600; line-height:1.15; max-width:420px; position:relative; }
+.leed-card-foot{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:18px; position:relative; }
+.leed-card-foot p{ font-size:14.5px; color:var(--tx-d2); max-width:340px; margin:0; line-height:1.6; }
+.leed-photos{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (min-width:992px){ .leed-photos{ gap:18px; } }
+.leed-photo{ border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:3/2; background:var(--paper-2); }
+.leed-photo img, .leed-hero-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.leed-photo:hover img, .leed-hero-photo:hover img{ transform:scale(1.05); }
+.leed-right{ display:grid; gap:14px; grid-template-rows:1fr auto; }
+@media (min-width:992px){ .leed-right{ gap:18px; } }
+.leed-hero-photo{ position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:340px; background:var(--paper-2); }
+.leed-hero-photo img{ position:absolute; inset:0; }
+.leed-medal{ position:absolute; left:16px; top:16px; display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border-radius:100px; background:rgba(30,30,30,.62); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); color:#fff; font-family:var(--ff-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+.leed-medal i{ width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px rgba(212,178,131,.25); }
+.leed-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; padding:18px; border-radius:var(--radius-lg); background:var(--ink); }
+.leed-tags span{ font-family:var(--ff-mono); font-size:11.5px; color:var(--tx-d2); padding:6px 12px; border:1px solid var(--line-dark); border-radius:100px; }
+
+/* ---------- Old way (after the MMY US solution) ---------- */
+.oldway-head{ display:flex; flex-direction:column; gap:10px; margin-bottom:26px; }
+.oldway-head h3{ font-family:var(--ff-display); font-size:clamp(20px,2.2vw,26px); font-weight:600; margin:0; max-width:640px; line-height:1.25; }
+
+/* ---------- Exploded module ---------- */
+.exploded-row{ margin-top:56px; padding-top:44px; border-top:1px solid var(--line-dark); }
+.exploded-figure{ border-radius:var(--radius-lg); overflow:hidden; background:#fff; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:18px; }
+.exploded-figure img{ width:100%; height:100%; object-fit:contain; }
+
+/* ---------- Clickable project cards ---------- */
+a.project-card{ display:block; color:inherit; text-decoration:none; }
+a.project-card:hover{ color:inherit; }
+.project-link{ display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-family:var(--ff-mono); font-size:12px; font-weight:600; color:var(--blue); }
+a.project-card:hover .project-link{ color:var(--blue-deep); }
+
 .mt-tag{ font-family:var(--ff-mono); font-size:11px; color:var(--tx-3); }
 
 /* ---------- Accessibility: visible keyboard focus ---------- */
@@ -904,7 +970,6 @@ select:focus-visible,
       <a href="#top">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="floor-plans.html">Floor Plans</a>
       <a href="press.html">Press</a>
       <a href="news.html">News</a>
       <a href="tender-opportunities.html">Tender Opportunities</a>
@@ -932,7 +997,6 @@ select:focus-visible,
   <a href="#process" class="mm-link">How it works</a>
   <a href="about.html" class="mm-link">About</a>
   <a href="projects.html" class="mm-link">Projects</a>
-  <a href="floor-plans.html" class="mm-link">Floor Plans</a>
   <a href="press.html" class="mm-link">Press</a>
   <a href="news.html" class="mm-link">News</a>
   <a href="tender-opportunities.html" class="mm-link">Tender Opportunities</a>
@@ -952,7 +1016,8 @@ select:focus-visible,
     <div class="container-mmy">
       <div class="hero-columns">
         <div class="hero-copy">
-          <h1 class="h-hero hero-title reveal is-in reveal-delay-1" style="margin-top:8px;">
+          <a href="#leed" class="hero-badge reveal is-in"><span class="hb-pill">LEED Platinum</span> First affordable steel modular LEED Platinum single-family home in the USA</a>
+          <h1 class="h-hero hero-title reveal is-in reveal-delay-1" style="margin-top:18px;">
             Your next home doesn't have to be a <em>construction project.</em>
           </h1>
           <p class="hero-sub reveal is-in reveal-delay-2">
@@ -1009,20 +1074,102 @@ select:focus-visible,
 </section>
 
 <!-- ============================================================
-     PROBLEM / AGITATE
+     FACTORY CAPACITY
+     ============================================================ -->
+<section class="bg-ink section-pad" id="factories">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Factory capacity</span><span class="dim-line"></span></div>
+    <div class="row gy-4 mb-4">
+      <div class="col-lg-7">
+        <h2 class="h-section reveal" style="color:#fff">Homes built on a production line, at the scale housing needs.</h2>
+      </div>
+      <div class="col-lg-5">
+        <p class="lede reveal reveal-delay-1">Every MMY US home is manufactured indoors, then delivered to site as finished modules.</p>
+      </div>
+    </div>
+
+    <div class="row g-3 g-lg-4 align-items-stretch">
+      <div class="col-lg-7">
+        <div class="factory-video reveal">
+          <video autoplay muted loop playsinline preload="metadata" poster="images/media/mmy-flythrough-poster.jpg" aria-label="MMY US video">
+            <source src="images/media/mmy-flythrough.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="factory-cards" id="factoryCards">
+          <div class="factory-card reveal reveal-delay-1">
+            <div class="factory-card-head"><h3>Factory 1</h3><span>Louisville, KY</span></div>
+            <div class="factory-stats">
+              <div class="factory-stat"><div class="num"><span class="count-up-f" data-target="120000">0</span></div><div class="lbl">sq ft of production space</div></div>
+              <div class="factory-stat"><div class="num"><span class="count-up-f" data-target="480">0</span></div><div class="lbl">homes a year</div></div>
+            </div>
+            <div class="factory-bar"><span style="--w:40%"></span></div>
+          </div>
+          <div class="factory-card is-future reveal reveal-delay-2">
+            <div class="factory-card-head"><h3>Factory 2</h3><span class="is-future">Cleveland, OH &middot; 2027</span></div>
+            <div class="factory-stats">
+              <div class="factory-stat"><div class="num"><span class="count-up-f" data-target="180000">0</span></div><div class="lbl">sq ft of production space</div></div>
+              <div class="factory-stat"><div class="num"><span class="count-up-f" data-target="720">0</span></div><div class="lbl">homes a year</div></div>
+            </div>
+            <div class="factory-bar"><span style="--w:60%"></span></div>
+          </div>
+          <a href="about.html#factories" class="btn-mmy btn-ghost-dark reveal reveal-delay-3" style="justify-self:start;">More about our factories <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LEED PLATINUM — BIGGEST ACHIEVEMENT
+     ============================================================ -->
+<section class="bg-paper section-pad" id="leed">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Our biggest achievement</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal mb-4" style="max-width:820px;">The first affordable steel modular LEED Platinum single-family home in the USA.</h2>
+
+    <div class="leed-grid">
+      <div class="leed-left">
+        <div class="leed-card reveal">
+          <h3>LEED Platinum Single Family Home — Elizabeth</h3>
+          <div class="leed-card-foot">
+            <p>1,700 sq ft, 3 Bed, 2 Bath LEED Platinum 2-story home, exceeding IBC &amp; State Code, pre-permitted and delivered in 18 weeks, lot to key.</p>
+            <a href="projects.html#elizabeth" class="btn-mmy btn-ghost-dark">Explore <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+          </div>
+        </div>
+        <div class="leed-photos reveal reveal-delay-1">
+          <div class="leed-photo"><img src="images/leed-elizabeth-living.jpg" alt="Elizabeth model living room" loading="lazy"></div>
+          <div class="leed-photo"><img src="images/leed-elizabeth-bedroom.jpg" alt="Elizabeth model bedroom" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="leed-right reveal reveal-delay-2">
+        <div class="leed-hero-photo">
+          <img src="images/leed-elizabeth-exterior.jpg" alt="Elizabeth model, LEED Platinum steel modular single-family home, exterior" loading="lazy">
+          <span class="leed-medal"><i></i> LEED Platinum</span>
+        </div>
+        <div class="leed-tags"><span>Faster build</span><span>Energy efficient</span><span>Less embedded carbon</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROBLEM — SOLUTION FIRST (MMY US), THEN THE TRADITIONAL WAY
      ============================================================ -->
 <section class="bg-paper section-pad" id="problem">
   <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">The old way</span><span class="dim-line"></span></div>
-    <div class="row align-items-center gy-4 mb-5">
+    <div class="dim-divider reveal"><span class="dim-label">A better way to build</span><span class="dim-line"></span></div>
+    <div class="row align-items-center gy-4">
       <div class="col-lg-7">
         <h2 class="h-section reveal">Construction was never built to scale like housing demand needs it to.</h2>
-        <p class="lede reveal reveal-delay-1 mt-3">Every added trade, every weather day, every change order adds risk to a project that was already unpredictable.</p>
+        <p class="lede reveal reveal-delay-1 mt-3" style="color:var(--tx-1);">MMY US removes the guesswork by building your development somewhere it can actually be controlled: a factory.</p>
+        <a href="#process" class="btn-mmy btn-ghost-light mt-4 reveal reveal-delay-2">See the process <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
       </div>
       <div class="col-lg-5">
         <div class="a2d-panel reveal reveal-delay-2">
           <div class="a2d-head">
-            <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">Meanwhile, at MMY US</span>
+            <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">At MMY US</span>
             <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional project is still waiting on permits <sup>*</sup></p>
           </div>
           <div class="a2d-stage" aria-hidden="true">
@@ -1035,35 +1182,6 @@ select:focus-visible,
           <p class="a2d-footnote">*In the states that MMY US is registered, currently Kentucky, Indiana &amp; Ohio.</p>
         </div>
       </div>
-    </div>
-
-    <div class="row g-3 g-md-4">
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-1">
-          <span class="pain-tag">Timeline risk</span>
-          <span class="pain-num">42 weeks</span>
-          <p>The U.S. average to construct a single family home — before permitting delays or a single subcontractor falls behind schedule.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-2">
-          <span class="pain-tag">Coordination risk</span>
-          <span class="pain-num">12+ trades</span>
-          <p>Architects, engineers, framers, electricians, plumbers, drywallers. Every trade you add is another schedule to sync and another point of failure.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-3">
-          <span class="pain-tag">Cost risk</span>
-          <span class="pain-num">Estimate only</span>
-          <p>Without a finished single family home digital model before you break ground, your budget stays a guess until the building is done.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="pivot-row reveal">
-      <p>MMY US removes the guesswork by building your development somewhere it can actually be controlled: a factory.</p>
-      <a href="#process" class="btn-mmy btn-ghost-light">See the process <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
     </div>
   </div>
 </section>
@@ -1091,44 +1209,34 @@ select:focus-visible,
 </section>
 
 <!-- ============================================================
-     BENEFITS — ROW 2 (beyond faster/accurate/sustainable)
+     THE TRADITIONAL WAY
      ============================================================ -->
 <section class="bg-paper section-pad-sm">
   <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">Beyond the headline numbers</span><span class="dim-line"></span></div>
-    <h2 class="h-section reveal" style="max-width:680px;">Our Single Family Homes &amp; Multiplex's have benefits beyond being faster, more accurate and more sustainable.</h2>
-
-    <div class="row g-3 g-md-4 mt-4">
-      <div class="col-sm-6 col-lg-3">
-        <div class="mini-stat-card reveal">
-          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-users" xlink:href="#icon-users"/></svg></div>
-          <span class="mini-stat-num">70%</span>
-          <div class="mini-stat-title">Fewer site workers</div>
-          <p>Labor requirements are fewer overall, and off-site labor can be performed in far more attractive working conditions.</p>
+    <div class="dim-divider reveal"><span class="dim-label">The traditional way</span><span class="dim-line"></span></div>
+    <div class="oldway-head">
+      <h3 class="reveal">Every added trade, every weather day, every change order adds risk to a project that was already unpredictable.</h3>
+    </div>
+    <div class="row g-3 g-md-4">
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-1">
+          <span class="pain-tag">Timeline risk</span>
+          <span class="pain-num">42 weeks</span>
+          <p>The U.S. average to construct a single family home — before permitting delays or a single subcontractor falls behind schedule.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="mini-stat-card reveal reveal-delay-1">
-          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-shield" xlink:href="#icon-shield"/></svg></div>
-          <span class="mini-stat-num">90%</span>
-          <div class="mini-stat-title">Fewer accidents</div>
-          <p>All work is performed at ground level with weather protection, resulting in far safer working conditions.</p>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-2">
+          <span class="pain-tag">Coordination risk</span>
+          <span class="pain-num">12+ trades</span>
+          <p>Architects, engineers, framers, electricians, plumbers, drywallers. Every trade you add is another schedule to sync and another point of failure.</p>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="mini-stat-card reveal reveal-delay-2">
-          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-cube" xlink:href="#icon-cube"/></svg></div>
-          <span class="mini-stat-num">100%</span>
-          <div class="mini-stat-title">Full control</div>
-          <p>Digital records of manufacturing and on-site work feed a building digital twin — full visibility and traceability.</p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3">
-        <div class="mini-stat-card reveal reveal-delay-3">
-          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-drop-slash" xlink:href="#icon-drop-slash"/></svg></div>
-          <span class="mini-stat-num">100%</span>
-          <div class="mini-stat-title">Mold Free</div>
-          <p>High-precision construction and high-performance materials keep every unit free from mold.</p>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-3">
+          <span class="pain-tag">Cost risk</span>
+          <span class="pain-num">Estimate only</span>
+          <p>Without a finished single family home digital model before you break ground, your budget stays a guess until the building is done.</p>
         </div>
       </div>
     </div>
@@ -1207,6 +1315,64 @@ select:focus-visible,
             <h3 class="assembly-title">Handover</h3>
             <p class="assembly-desc">A permanent, code-compliant building, signed off and ready to occupy.</p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row exploded-row align-items-center gy-4">
+      <div class="col-lg-5">
+        <div class="exploded-figure reveal">
+          <img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a750494bc284a51f10ed7df_Sellersburg%20Exploded%20Box%201.png" alt="Exploded diagram of an MMY US module" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <span class="eyebrow reveal" style="color:var(--gold);">Inside a module</span>
+        <h3 class="h-section reveal" style="color:#fff; font-size:clamp(26px,3vw,38px);">Engineered layer by layer.</h3>
+        <p class="lede reveal reveal-delay-1 mt-3">85% of the work happens off-site — structure, MEP, fixtures and finishes, built as complete modules on the factory floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BENEFITS — ROW 2 (beyond faster/accurate/sustainable)
+     ============================================================ -->
+<section class="bg-paper section-pad-sm">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">Beyond the headline numbers</span><span class="dim-line"></span></div>
+    <h2 class="h-section reveal" style="max-width:680px;">Our Single Family Homes &amp; Multiplex's have benefits beyond being faster, more accurate and more sustainable.</h2>
+
+    <div class="row g-3 g-md-4 mt-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-users" xlink:href="#icon-users"/></svg></div>
+          <span class="mini-stat-num">70%</span>
+          <div class="mini-stat-title">Fewer site workers</div>
+          <p>Labor requirements are fewer overall, and off-site labor can be performed in far more attractive working conditions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-1">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-shield" xlink:href="#icon-shield"/></svg></div>
+          <span class="mini-stat-num">90%</span>
+          <div class="mini-stat-title">Fewer accidents</div>
+          <p>All work is performed at ground level with weather protection, resulting in far safer working conditions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-2">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-cube" xlink:href="#icon-cube"/></svg></div>
+          <span class="mini-stat-num">100%</span>
+          <div class="mini-stat-title">Full control</div>
+          <p>Digital records of manufacturing and on-site work feed a building digital twin — full visibility and traceability.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="mini-stat-card reveal reveal-delay-3">
+          <div class="mini-stat-icon"><svg class="icon" style="width:20px;height:20px"><use href="#icon-drop-slash" xlink:href="#icon-drop-slash"/></svg></div>
+          <span class="mini-stat-num">100%</span>
+          <div class="mini-stat-title">Mold Free</div>
+          <p>High-precision construction and high-performance materials keep every unit free from mold.</p>
         </div>
       </div>
     </div>
@@ -1338,93 +1504,6 @@ select:focus-visible,
 </section>
 
 <!-- ============================================================
-     SCALE / CONFIGURATION
-     ============================================================ -->
-<section class="bg-paper2 section-pad-sm" id="scale">
-  <div class="container-mmy">
-    <div class="scale-shell reveal">
-      <div class="scale-inner">
-        <div class="dim-divider" style="margin-bottom:8px;"><span class="dim-label">One system, any scale</span><span class="dim-line"></span></div>
-        <div class="row gy-4">
-          <div class="col-lg-7">
-            <h2 class="h-section" style="color:#fff;">From a Quadplex to a 72-Plex, without reinventing the building.</h2>
-            <p class="lede mt-3" style="color:var(--tx-d2)">Every configuration is assembled from the same catalog of pre-engineered units — scaling up doesn't mean starting over.</p>
-
-            <div class="scale-tiers" id="scaleTiers">
-              <button class="scale-tier is-active" data-value="8">Quadplex</button>
-              <button class="scale-tier" data-value="16">Eightplex</button>
-              <button class="scale-tier" data-value="38">18-Plex</button>
-              <button class="scale-tier" data-value="72">48-Plex</button>
-              <button class="scale-tier" data-value="100">72-Plex</button>
-            </div>
-
-            <div class="scale-bar-wrap">
-              <div class="scale-bar-track"><div class="scale-bar-fill" id="scaleBarFill"></div></div>
-            </div>
-
-            <div class="chip-stack">
-              <span class="unit-chip">Studio</span>
-              <span class="unit-chip">1-Bedroom</span>
-              <span class="unit-chip">2-Bedroom</span>
-              <span class="unit-chip">3-Bedroom</span>
-              <span class="unit-chip">4 facade styles</span>
-              <span class="unit-chip">Up to 8 stories</span>
-              <span class="unit-chip">20+ floor plans</span>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="scale-callouts">
-              <div class="scale-callout">
-                <div class="num">4–60+</div>
-                <div class="lbl">Units per structure, built from the same standardized catalog.</div>
-              </div>
-              <div class="scale-callout">
-                <div class="num">8</div>
-                <div class="lbl">Stories maximum, from single-family infill to mid-rise multiplex.</div>
-              </div>
-              <div class="scale-callout">
-                <div class="num">15–35%</div>
-                <div class="lbl">Lower development cost on orders above 100 units, via volume.</div>
-              </div>
-              <div class="scale-callout">
-                <div class="num">47</div>
-                <div class="lbl">U.S. states where our units are pre-engineered to meet code.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FACADES
-     ============================================================ -->
-<section class="bg-paper section-pad">
-  <div class="container-mmy">
-    <div class="row align-items-end gy-3 mb-4">
-      <div class="col-lg-7">
-        <div class="dim-divider reveal"><span class="dim-label">Style, standardized</span><span class="dim-line"></span></div>
-        <h2 class="h-section reveal">4 facades. Enough variety for any streetscape.</h2>
-      </div>
-      <div class="col-lg-5">
-        <p class="lede reveal reveal-delay-1">Every option ships from the same catalog of pre-engineered units — choose a look that fits the neighborhood, not a one-off design.</p>
-      </div>
-    </div>
-
-    <div class="gallery-grid reveal">
-      <div class="gallery-item wide"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655d525c274ad98f0751befc_V3_A%2000-XX-00_cover%20sheet.png" alt="MMY US multiplex facade elevation" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/655dca8b662f4855abb306f0_Facade%202.png" alt="Facade option 2" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654e4169d9f09f88429742b5_Facade%203.png" alt="Facade option 3" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654e4169418f6b433a717607_Facade%204.png" alt="Facade option 4" loading="lazy"></div>
-      <div class="gallery-item"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a750494bc284a51f10ed7df_Sellersburg%20Exploded%20Box%201.png" alt="Exploded module diagram" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
      INTERIORS
      ============================================================ -->
 <section class="bg-paper2 section-pad">
@@ -1448,39 +1527,6 @@ select:focus-visible,
       <div class="gallery-item"><img src="images/interior-living-room.jpg" alt="Finished modular living room" loading="lazy"></div>
     </div>
 
-    <div class="row g-3 g-md-4 mt-1 reveal">
-      <div class="col-6 col-md-4">
-        <div class="fp-card">
-          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5d9f070f356cfd62bea_floor-plan-1.png" alt="Floor plan 1"></div>
-          <div class="fp-meta">
-            <div><strong>600</strong>ft&sup2;</div>
-            <div><strong>1</strong>bed</div>
-            <div><strong>1</strong>bath</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4">
-        <div class="fp-card">
-          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5d9a92f87d46426aa85_floor-plan-2.png" alt="Floor plan 2"></div>
-          <div class="fp-meta">
-            <div><strong>1,097</strong>ft&sup2;</div>
-            <div><strong>2</strong>bed</div>
-            <div><strong>2</strong>bath</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="fp-card">
-          <div class="fp-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c5a5e2b49987c897df4cd0_floor-plan-3.png" alt="Floor plan 3"></div>
-          <div class="fp-meta">
-            <div><strong>1,239</strong>ft&sup2;</div>
-            <div><strong>3</strong>bed</div>
-            <div><strong>2</strong>bath</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="mt-tag mt-3 reveal">+20 other pre-permitted floor plans available on request &middot; <a href="floor-plans.html" style="color:var(--blue); text-decoration:underline;">See all floor plans →</a></p>
   </div>
 </section>
 
@@ -1500,7 +1546,7 @@ select:focus-visible,
     </div>
 
     <div class="scroller reveal" tabindex="0" role="region" aria-label="Recent projects, scroll horizontally">
-      <div class="project-card">
+      <a class="project-card" href="projects.html#elizabeth">
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Single-family</div>
@@ -1515,10 +1561,11 @@ select:focus-visible,
             <span>Model: <strong>Elizabeth</strong></span>
             <span>Client: <strong>Louisville Metro Government</strong></span>
           </div>
+          <span class="project-link">View project <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="projects.html#windsor">
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2026 &middot; Single-family</div>
@@ -1532,27 +1579,29 @@ select:focus-visible,
             <span>Model: <strong>Windsor</strong></span>
             <span>Client: <strong>Louisville Metro Government &amp; City of Cleveland</strong> (thru Habitat for Humanity)</span>
           </div>
+          <span class="project-link">View project <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="projects.html#nine-plex">
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
-          <h3 class="project-title">LEED Platinum MMY US 9-Plex — Louisville</h3>
-          <p class="project-desc">LEED Platinum apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
+          <h3 class="project-title">LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland</h3>
+          <p class="project-desc">LEED Gold apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
           <div class="project-badges">
             <span class="badge-mmy">90% faster build</span>
             <span class="badge-mmy">3x energy efficient</span>
           </div>
           <div class="project-meta">
-            <span>Model: <strong>9-Plex</strong> (with elevator)</span>
+            <span>Model: <strong>9-Plex</strong> (optional elevator)</span>
             <span>Client: <strong>Rebound</strong></span>
           </div>
+          <span class="project-link">View project <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="projects.html#sellersburg">
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
@@ -1565,8 +1614,9 @@ select:focus-visible,
           <div class="project-meta">
             <span>Client: <strong>Family Scholar House</strong></span>
           </div>
+          <span class="project-link">View project <svg class="icon" style="width:13px;height:13px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></span>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="text-center mt-4 reveal">
@@ -1793,13 +1843,16 @@ select:focus-visible,
       <div>
         <img class="logo-img" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/654a774e9bd5c0a0bb125ef0_logo.svg" alt="MMY US">
         <p class="footer-desc">Permanent, code-compliant modular homes and multiplexes — designed, manufactured and delivered across the United States.</p>
+        <a class="footer-group" href="https://www.reds10.com/" target="_blank" rel="noopener" aria-label="A REDS10 Group company (opens reds10.com)">
+          <span>A REDS10 Group<br>company</span>
+          <img src="images/reds10-group-logo-light.png" alt="REDS10 Group">
+        </a>
       </div>
       <div class="footer-col">
         <h6>Product</h6>
         <a href="#top">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="floor-plans.html">Floor Plans</a>
         <a href="press.html">Press</a>
       </div>
       <div class="footer-col">
@@ -1901,6 +1954,32 @@ select:focus-visible,
       });
     }, {threshold:0.4});
     statIO.observe(statBand);
+  }
+
+  // Factory capacity counters (formatted with thousands separators)
+  var factoryCards = document.getElementById('factoryCards');
+  if(factoryCards){
+    var fDone = false;
+    var fIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !fDone){
+          fDone = true;
+          document.querySelectorAll('.count-up-f').forEach(function(el){
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            if(reduceMotion){ el.textContent = target.toLocaleString('en-US'); return; }
+            var t0 = null;
+            (function step(ts){
+              if(!t0) t0 = ts;
+              var p = Math.min((ts - t0) / 1600, 1);
+              el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target).toLocaleString('en-US');
+              if(p < 1) requestAnimationFrame(step);
+            })(performance.now());
+          });
+          fIO.disconnect();
+        }
+      });
+    }, {threshold:0.3});
+    fIO.observe(factoryCards);
   }
 
   // Hero photo carousel (crossfade)
