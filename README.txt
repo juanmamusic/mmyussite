@@ -18,7 +18,9 @@ CONTENTS
   images/                             Photos, favicons, REDS10 Group logo
   images/case-studies/                9-Plex renders and MCC site photos for the case studies
 
-  The home page factory flythrough video and some images still load from the current site's Webflow CDN
+  images/media/                       Factory flythrough video (home page)
+
+  Some images still load from the current site's Webflow CDN
   (cdn.prod.website-files.com). Keep the Webflow plan active until
   those images are copied into images/ — otherwise they will break.
 
