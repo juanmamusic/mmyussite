@@ -869,7 +869,7 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 /* ---------- LEED achievement ---------- */
 .leed-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:992px){ .leed-grid{ grid-template-columns:1.45fr 1fr; gap:18px; } }
-.leed-left{ display:grid; gap:14px; }
+.leed-left{ display:grid; gap:14px; grid-template-rows:1fr auto; }
 @media (min-width:992px){ .leed-left{ gap:18px; } }
 .leed-card{ position:relative; overflow:hidden; background:var(--ink); color:#fff; border-radius:var(--radius-lg); padding:32px 30px 30px; min-height:280px; display:flex; flex-direction:column; justify-content:space-between; gap:28px; }
 .leed-card::before{ content:""; position:absolute; width:420px; height:420px; right:-120px; top:-160px; border-radius:50%; background:radial-gradient(circle, rgba(91,141,137,.35), rgba(91,141,137,0) 65%); pointer-events:none; }
@@ -881,10 +881,10 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .leed-photo{ border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:3/2; background:var(--paper-2); }
 .leed-photo img, .leed-hero-photo img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
 .leed-photo:hover img, .leed-hero-photo:hover img{ transform:scale(1.05); }
-.leed-right{ display:grid; gap:14px; grid-template-rows:1fr auto; }
+.leed-right{ display:grid; gap:14px; grid-template-rows:auto auto; align-content:start; }
 @media (min-width:992px){ .leed-right{ gap:18px; } }
-.leed-hero-photo{ position:relative; border-radius:var(--radius-lg); overflow:hidden; min-height:340px; background:var(--paper-2); }
-.leed-hero-photo img{ position:absolute; inset:0; }
+.leed-hero-photo{ position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5; background:var(--paper-2); }
+.leed-hero-photo img{ position:absolute; inset:0; object-position:center top; }
 .leed-medal{ position:absolute; left:16px; top:16px; display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border-radius:100px; background:rgba(30,30,30,.62); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); color:#fff; font-family:var(--ff-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
 .leed-medal i{ width:8px; height:8px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px rgba(212,178,131,.25); }
 .leed-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; padding:18px; border-radius:var(--radius-lg); background:var(--ink); }
@@ -1091,8 +1091,8 @@ select:focus-visible,
     <div class="row g-3 g-lg-4 align-items-stretch">
       <div class="col-lg-7">
         <div class="factory-video reveal">
-          <video autoplay muted loop playsinline preload="metadata" poster="images/media/mmy-flythrough-poster.jpg" aria-label="MMY US video">
-            <source src="images/media/mmy-flythrough.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="MMY US factory flythrough">
+            <source src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be%2F67d069f7438806d573ae2653_MMY_Factory-Flythrough_01%20cut%20%281%29-transcode.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -1149,95 +1149,6 @@ select:focus-visible,
           <span class="leed-medal"><i></i> LEED Platinum</span>
         </div>
         <div class="leed-tags"><span>Faster build</span><span>Energy efficient</span><span>Less embedded carbon</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PROBLEM — SOLUTION FIRST (MMY US), THEN THE TRADITIONAL WAY
-     ============================================================ -->
-<section class="bg-paper section-pad" id="problem">
-  <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">A better way to build</span><span class="dim-line"></span></div>
-    <div class="row align-items-center gy-4">
-      <div class="col-lg-7">
-        <h2 class="h-section reveal">Construction was never built to scale like housing demand needs it to.</h2>
-        <p class="lede reveal reveal-delay-1 mt-3" style="color:var(--tx-1);">MMY US removes the guesswork by building your development somewhere it can actually be controlled: a factory.</p>
-        <a href="#process" class="btn-mmy btn-ghost-light mt-4 reveal reveal-delay-2">See the process <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
-      </div>
-      <div class="col-lg-5">
-        <div class="a2d-panel reveal reveal-delay-2">
-          <div class="a2d-head">
-            <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">At MMY US</span>
-            <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional project is still waiting on permits <sup>*</sup></p>
-          </div>
-          <div class="a2d-stage" aria-hidden="true">
-            <div class="a2d-guide"></div>
-            <div class="a2d-ground"></div>
-            <div class="a2d-mod a2d-home-l"></div>
-            <div class="a2d-mod a2d-home-r"></div>
-            <div class="a2d-roof"></div>
-          </div>
-          <p class="a2d-footnote">*In the states that MMY US is registered, currently Kentucky, Indiana &amp; Ohio.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     STAT BAND
-     ============================================================ -->
-<section class="bg-ink stat-band">
-  <div class="container-mmy">
-    <div class="stat-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num"><span class="count-up" data-target="8">0</span><span class="unit">wks</span></div>
-        <div class="stat-label">Turnaround from order to handover — 5x faster than a traditional build.</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-num"><span class="count-up" data-target="80">0</span><span class="unit">%</span></div>
-        <div class="stat-label">More accurate cost prediction, using a digital twin built before construction starts.</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-num"><span class="count-up" data-target="35">0</span><span class="unit">%</span></div>
-        <div class="stat-label">Less carbon emitted than traditional construction — about 32 tons of CO&#8322; saved per unit.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     THE TRADITIONAL WAY
-     ============================================================ -->
-<section class="bg-paper section-pad-sm">
-  <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">The traditional way</span><span class="dim-line"></span></div>
-    <div class="oldway-head">
-      <h3 class="reveal">Every added trade, every weather day, every change order adds risk to a project that was already unpredictable.</h3>
-    </div>
-    <div class="row g-3 g-md-4">
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-1">
-          <span class="pain-tag">Timeline risk</span>
-          <span class="pain-num">42 weeks</span>
-          <p>The U.S. average to construct a single family home — before permitting delays or a single subcontractor falls behind schedule.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-2">
-          <span class="pain-tag">Coordination risk</span>
-          <span class="pain-num">12+ trades</span>
-          <p>Architects, engineers, framers, electricians, plumbers, drywallers. Every trade you add is another schedule to sync and another point of failure.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pain-card reveal reveal-delay-3">
-          <span class="pain-tag">Cost risk</span>
-          <span class="pain-num">Estimate only</span>
-          <p>Without a finished single family home digital model before you break ground, your budget stays a guess until the building is done.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -1329,6 +1240,95 @@ select:focus-visible,
         <span class="eyebrow reveal" style="color:var(--gold);">Inside a module</span>
         <h3 class="h-section reveal" style="color:#fff; font-size:clamp(26px,3vw,38px);">Engineered layer by layer.</h3>
         <p class="lede reveal reveal-delay-1 mt-3">85% of the work happens off-site — structure, MEP, fixtures and finishes, built as complete modules on the factory floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROBLEM — SOLUTION FIRST (MMY US), THEN THE TRADITIONAL WAY
+     ============================================================ -->
+<section class="bg-paper section-pad" id="problem">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">A better way to build</span><span class="dim-line"></span></div>
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7">
+        <h2 class="h-section reveal">Construction was never built to scale like housing demand needs it to.</h2>
+        <p class="lede reveal reveal-delay-1 mt-3" style="color:var(--tx-1);">MMY US removes the guesswork by building your development somewhere it can actually be controlled: a factory.</p>
+        <a href="#process" class="btn-mmy btn-ghost-light mt-4 reveal reveal-delay-2">See the process <svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg></a>
+      </div>
+      <div class="col-lg-5">
+        <div class="a2d-panel reveal reveal-delay-2">
+          <div class="a2d-head">
+            <span class="eyebrow" style="color:var(--gold); margin-bottom:0;">At MMY US</span>
+            <p class="a2d-caption">Every module is manufactured and finished off-site — while a traditional project is still waiting on permits <sup>*</sup></p>
+          </div>
+          <div class="a2d-stage" aria-hidden="true">
+            <div class="a2d-guide"></div>
+            <div class="a2d-ground"></div>
+            <div class="a2d-mod a2d-home-l"></div>
+            <div class="a2d-mod a2d-home-r"></div>
+            <div class="a2d-roof"></div>
+          </div>
+          <p class="a2d-footnote">*In the states that MMY US is registered, currently Kentucky, Indiana &amp; Ohio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STAT BAND
+     ============================================================ -->
+<section class="bg-ink stat-band">
+  <div class="container-mmy">
+    <div class="stat-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="count-up" data-target="8">0</span><span class="unit">wks</span></div>
+        <div class="stat-label">Turnaround from order to handover — 5x faster than a traditional build.</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span class="count-up" data-target="80">0</span><span class="unit">%</span></div>
+        <div class="stat-label">More accurate cost prediction, using a digital twin built before construction starts.</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span class="count-up" data-target="35">0</span><span class="unit">%</span></div>
+        <div class="stat-label">Less carbon emitted than traditional construction — about 32 tons of CO&#8322; saved per unit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE TRADITIONAL WAY
+     ============================================================ -->
+<section class="bg-paper section-pad-sm">
+  <div class="container-mmy">
+    <div class="dim-divider reveal"><span class="dim-label">The traditional way</span><span class="dim-line"></span></div>
+    <div class="oldway-head">
+      <h3 class="reveal">Every added trade, every weather day, every change order adds risk to a project that was already unpredictable.</h3>
+    </div>
+    <div class="row g-3 g-md-4">
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-1">
+          <span class="pain-tag">Timeline risk</span>
+          <span class="pain-num">42 weeks</span>
+          <p>The U.S. average to construct a single family home — before permitting delays or a single subcontractor falls behind schedule.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-2">
+          <span class="pain-tag">Coordination risk</span>
+          <span class="pain-num">12+ trades</span>
+          <p>Architects, engineers, framers, electricians, plumbers, drywallers. Every trade you add is another schedule to sync and another point of failure.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pain-card reveal reveal-delay-3">
+          <span class="pain-tag">Cost risk</span>
+          <span class="pain-num">Estimate only</span>
+          <p>Without a finished single family home digital model before you break ground, your budget stays a guess until the building is done.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1550,7 +1550,7 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Single-family</div>
-          <h3 class="project-title">LEED Platinum 2-Storey Home — Louisville</h3>
+          <h3 class="project-title">Elizabeth — LEED Platinum 2-Storey Home, Louisville</h3>
           <p class="project-desc">1,700 sq ft, 3 bed, 2 bath. Exceeds IBC &amp; state code — permitted in 3 states.</p>
           <div class="project-badges">
             <span class="badge-mmy">Faster build</span>
@@ -1569,7 +1569,7 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2026 &middot; Single-family</div>
-          <h3 class="project-title">LEED Platinum 1-Storey Home — Louisville &amp; Cleveland</h3>
+          <h3 class="project-title">Windsor — LEED Platinum 1-Storey Home, Louisville &amp; Cleveland</h3>
           <p class="project-desc">Climate-resilient steel construction exceeding IBC &amp; state code — delivered lot-to-key in 8 weeks.</p>
           <div class="project-badges">
             <span class="badge-mmy">80% faster build</span>
@@ -1584,10 +1584,10 @@ select:focus-visible,
       </a>
 
       <a class="project-card" href="projects.html#nine-plex">
-        <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
+        <div class="project-media"><img src="images/case-studies/nine-plex-exterior-photo.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
-          <h3 class="project-title">LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland</h3>
+          <h3 class="project-title">MMY US 9-Plex — LEED Gold Multi-Family, Louisville &amp; Cleveland</h3>
           <p class="project-desc">LEED Gold apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
           <div class="project-badges">
             <span class="badge-mmy">90% faster build</span>
@@ -1605,7 +1605,7 @@ select:focus-visible,
         <div class="project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
-          <h3 class="project-title">MMY US Multifamily — 36 Units — Sellersburg, Indiana</h3>
+          <h3 class="project-title">Sellersburg Scholar House — 36 Units, Sellersburg, Indiana</h3>
           <p class="project-desc">Design-build of a 36-unit affordable multifamily housing scheme for Family Scholar House.</p>
           <div class="project-badges">
             <span class="badge-mmy">80% faster build</span>

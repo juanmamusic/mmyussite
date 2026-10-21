@@ -943,6 +943,17 @@ select:focus-visible,
 .why-card p{ font-size:13.5px; color:var(--tx-2); line-height:1.55; margin:0; }
 
 /* ---------- Full project cards (Projects page) ---------- */
+a.full-project-card{ display:block; color:inherit; text-decoration:none; height:100%; }
+a.full-project-card:hover{ color:inherit; }
+.full-project-media.is-empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; background:linear-gradient(135deg, var(--blue), var(--ink)); color:rgba(255,255,255,.85); }
+.full-project-media.is-empty span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; }
+.project-link{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-family:var(--ff-mono); font-size:12px; font-weight:600; color:var(--blue); }
+a.full-project-card:hover .project-link{ color:var(--blue-deep); }
+.full-project-media.has-status{ position:relative; }
+.status-badge{ position:absolute; left:14px; top:14px; display:inline-flex; align-items:center; gap:7px; padding:6px 11px; border-radius:100px; background:#CFE6E2; color:#0F3B37; font-family:var(--ff-mono); font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; box-shadow:0 6px 18px -8px rgba(0,0,0,.35); }
+.status-badge i{ width:7px; height:7px; border-radius:50%; background:#2F7D74; animation:csPulse 1.8s ease-in-out infinite; }
+@keyframes csPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(47,125,116,.5); } 50%{ box-shadow:0 0 0 5px rgba(47,125,116,0); } }
+@media (prefers-reduced-motion:reduce){ .status-badge i{ animation:none; } }
 /* ---------- Case study ---------- */
 .cs-back{ display:flex; width:fit-content; align-items:center; gap:8px; font-family:var(--ff-mono); font-size:12px; color:var(--tx-d2); text-decoration:none; margin-bottom:22px; }
 .cs-back svg{ transform:rotate(180deg); }
@@ -950,9 +961,16 @@ select:focus-visible,
 .cs-sub{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
 .cs-sub span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.04em; color:var(--tx-d2); padding:6px 12px; border:1px solid var(--line-dark); border-radius:100px; }
 .cs-sub .cs-cert{ color:var(--ink); background:var(--gold); border-color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:10.5px; }
+.cs-sub .cs-status{ display:inline-flex; align-items:center; gap:7px; color:#0F3B37; background:#CFE6E2; border-color:#CFE6E2; font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:10.5px; }
+.cs-status i{ width:7px; height:7px; border-radius:50%; background:#2F7D74; animation:csPulse 1.8s ease-in-out infinite; }
+@keyframes csPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(47,125,116,.5); } 50%{ box-shadow:0 0 0 5px rgba(47,125,116,0); } }
+@media (prefers-reduced-motion:reduce){ .cs-status i{ animation:none; } }
 .cs-h1b{ display:block; color:var(--blue-bright); }
 .cs-hero-img{ border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:16/8; background:var(--paper-2); margin-top:-1px; }
 .cs-hero-img img{ width:100%; height:100%; object-fit:cover; }
+.cs-hero-img.is-contain{ position:relative; background:var(--bg) center/cover no-repeat; }
+.cs-hero-img.is-contain::before{ content:""; position:absolute; inset:0; backdrop-filter:blur(28px) brightness(.85); -webkit-backdrop-filter:blur(28px) brightness(.85); }
+.cs-hero-img.is-contain img{ position:relative; object-fit:contain; }
 @media (max-width:767px){ .cs-hero-img{ aspect-ratio:4/3; } }
 .cs-stats{ display:grid; grid-template-columns:1fr; gap:12px; }
 @media (min-width:576px){ .cs-stats{ grid-template-columns:1fr 1fr; } }
@@ -1100,7 +1118,13 @@ select:focus-visible,
     <a href="projects.html" class="cs-back"><svg class="icon" style="width:15px;height:15px"><use href="#icon-arrow-right" xlink:href="#icon-arrow-right"/></svg> Back to projects</a>
     <div class="eyebrow reveal is-in" style="color:var(--wood)">Case study</div>
     <h1 class="h-hero reveal is-in reveal-delay-1" style="color:#fff; max-width:900px;">MCC Medical Center Campus<span class="cs-h1b">LEED Gold 60-Unit Multi-Family</span></h1>
-    <div class="cs-sub reveal is-in reveal-delay-2"><span class="cs-cert">LEED Gold</span><span>Affordable multi-family residential</span><span>MCC Medical Center Campus</span></div>
+    <div class="cs-sub reveal is-in reveal-delay-2"><span class="cs-status"><i></i>In delivery</span><span class="cs-cert">LEED Gold</span><span>Affordable multi-family residential</span><span>MCC Medical Center Campus</span></div>
+  </div>
+</section>
+
+<section class="bg-paper" style="padding-top:28px;">
+  <div class="container-mmy">
+    <div class="cs-hero-img reveal is-in"><img src="images/case-studies/mcc-facade.jpg" alt="MCC Medical Center Campus modules installed on site"></div>
   </div>
 </section>
 
@@ -1142,6 +1166,10 @@ select:focus-visible,
           <p>MMY US developed a modular multi-family housing solution specifically suited to the constraints of the MCC Medical Center Campus site.</p>
           <p>Modularization was central to the delivery strategy, allowing the majority of building construction activities to take place within a controlled factory environment rather than on the restricted urban site. This substantially reduced the need for on-site labour, material storage and prolonged construction operations.</p>
           <p>The building design and installation sequence were coordinated with the engineered civil and foundation works to accommodate the existing ground conditions. Detailed planning of module transportation, site access, lifting operations and installation enabled the development to be approached through a controlled sequence of activities despite the limited available space.</p>
+          <div class="cs-gallery">
+            <figure><img src="images/case-studies/mcc-module-lift.jpg" alt="Module being craned into place at MCC Medical Center Campus" loading="lazy"></figure>
+            <figure><img src="images/case-studies/mcc-foundations.jpg" alt="Engineered foundations prepared for module installation at MCC Medical Center Campus" loading="lazy"></figure>
+          </div>
         </div>
       </div>
     </div>

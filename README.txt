@@ -16,10 +16,9 @@ CONTENTS
   tender-opportunities.html           Tender Opportunities
   invest.html                         Invest (built, NOT linked in navigation)
   images/                             Photos, favicons, REDS10 Group logo
-  images/media/                       Home page video (placeholder until the factory flythrough file is supplied)
-  images/case-studies/                9-Plex renders used on its case study
+  images/case-studies/                9-Plex renders and MCC site photos for the case studies
 
-  Some images still load from the current site's Webflow CDN
+  The home page factory flythrough video and some images still load from the current site's Webflow CDN
   (cdn.prod.website-files.com). Keep the Webflow plan active until
   those images are copied into images/ — otherwise they will break.
 

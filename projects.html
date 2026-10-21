@@ -949,6 +949,11 @@ a.full-project-card:hover{ color:inherit; }
 .full-project-media.is-empty span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; }
 .project-link{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-family:var(--ff-mono); font-size:12px; font-weight:600; color:var(--blue); }
 a.full-project-card:hover .project-link{ color:var(--blue-deep); }
+.full-project-media.has-status{ position:relative; }
+.status-badge{ position:absolute; left:14px; top:14px; display:inline-flex; align-items:center; gap:7px; padding:6px 11px; border-radius:100px; background:#CFE6E2; color:#0F3B37; font-family:var(--ff-mono); font-size:10.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; box-shadow:0 6px 18px -8px rgba(0,0,0,.35); }
+.status-badge i{ width:7px; height:7px; border-radius:50%; background:#2F7D74; animation:csPulse 1.8s ease-in-out infinite; }
+@keyframes csPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(47,125,116,.5); } 50%{ box-shadow:0 0 0 5px rgba(47,125,116,0); } }
+@media (prefers-reduced-motion:reduce){ .status-badge i{ animation:none; } }
 .full-project-card{ scroll-margin-top:110px;
   border:1px solid var(--line-light); border-radius:var(--radius-lg); overflow:hidden; background:#fff; height:100%;
   transition:transform .3s ease, box-shadow .3s ease;
@@ -1091,7 +1096,7 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="LEED Platinum Single Family Home - Elizabeth" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Single-family &middot; 2025</span>
-            <h3 class="project-title">LEED Platinum 2-Storey Home — Louisville</h3>
+            <h3 class="project-title">Elizabeth — LEED Platinum 2-Storey Home, Louisville</h3>
             <p class="project-desc">1,700 sq ft, 3 bed, 2 bath. Exceeds IBC &amp; state code — permitted in 3 states.</p>
             <div class="project-badges">
               <span class="badge-mmy">Faster build</span>
@@ -1111,7 +1116,7 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="LEED Platinum Single Family Home - Windsor" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Single-family &middot; 2026</span>
-            <h3 class="project-title">LEED Platinum 1-Storey Home — Louisville &amp; Cleveland</h3>
+            <h3 class="project-title">Windsor — LEED Platinum 1-Storey Home, Louisville &amp; Cleveland</h3>
             <p class="project-desc">Climate-resilient steel construction exceeding IBC &amp; state code — delivered lot-to-key in 8 weeks.</p>
             <div class="project-badges">
               <span class="badge-mmy">80% faster build</span>
@@ -1127,10 +1132,10 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
       </div>
       <div class="col-md-6">
         <a id="nine-plex" class="full-project-card reveal reveal-delay-2" href="case-study-nine-plex.html">
-          <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
+          <div class="full-project-media"><img src="images/case-studies/nine-plex-exterior-photo.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Multifamily &middot; 2025</span>
-            <h3 class="project-title">LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland</h3>
+            <h3 class="project-title">MMY US 9-Plex — LEED Gold Multi-Family, Louisville &amp; Cleveland</h3>
             <p class="project-desc">LEED Gold apartments exceeding IBC &amp; state code — pre-permitted for delivery across Kentucky and Ohio.</p>
             <div class="project-badges">
               <span class="badge-mmy">90% faster build</span>
@@ -1149,7 +1154,7 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
           <div class="full-project-media"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="MMY US 36 Unit Multifamily" loading="lazy"></div>
           <div class="project-body">
             <span class="full-project-tag">Multifamily &middot; 2025</span>
-            <h3 class="project-title">MMY US Multifamily — 36 Units — Sellersburg, Indiana</h3>
+            <h3 class="project-title">Sellersburg Scholar House — 36 Units, Sellersburg, Indiana</h3>
             <p class="project-desc">Design-build of a 36-unit affordable multifamily housing scheme for Family Scholar House.</p>
             <div class="project-badges">
               <span class="badge-mmy">80% faster build</span>
@@ -1164,7 +1169,7 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
       </div>
       <div class="col-md-6">
         <a id="mcc-medical-center" class="full-project-card reveal" href="case-study-mcc-medical-center.html">
-          <div class="full-project-media is-empty"><svg class="icon" style="width:44px;height:44px"><use href="#icon-building" xlink:href="#icon-building"/></svg><span>Project photography coming soon</span></div>
+          <div class="full-project-media has-status"><img src="images/case-studies/mcc-module-lift.jpg" alt="Module being craned into place at MCC Medical Center Campus" loading="lazy"><span class="status-badge"><i></i>In delivery</span></div>
           <div class="project-body">
             <span class="full-project-tag">Affordable multi-family &middot; Louisville</span>
             <h3 class="project-title">MCC Medical Center Campus — LEED Gold 60-Unit Multi-Family</h3>
@@ -1306,7 +1311,7 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
       <div class="col-md-6 col-lg-4 proj-item" data-cat="residential">
         <div class="tender-card reveal reveal-delay-2" style="cursor:default;">
           <div class="tender-media">
-            <img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a72a2765c05ae60cce1339b_Bed-Bath.jpg" alt="LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland">
+            <img src="images/case-studies/nine-plex-exterior-photo.jpg" alt="LEED Gold MMY US 9-Plex — Louisville &amp; Cleveland">
           </div>
           <div class="tender-body">
             <div class="tender-type">Residential</div>
