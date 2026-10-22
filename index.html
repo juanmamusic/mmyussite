@@ -854,6 +854,13 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .hero-badge:hover{ border-color:var(--gold); background:rgba(212,178,131,.14); color:#fff; }
 .hero-badge .hb-pill{ flex-shrink:0; font-family:var(--ff-mono); font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); background:var(--gold); padding:4px 8px; border-radius:100px; }
 
+
+/* Hero → factory transition: fade glows out at the bottom, tighten the gap */
+.hero-bg::before, .hero-cursor-glow{ -webkit-mask-image:linear-gradient(to bottom, #000 60%, transparent 100%); mask-image:linear-gradient(to bottom, #000 60%, transparent 100%); }
+.hero{ min-height:auto; padding-top:clamp(120px,14vh,170px); }
+.hero-content{ padding-bottom:clamp(24px,3vw,40px); }
+.scroll-cue{ display:none !important; }
+#factories{ padding-top:clamp(32px,4vw,56px); }
 /* ---------- Factory capacity ---------- */
 .factory-video{ position:relative; border-radius:var(--radius-lg); overflow:hidden; background:var(--ink-2); border:1px solid var(--line-dark); aspect-ratio:16/10; }
 .factory-video video{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -1053,7 +1060,7 @@ select:focus-visible,
       </div>
 
       <div class="trust-strip reveal is-in reveal-delay-4">
-        <span class="trust-label">Trusted by developers &amp; institutions</span>
+        <span class="trust-label">Trusted by</span>
         <div class="logo-marquee">
           <div class="logo-track">
             <div class="logo-chip"><img src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/67c19053b2f311779624eec6_pwc-new.svg" alt="PwC"></div>
@@ -1084,7 +1091,6 @@ select:focus-visible,
      ============================================================ -->
 <section class="bg-ink section-pad" id="factories">
   <div class="container-mmy">
-    <div class="dim-divider reveal"><span class="dim-label">Factory capacity</span><span class="dim-line"></span></div>
     <div class="row gy-4 mb-4">
       <div class="col-lg-7">
         <h2 class="h-section reveal" style="color:#fff">Homes built on a production line, at the scale housing needs.</h2>
