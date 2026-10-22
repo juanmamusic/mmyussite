@@ -839,9 +839,9 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-col a:hover{ color:#fff; }
 .footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
 @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
-.footer-group{ display:inline-flex; align-items:center; gap:12px; margin-top:22px; padding:10px 14px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
-.footer-group span{ font-family:var(--ff-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
-.footer-group img{ height:30px; width:auto; }
+.footer-group{ display:inline-flex; align-items:center; gap:16px; margin-top:24px; padding:12px 18px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
+.footer-group span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
+.footer-group img{ height:50px; width:auto; }
 .footer-group:hover{ border-color:var(--tx-d3); color:#fff; }
 .social-row{ display:flex; gap:12px; }
 .social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
@@ -902,8 +902,8 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 
 /* ---------- Exploded module ---------- */
 .exploded-row{ margin-top:56px; padding-top:44px; border-top:1px solid var(--line-dark); }
-.exploded-figure{ border-radius:var(--radius-lg); overflow:hidden; background:#fff; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:18px; }
-.exploded-figure img{ width:100%; height:100%; object-fit:contain; }
+.exploded-figure{ border-radius:var(--radius-lg); overflow:hidden; background:#F4F2F2; }
+.exploded-figure img{ width:100%; height:auto; display:block; }
 
 /* ---------- Clickable project cards ---------- */
 a.project-card{ display:block; color:inherit; text-decoration:none; }
@@ -1041,7 +1041,7 @@ select:focus-visible,
 
         <div class="hero-video-card reveal is-in reveal-delay-2">
           <div class="hero-photo-carousel" id="heroCarousel">
-            <img class="hero-photo is-active" src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a760cd1d0ab8f5566762c15_Final%20Sburg%20.jpg" alt="Completed MMY US single-family home exterior">
+            <img class="hero-photo is-active" src="images/site/final-sburg.jpg" alt="Completed MMY US single-family home exterior">
             <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="Finished living room interior">
             <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="Finished kitchen interior">
             <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e6203fc249630c5b49a6_Bedroom%201.jpg" alt="Finished bedroom interior">
@@ -1239,7 +1239,7 @@ select:focus-visible,
     <div class="row exploded-row align-items-center gy-4">
       <div class="col-lg-5">
         <div class="exploded-figure reveal">
-          <img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a750494bc284a51f10ed7df_Sellersburg%20Exploded%20Box%201.png" alt="Exploded diagram of an MMY US module" loading="lazy">
+          <img src="images/site/sellersburg-exploded-box-1.jpg" alt="Exploded diagram of an MMY US module" loading="lazy">
         </div>
       </div>
       <div class="col-lg-6 offset-lg-1">
@@ -1470,7 +1470,7 @@ select:focus-visible,
     <div class="mt-3">
       <div class="proof-row reveal">
         <div class="proof-media">
-          <img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19acecbc1de2a32a06aa0_rapid-dev-image.webp" alt="Rapid modular development site" loading="lazy">
+          <img src="images/site/rapid-dev-image.webp" alt="Rapid modular development site" loading="lazy">
         </div>
         <div class="proof-text">
           <span class="proof-index">01</span>
@@ -1480,7 +1480,7 @@ select:focus-visible,
       </div>
 
       <div class="proof-row flip reveal">
-        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/6a760cd1d0ab8f5566762c15_Final%20Sburg%20.jpg" alt="Finished modular home on an urban infill lot" loading="lazy"></div>
+        <div class="proof-media"><img src="images/site/final-sburg.jpg" alt="Finished modular home on an urban infill lot" loading="lazy"></div>
         <div class="proof-text">
           <span class="proof-index">02</span>
           <h3 class="h-card mb-3">Less disruption</h3>
@@ -1489,7 +1489,7 @@ select:focus-visible,
       </div>
 
       <div class="proof-row reveal">
-        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19ab8b79a4084f681c97b_high-qual-image.png" alt="High quality finished modular unit" loading="lazy"></div>
+        <div class="proof-media"><img src="images/site/high-qual-image.jpg" alt="High quality finished modular unit" loading="lazy"></div>
         <div class="proof-text">
           <span class="proof-index">03</span>
           <h3 class="h-card mb-3">High quality</h3>
@@ -1498,7 +1498,7 @@ select:focus-visible,
       </div>
 
       <div class="proof-row flip reveal">
-        <div class="proof-media"><img src="https://cdn.prod.website-files.com/654a4617f32c4b08ad09e7be/67c19ab8b95732699058e3eb_vr-screenshot.png" alt="Digital twin VR model of a building" loading="lazy"></div>
+        <div class="proof-media"><img src="images/site/vr-screenshot.jpg" alt="Digital twin VR model of a building" loading="lazy"></div>
         <div class="proof-text">
           <span class="proof-index">04</span>
           <h3 class="h-card mb-3">Experience it before it's built</h3>
@@ -1590,7 +1590,7 @@ select:focus-visible,
       </a>
 
       <a class="project-card" href="projects.html#nine-plex">
-        <div class="project-media"><img src="images/case-studies/nine-plex-exterior-photo.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
+        <div class="project-media"><img src="images/case-studies/nine-plex-exterior-clean.jpg" alt="MMY US 9-Plex" loading="lazy"></div>
         <div class="project-body">
           <div class="project-year">2025 &middot; Multifamily</div>
           <h3 class="project-title">MMY US 9-Plex — LEED Gold Multi-Family, Louisville &amp; Cleveland</h3>
@@ -1879,7 +1879,6 @@ select:focus-visible,
         <a href="https://www.linkedin.com/company/mmy-us/" aria-label="LinkedIn"><svg class="icon" style="width:15px;height:15px"><use href="#icon-linkedin" xlink:href="#icon-linkedin"/></svg></a>
         <a href="https://www.instagram.com/mmyus_official/" aria-label="Instagram"><svg class="icon" style="width:15px;height:15px"><use href="#icon-instagram" xlink:href="#icon-instagram"/></svg></a>
       </div>
-      <span class="mono" style="opacity:.6">Design concept prepared for MMY US</span>
     </div>
   </div>
 </footer>

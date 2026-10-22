@@ -796,9 +796,9 @@ footer{ background:var(--ink); color:var(--tx-d2); padding:56px 0 26px; }
 .footer-col a:hover{ color:#fff; }
 .footer-bottom{ display:flex; flex-direction:column; gap:14px; padding-top:26px; font-size:12.5px; color:var(--tx-d3); }
 @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; align-items:center; } }
-.footer-group{ display:inline-flex; align-items:center; gap:12px; margin-top:22px; padding:10px 14px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
-.footer-group span{ font-family:var(--ff-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
-.footer-group img{ height:30px; width:auto; }
+.footer-group{ display:inline-flex; align-items:center; gap:16px; margin-top:24px; padding:12px 18px; border:1px solid var(--line-dark); border-radius:12px; color:var(--tx-d3); text-decoration:none; transition:border-color .25s ease, color .25s ease; }
+.footer-group span{ font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; line-height:1.4; }
+.footer-group img{ height:50px; width:auto; }
 .footer-group:hover{ border-color:var(--tx-d3); color:#fff; }
 .social-row{ display:flex; gap:12px; }
 .social-row a{ width:34px; height:34px; border-radius:50%; border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease, color .25s ease; }
@@ -993,6 +993,9 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
 @media (min-width:768px){ .cs-gallery{ grid-template-columns:1fr 1fr; gap:18px; } }
 .cs-gallery figure{ margin:0; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/3; background:var(--paper-2); }
 .cs-gallery img{ width:100%; height:100%; object-fit:cover; }
+.cs-video{ margin:0; max-width:620px; }
+.cs-video video{ width:100%; aspect-ratio:1/1; object-fit:cover; display:block; border-radius:var(--radius-lg); background:var(--ink); }
+.cs-video figcaption{ font-family:var(--ff-mono); font-size:12px; color:var(--tx-3); margin-top:12px; }
 .cs-related{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:768px){ .cs-related{ grid-template-columns:1fr 1fr; gap:18px; } }
 .cs-rel-card{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 24px; background:#fff; border:1px solid var(--line-light); border-radius:var(--radius); color:inherit; text-decoration:none; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
@@ -1257,7 +1260,6 @@ a.full-project-card:hover .project-link{ color:var(--blue-deep); }
         <a href="https://www.linkedin.com/company/mmy-us/" aria-label="LinkedIn"><svg class="icon" style="width:15px;height:15px"><use href="#icon-linkedin" xlink:href="#icon-linkedin"/></svg></a>
         <a href="https://www.instagram.com/mmyus_official/" aria-label="Instagram"><svg class="icon" style="width:15px;height:15px"><use href="#icon-instagram" xlink:href="#icon-instagram"/></svg></a>
       </div>
-      <span class="mono" style="opacity:.6">Design concept prepared for MMY US</span>
     </div>
   </div>
 </footer>

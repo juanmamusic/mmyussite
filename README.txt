@@ -15,14 +15,17 @@ CONTENTS
   news.html                           News
   tender-opportunities.html           Tender Opportunities
   invest.html                         Invest (built, NOT linked in navigation)
-  images/                             Photos, favicons, REDS10 Group logo
-  images/case-studies/                9-Plex renders and MCC site photos for the case studies
+  images/                             Photos, favicons, logos, link-preview image
+  images/site/                        Images moved over from the Webflow export
+  images/case-studies/                Project photos for the case studies
 
-  images/media/                       Factory flythrough video (home page)
+  images/media/                       Videos: factory flythrough (home), MCC VR walkthrough (case study)
 
-  Some images still load from the current site's Webflow CDN
-  (cdn.prod.website-files.com). Keep the Webflow plan active until
-  those images are copied into images/ — otherwise they will break.
+  29 images (team photos, partner logos, press thumbnails and some
+  project photos) still load from Webflow's CMS storage
+  (cdn.prod.website-files.com). Webflow's code export does not include
+  CMS images, so these must be downloaded manually before the Webflow
+  project is ever deleted.
 
 HOW TO DEPLOY
 -------------
