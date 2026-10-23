@@ -15,6 +15,11 @@ CONTENTS
   news.html                           News
   tender-opportunities.html           Tender Opportunities
   invest.html                         Invest (built, NOT linked in navigation)
+  privacy-policy.html, terms-of-service.html, purchase-order-terms-conditions.html
+                                      Legal pages (content carried over from the previous site)
+  404.html                            'Page not found' page
+  contact.php                         Contact form handler — emails enquiries to hello@mmyus.com
+  .htaccess                           Redirects old Webflow URLs, clean URLs, 404 page (hidden file — make sure it is uploaded)
   images/                             Photos, favicons, logos, link-preview image
   images/site/                        Images moved over from the Webflow export
   images/case-studies/                Project photos for the case studies
@@ -42,6 +47,4 @@ NOTES
 - invest.html is unlinked but works if visited directly. To relaunch,
   add <a href="invest.html">Invest</a> back to the nav, mobile menu and
   footer of each page.
-- Contact form is front-end only until a form handler is connected
-  (submissions should go to hello@mmyus.com).
-- Privacy Policy / Terms of Service links are placeholders.
+- Contact form posts to contact.php, which emails hello@mmyus.com. Send a test enquiry after going live and check the inbox (and spam folder).

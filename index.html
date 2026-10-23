@@ -8,12 +8,12 @@
 <meta property="og:title" content="MMY US — Manufactured. Not Constructed.">
 <meta property="og:description" content="Permanent, code-compliant modular homes and multiplexes, manufactured off-site and delivered in as little as 8 weeks.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/og-image.jpg">
+<meta property="og:image" content="https://www.mmyus.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="MMY US logo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="images/og-image.jpg">
+<meta name="twitter:image" content="https://www.mmyus.com/images/og-image.jpg">
 <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="shortcut icon" href="images/favicon.ico">
@@ -823,6 +823,9 @@ h1,h2,h3,h4{
   background:rgba(255,255,255,.06); border-color:var(--blue-bright); box-shadow:0 0 0 3px rgba(61,107,255,.22); color:#fff;
 }
 .form-mmy .form-select option{ background:var(--ink); }
+.hp-field{ position:absolute !important; left:-9999px !important; width:1px; height:1px; overflow:hidden; }
+.form-error{ display:none; margin-top:14px; padding:12px 14px; border-radius:10px; background:rgba(200,70,60,.10); color:#B23B30; font-size:14px; }
+.form-error.is-visible{ display:block; }
 .form-success{
   display:none; align-items:center; gap:12px; padding:16px 18px; border-radius:var(--radius-sm);
   background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.35); color:#BBF7D0; font-size:14px; margin-top:16px;
@@ -1049,14 +1052,12 @@ select:focus-visible,
 
         <div class="hero-video-card reveal is-in reveal-delay-2">
           <div class="hero-photo-carousel" id="heroCarousel">
-            <img class="hero-photo is-active" src="images/site/final-sburg.jpg" alt="Completed MMY US single-family home exterior">
-            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="Finished living room interior">
-            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="Finished kitchen interior">
-            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e6203fc249630c5b49a6_Bedroom%201.jpg" alt="Finished bedroom interior">
-            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2fbd686c4f2ceb3237_Skyview%20Living%20(1).jpg" alt="Finished living space interior">
-            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e3905f3636c50c748d23_dji_fly_20260806_092222_0255_1786022728039_photo_beautify.jpeg" alt="Aerial view of completed MMY US development">
+            <img class="hero-photo is-active" src="images/case-studies/elizabeth-street.jpg" alt="Elizabeth, an MMY US LEED Platinum single-family home in Louisville" style="object-position:center 58%">
+            <img class="hero-photo" src="images/case-studies/windsor-street.jpg" alt="Windsor, an MMY US single-storey single-family home" loading="lazy">
+            <img class="hero-photo" src="images/site/final-sburg.jpg" alt="Sellersburg Scholar House, MMY US multi-family development" loading="lazy">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a74e617513dac567104bfc0_Living%20Room.jpg" alt="Finished living room interior" loading="lazy">
+            <img class="hero-photo" src="https://cdn.prod.website-files.com/6554b5072e6dc0c7f2fbd6da/6a70bf2b88cfbd749e4ae797_Skyview%20Kitchen%20(1).jpg" alt="Finished kitchen interior" loading="lazy">
           </div>
-          <div class="hero-video-tag"><span class="dot"></span> Recently delivered</div>
         </div>
       </div>
 
@@ -1817,23 +1818,24 @@ select:focus-visible,
         </div>
 
         <div>
-          <form class="form-mmy" id="contactForm">
+          <form class="form-mmy" id="contactForm" action="contact.php" method="post" novalidate>
+            <div class="hp-field" aria-hidden="true"><label for="fWebsite">Website</label><input type="text" id="fWebsite" name="website" tabindex="-1" autocomplete="off"></div>
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="fName">Name</label>
-                <input type="text" class="form-control" id="fName" placeholder="Jane Developer" required>
+                <input type="text" class="form-control" id="fName" name="name" placeholder="Jane Developer" autocomplete="name" required>
               </div>
               <div class="col-sm-6">
                 <label for="fCompany">Company</label>
-                <input type="text" class="form-control" id="fCompany" placeholder="Acme Development Co.">
+                <input type="text" class="form-control" id="fCompany" name="company" placeholder="Acme Development Co." autocomplete="organization">
               </div>
               <div class="col-sm-6">
                 <label for="fEmail">Email</label>
-                <input type="email" class="form-control" id="fEmail" placeholder="jane@company.com" required>
+                <input type="email" class="form-control" id="fEmail" name="email" placeholder="jane@company.com" autocomplete="email" required>
               </div>
               <div class="col-sm-6">
                 <label for="fType">Project type</label>
-                <select class="form-select" id="fType">
+                <select class="form-select" id="fType" name="project_type">
                   <option>Single-family home</option>
                   <option>Multiplex (4–18 units)</option>
                   <option>Multifamily (48+ units)</option>
@@ -1842,7 +1844,7 @@ select:focus-visible,
               </div>
               <div class="col-12">
                 <label for="fMsg">Tell us about your site</label>
-                <textarea class="form-control" id="fMsg" rows="3" placeholder="Location, target unit count, timeline..."></textarea>
+                <textarea class="form-control" id="fMsg" name="message" rows="3" placeholder="Location, target unit count, timeline..."></textarea>
               </div>
               <div class="col-12">
                 <button type="submit" class="btn-mmy btn-primary-mmy w-100 justify-content-center">
@@ -1854,6 +1856,7 @@ select:focus-visible,
               <svg class="icon" style="width:18px;height:18px"><use href="#icon-check" xlink:href="#icon-check"/></svg>
               Thanks — a member of our team will follow up within one business day.
             </div>
+            <div class="form-error" id="formError" role="alert"></div>
           </form>
         </div>
       </div>
@@ -1890,8 +1893,9 @@ select:focus-visible,
       </div>
       <div class="footer-col">
         <h6>Legal</h6>
-        <a href="#" onclick="return false;" title="Not prioritized for this prototype">Privacy policy</a>
-        <a href="#" onclick="return false;" title="Not prioritized for this prototype">Terms of service</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms-of-service.html">Terms of service</a>
+        <a href="purchase-order-terms-conditions.html">Purchase order T&amp;Cs</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2129,11 +2133,34 @@ select:focus-visible,
   var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   if(form){
+    var errorBox = document.getElementById('formError');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    function showError(msg){ errorBox.textContent = msg; errorBox.classList.add('is-visible'); }
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      success.classList.add('is-visible');
-      form.querySelectorAll('input, textarea, select').forEach(function(f){ f.disabled = true; });
-      form.querySelector('button[type="submit"]').style.opacity = '.6';
+      errorBox.classList.remove('is-visible');
+      if(!form.checkValidity()){
+        showError('Please add your name and a valid email address.');
+        form.reportValidity && form.reportValidity();
+        return;
+      }
+      submitBtn.disabled = true; submitBtn.style.opacity = '.6';
+      fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } })
+        .then(function(r){ return r.json().catch(function(){ return { ok:false }; }); })
+        .then(function(res){
+          if(res && res.ok){
+            success.classList.add('is-visible');
+            form.querySelectorAll('input, textarea, select').forEach(function(f){ f.disabled = true; });
+          } else {
+            throw new Error((res && res.error) || 'send failed');
+          }
+        })
+        .catch(function(err){
+          submitBtn.disabled = false; submitBtn.style.opacity = '';
+          showError(err && err.message && err.message !== 'send failed' && err.message.indexOf('Failed to fetch') === -1
+            ? err.message
+            : 'Your message could not be sent. Please email hello@mmyus.com directly.');
+        });
     });
   }
 
